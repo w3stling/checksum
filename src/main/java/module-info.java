@@ -25,7 +25,7 @@
 /**
  * This modules defines the base APIs for checksum.
  */
-module com.apptastic.rssreader {
+module com.apptastic.checksum {
     requires java.net.http;
 
     exports com.apptastic.checksum;
