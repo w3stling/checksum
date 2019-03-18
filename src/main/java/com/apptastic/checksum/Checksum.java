@@ -39,6 +39,10 @@ import java.security.MessageDigest;
  */
 public final class Checksum {
 
+    private Checksum() {
+
+    }
+
     /**
      * Calculate checksum for the content a given file
      *
