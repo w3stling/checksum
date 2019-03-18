@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"com.apptastic.rssreader"}]
+moduleSearchIndex = [{"l":"com.apptastic.checksum"}]
