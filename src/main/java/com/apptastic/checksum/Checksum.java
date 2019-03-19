@@ -33,6 +33,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.MessageDigest;
+import java.util.Optional;
+import java.util.zip.GZIPInputStream;
 
 /**
  * Calculate checksum
@@ -67,16 +69,26 @@ public final class Checksum {
      * @throws InterruptedException InterruptedException
      */
     public static String calculate(URI url, MessageDigest digest) throws IOException, InterruptedException {
-        HttpClient client = HttpClient.newHttpClient();
+        HttpClient client = HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_2)
+                .followRedirects(HttpClient.Redirect.ALWAYS)
+                .build();
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(url)
+        HttpRequest request = HttpRequest.newBuilder(url)
+                .header("Accept-Encoding", "gzip")
+                .GET()
                 .build();
 
         HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-        InputStream is = new BufferedInputStream(response.body());
 
-        return calculate(is, digest);
+        var inputStream = response.body();
+
+        if (Optional.of("gzip").equals(response.headers().firstValue("Content-Encoding")))
+            inputStream = new GZIPInputStream(inputStream);
+
+        inputStream = new BufferedInputStream(inputStream);
+
+        return calculate(inputStream, digest);
     }
 
     private static String calculate(InputStream is, MessageDigest digest) throws IOException {
