@@ -36,6 +36,6 @@ public class ParisRatpTest {
     @Test
     public void airportAccessMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Acces-Aeroports.1496264586.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("5f063db923716b529e51f8efd3d58a15", checksum);
+        assertEquals("60a19382c36dc020f95e2797943119cd", checksum);
     }
 }
