@@ -12,13 +12,13 @@ public class StockholmSlTest {
     @Test
     public void allRailServicesMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://sl.se/ficktid/karta/vinter/SL_Sp%C3%A5rtrafik.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f57d91f9b1592d33b80360abee42e521", checksum);
+        assertEquals("061ac92473d88c25862996eb9615d179", checksum);
     }
 
     @Test
     public void tramPendeltagMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://sl.se/ficktid/karta/vinter/Ptag.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("4aa6a42e28bc275bc21bb8013669b391", checksum);
+        assertEquals("661a3bee0ca07d4bb6d126db814d00d3", checksum);
     }
 
     @Test
