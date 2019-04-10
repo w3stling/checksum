@@ -1,5 +1,6 @@
 package com.apptastic.checksum;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
@@ -67,7 +68,7 @@ public class NewYorkMtaTest {
     @Test
     public void railLongIslandMap() throws Exception{
         String checksum = Checksum.calculate(new URI("http://web.mta.info/lirr/Timetable/images/lirr.gif"), MessageDigest.getInstance("MD5"));
-        assertEquals("8eba081849a649a9a8af8d5d272899ed", checksum);
+        assertEquals("debbca8555d3994d182036fd432e8b6a", checksum);
     }
 
     @Test
