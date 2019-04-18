@@ -1,12 +1,12 @@
 package com.apptastic.checksum;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class NewYorkMtaTest {
 
@@ -17,11 +17,16 @@ public class NewYorkMtaTest {
     }
 
     @Test
+    public void subwayMapWithStreets() throws Exception{
+        String checksum = Checksum.calculate(new URI("http://web.mta.info/nyct/maps/subway_map.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("55225b2a71e71dfc2f584894226d8cf0", checksum);
+    }
+
+    @Test
     public void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("http://web.mta.info/maps/night_map.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("95072e58ad0fa313acc70f212fa92153", checksum);
     }
-
 
     @Test
     public void regionalDiagramMap() throws Exception{
