@@ -24,7 +24,7 @@ public class LondonTflTest {
     @Test
     public void dlrMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://content.tfl.gov.uk/dlr-route-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("82ca7e38b34554e16a06c2f08daedc02", checksum);
+        assertEquals("e3ccb5f54fea042cc72000acc38cca83", checksum);
     }
 
     @Test
