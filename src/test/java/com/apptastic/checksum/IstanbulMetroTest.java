@@ -30,7 +30,7 @@ public class IstanbulMetroTest {
     @Test
     public void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://en.wikipedia.org/wiki/Public_transport_in_Istanbul#/media/File:Istanbul_Metrob%C3%BCs_Lines.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("0d1f2ba4fe01af5bbd0ac44931cb1cc8", checksum);
+        assertEquals("9a07cf0cfcd8f241193789f80791385e", checksum);
     }
 
     @Test
