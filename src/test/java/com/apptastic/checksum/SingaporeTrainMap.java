@@ -32,7 +32,7 @@ public class SingaporeTrainMap {
     @Test
     public void circleLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/20180723_CCL%20line%20only.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("02cf0a8c4bc1972dfbb07b0dcfd77766", checksum);
+        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
     }
 
     @Test
