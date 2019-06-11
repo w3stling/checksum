@@ -1,5 +1,6 @@
 package com.apptastic.checksum;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
@@ -27,6 +28,7 @@ public class IstanbulMetroTest {
         assertEquals("3f703256e54ccd3094ebb6fac7da28f6", checksum);
     }
 
+    @Ignore
     @Test
     public void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://en.wikipedia.org/wiki/Public_transport_in_Istanbul#/media/File:Istanbul_Metrob%C3%BCs_Lines.png"), MessageDigest.getInstance("MD5"));
