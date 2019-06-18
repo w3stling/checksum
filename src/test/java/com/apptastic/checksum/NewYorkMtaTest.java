@@ -48,8 +48,8 @@ public class NewYorkMtaTest {
 
     @Test
     public void busManhattanMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("http://web.mta.info/nyct/maps/manbus.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("06b6d906bccbc46bc730a8c572d91fe6", checksum);
+        String checksum = Checksum.calculate(new URI("http://web.mta.info/nyct/maps/manbus_2.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("1e2868693cc0a9bf296a2a6dcf65a8e8", checksum);
     }
 
     @Test

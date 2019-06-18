@@ -11,7 +11,7 @@ public class ParisRatpTest {
 
     @Test
     public void metroMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-Metro.1542892915.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-Metro.1555581459.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("d2725d02131362461c32c68d336b1407", checksum);
     }
 
@@ -23,7 +23,7 @@ public class ParisRatpTest {
 
     @Test
     public void busMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Bus.1542892928.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Bus.1555581448.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("dac2e410865e9a6a0317b67f22aaae27", checksum);
     }
 
@@ -35,7 +35,7 @@ public class ParisRatpTest {
 
     @Test
     public void airportAccessMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Acces-Aeroports.1496264586.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Acces-Aeroports.1553266180.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("60a19382c36dc020f95e2797943119cd", checksum);
     }
 }
