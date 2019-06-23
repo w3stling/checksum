@@ -18,7 +18,7 @@ public class StockholmSlTest {
     @Test
     public void tramPendeltagMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://sl.se/ficktid/karta/vinter/Ptag.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("661a3bee0ca07d4bb6d126db814d00d3", checksum);
+        assertEquals("1bb8c5906dd4fad4aef8ade38072e40a", checksum);
     }
 
     @Test

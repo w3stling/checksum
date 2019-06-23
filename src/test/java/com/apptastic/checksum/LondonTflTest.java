@@ -42,7 +42,7 @@ public class LondonTflTest {
     @Test
     public void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://content.tfl.gov.uk/key-bus-routes-in-central-london.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("0377959117ef6cd45dceeb07dd84955e", checksum);
+        assertEquals("d78a62abb07fb9f521369450b9b7c150", checksum);
     }
 
     @Test
