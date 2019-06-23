@@ -38,19 +38,19 @@ public class SingaporeTrainMap {
     @Test
     public void downtownLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/DTL%20lines%20only.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
+        assertTrue("d41d8cd98f00b204e9800998ecf8427e".equals(checksum) || "29a0b125fdbcf048a4fe69e4e6f47226".equals(checksum));
     }
 
     @Test
     public void eastWestLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/System%20map%20with%20EWL%20only%20-%20resize.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
+        assertTrue("d41d8cd98f00b204e9800998ecf8427e".equals(checksum) || "14723852a9b3e478c9b88a715c783d10".equals(checksum));
     }
 
     @Test
     public void northEastLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/NEL-.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
+        assertTrue("d41d8cd98f00b204e9800998ecf8427e".equals(checksum) || "5642089d7940480ff55ab0473fc35dde".equals(checksum));
     }
 
     @Test
