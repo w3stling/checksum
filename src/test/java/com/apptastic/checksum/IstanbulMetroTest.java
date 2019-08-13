@@ -28,13 +28,6 @@ public class IstanbulMetroTest {
         assertEquals("3f703256e54ccd3094ebb6fac7da28f6", checksum);
     }
 
-    @Ignore
-    @Test
-    public void busMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://en.wikipedia.org/wiki/Public_transport_in_Istanbul#/media/File:Istanbul_Metrob%C3%BCs_Lines.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("50a98be54d8c5e5ae0f41a6b2881e703", checksum);
-    }
-
     @Test
     public void ferryMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.sehirhatlari.istanbul/themplate/images/b-merkez-hatlari.png"), MessageDigest.getInstance("MD5"));
