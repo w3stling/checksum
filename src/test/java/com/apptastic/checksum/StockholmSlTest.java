@@ -42,13 +42,13 @@ public class StockholmSlTest {
     @Test
     public void tramNockebybananTvarbananMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://sl.se/ficktid/karta/vinter/NbTB.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("2587e8151ba63d3a9848feed6b3f7bbc", checksum);
+        assertEquals("b866e37527781232d93eb5f6c3c19794", checksum);
     }
 
     @Test
     public void tramRoslagsbananMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://sl.se/ficktid/karta/vinter/Rb.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("4ea95b723272186dfe34c169cd0f3fe0", checksum);
+        assertEquals("dc2005ffff944064b5078946c98d25fa", checksum);
     }
 
     @Test
