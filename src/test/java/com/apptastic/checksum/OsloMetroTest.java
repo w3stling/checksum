@@ -17,8 +17,8 @@ public class OsloMetroTest {
 
     @Test
     public void tramMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-13052019-korr.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("7c57d592da5dba993448575411f8e917", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-02092019.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("107b35ccb5fba04764b393709d31e87b", checksum);
     }
 
     @Test
