@@ -62,6 +62,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 ext.moduleName = 'com.apptastic.checksum'
 
 compileJava {
+    options.encoding = "UTF-8"
     inputs.property('moduleName', moduleName)
     doFirst {
         options.compilerArgs = [
@@ -72,7 +73,7 @@ compileJava {
 }
 
 jacoco {
-    toolVersion = "0.8.3"
+    toolVersion = "0.8.4"
 }
 
 artifacts {
