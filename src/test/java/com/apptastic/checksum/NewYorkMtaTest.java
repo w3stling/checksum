@@ -79,7 +79,7 @@ public class NewYorkMtaTest {
     @Test
     public void railMetroNorthMap() throws Exception{
         String checksum = Checksum.calculate(new URI("http://web.mta.info/mnr/gifs/mnrmap.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("e8855dd7971b1201fe89562481a28a0a", checksum);
+        assertEquals("76a74c95e7e88e24fd1dc1b5ad4664cc", checksum);
     }
 
     @Test
