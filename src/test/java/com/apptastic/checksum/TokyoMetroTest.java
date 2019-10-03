@@ -30,7 +30,7 @@ public class TokyoMetroTest {
     @Test
     public void todenArakawaMapJp() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/toden/map/i/index_map4.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("8576d9bd43a490a0b4da7226d290d941", checksum);
+        assertEquals("f91543e0c39b74a80e3f40b0bdb2cd43", checksum);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class TokyoMetroTest {
     @Test
     public void nipporiToneriLinerMapJp() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/nippori_toneri/map/i/index_map.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("353ff2dae80e52d5b11764c61af3dc70", checksum);
+        assertEquals("374769bd36490dced99675a889ccffde", checksum);
     }
 
     @Test
