@@ -26,7 +26,7 @@ public class SingaporeTrainMap {
     @Test
     public void bukitPanjangLrtMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/LBPLRT.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
+        assertEquals("31d2c8832abad527067843ded5cfe5d7", checksum);
     }
 
     @Test
@@ -56,19 +56,19 @@ public class SingaporeTrainMap {
     @Test
     public void northSouthLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/NSLE%20line.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
+        assertEquals("5b435aec4c75e54de328af78df145e81", checksum);
     }
 
     @Test
     public void punggolLrtMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/SPLRT%20loop-Mar17.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
+        assertEquals("6a26fb3a5f5e0a43c06665b813ba7f6b", checksum);
     }
 
     @Test
     public void sengkangLrtMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/SPLRT%20loop-Mar17.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d41d8cd98f00b204e9800998ecf8427e", checksum);
+        assertEquals("6a26fb3a5f5e0a43c06665b813ba7f6b", checksum);
     }
 
 }
