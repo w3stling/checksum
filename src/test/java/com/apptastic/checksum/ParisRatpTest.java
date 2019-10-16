@@ -29,7 +29,7 @@ public class ParisRatpTest {
 
     @Test
     public void nightBusMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Noctilien.1527497902.pdf"), MessageDigest.getInstance("MD5"));
+            String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Noctilien.1527497902.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("a84c61a6b1cd3478eb534042e9a7abb4", checksum);
     }
 
