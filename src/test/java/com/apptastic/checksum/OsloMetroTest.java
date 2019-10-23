@@ -53,13 +53,13 @@ public class OsloMetroTest {
 
     @Test
     public void trainRoutesInNorwayDetailed() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/filer-en/linjekart/linjekart-vy-norge-detaljert.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-no/linjekart/linjekart-vy-norge-detaljert.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("f0283cd4427e7214b37255334f909884", checksum);
     }
 
     @Test
     public void trainRoutesInSoutheasternNorway() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/filer-en/linjekart/linjekart-lokaltog-ostlandet.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-no/linjekart/linjekart-lokaltog-ostlandet.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("24b1a7383f3389fee90e62e94fc01d2d", checksum);
     }
 }
