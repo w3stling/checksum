@@ -23,6 +23,7 @@
  */
 package com.apptastic.checksum;
 
+import javax.net.ssl.SSLContext;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,6 +33,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.util.Optional;
 import java.util.zip.GZIPInputStream;
@@ -69,8 +71,17 @@ public final class Checksum {
      * @throws InterruptedException InterruptedException
      */
     public static String calculate(URI url, MessageDigest digest) throws IOException, InterruptedException {
+        SSLContext context;
+
+        try {
+            context = SSLContext.getInstance("TLSv1.3");
+            context.init(null, null, null);
+        } catch (GeneralSecurityException e) {
+            throw new RuntimeException(e);
+        }
+
         HttpClient client = HttpClient.newBuilder()
-                .version(HttpClient.Version.HTTP_2)
+                .sslContext(context)
                 .followRedirects(HttpClient.Redirect.ALWAYS)
                 .build();
 
@@ -103,8 +114,8 @@ public final class Checksum {
         byte[] bytes = digest.digest();
         StringBuilder hashBuilder = new StringBuilder();
 
-        for(int i=0; i< bytes.length ;i++) {
-            hashBuilder.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+        for (byte aByte : bytes) {
+            hashBuilder.append(Integer.toString((aByte & 0xff) + 0x100, 16).substring(1));
         }
 
         return hashBuilder.toString();
