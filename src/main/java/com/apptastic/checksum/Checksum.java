@@ -70,15 +70,9 @@ public final class Checksum {
      * @throws IOException - IOException
      * @throws InterruptedException InterruptedException
      */
-    public static String calculate(URI url, MessageDigest digest) throws IOException, InterruptedException {
-        SSLContext context;
-
-        try {
-            context = SSLContext.getInstance("TLSv1.3");
-            context.init(null, null, null);
-        } catch (GeneralSecurityException e) {
-            throw new RuntimeException(e);
-        }
+    public static String calculate(URI url, MessageDigest digest) throws IOException, InterruptedException, GeneralSecurityException {
+        SSLContext context = SSLContext.getInstance("TLSv1.3");
+        context.init(null, null, null);
 
         HttpClient client = HttpClient.newBuilder()
                 .sslContext(context)
