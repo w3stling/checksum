@@ -30,7 +30,7 @@ public class BerlinUndergroundTest {
     @Test
     public void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=3449"), MessageDigest.getInstance("MD5"));
-        assertEquals("ac00020aaca0341f8d2a8430a172e394", checksum);
+        assertEquals("8a55d22d283d7765af74867942296017", checksum);
     }
 
     @Test
