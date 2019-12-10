@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
 
-public class LyonMetroMap {
+public class LyonTclTest {
 
     @Test
     public void reinforcedLine() throws Exception {

@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
 
-public class BostonSubwayMap {
+public class BostonMbtaTest {
 
     @Test
     public void subwayMap() throws Exception {

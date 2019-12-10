@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
 
-public class BerlinUndergroundTest {
+public class BerlinBvgTest {
 
     @Test
     public void undergroundBerlinABC() throws Exception {

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class SingaporeTrainMap {
+public class SingaporeLtaTest {
 
     @Test
     public void trainSystemMap() throws Exception {
