@@ -54,7 +54,7 @@ public class OsloRuterTest {
     @Test
     public void trainRoutesInNorwayDetailed() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-no/linjekart/linjekart-vy-norge-detaljert.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f0283cd4427e7214b37255334f909884", checksum);
+        assertEquals("27874fb18d06fe2b2b895275f92e4b6e", checksum);
     }
 
     @Test
