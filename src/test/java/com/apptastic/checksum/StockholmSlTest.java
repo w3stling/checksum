@@ -54,7 +54,7 @@ public class StockholmSlTest {
     @Test
     public void tramSaltsjobananMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://sl.se/ficktid/karta/vinter/SB.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("1af39feee5cda715150b789c31dc3ce1", checksum);
+        assertEquals("ce62db544aa7d8f7483817b62e723d05", checksum);
     }
 
     @Test
