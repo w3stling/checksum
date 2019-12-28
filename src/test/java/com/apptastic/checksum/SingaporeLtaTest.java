@@ -18,6 +18,12 @@ public class SingaporeLtaTest {
     }
 
     @Test
+    public void trainSystemMapPdf() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/SystemMap%20for%20download-Nov19.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("f1753d8e585bc8c2a72b540d89285875", checksum);
+    }
+
+    @Test
     public void walkingTrainMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/20190114_SM_%20walking%20time-removal%20BP14%20-%20Walking%20Train%20Map.jpg"), MessageDigest.getInstance("MD5"));
         assertTrue("d41d8cd98f00b204e9800998ecf8427e".equals(checksum) || "015db661c97589330053bb9a7ec7bc51".equals(checksum));
