@@ -40,15 +40,9 @@ public class OsloRuterTest {
     }
 
     @Test
-    public void ferryB1Map() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/bat/b1-linjekart-vinter-01092019.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("8e2810902f2f665a6566c3eeeb6ea437", checksum);
-    }
-
-    @Test
-    public void ferryB1B2B3B4Map() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/bat/b1-b2-b3-b4-linjekart-sommer-08062019.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("8d3f27e2032721dcebdf8b0f832ef657", checksum);
+    public void ferryMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/bat/baat-linjekart-04112019.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("5b8d176c97aa6458df7c424c42e328a0", checksum);
     }
 
     @Test
