@@ -12,6 +12,6 @@ public class MicCodeTest {
     @Test
     public void MicCodeTest() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.iso20022.org/sites/default/files/ISO10383_MIC/ISO10383_MIC.csv"), MessageDigest.getInstance("MD5"));
-        assertEquals("cfcf37a085395af19e87196f125d8e08", checksum);
+        assertEquals("3269750a8555cecb9c78b0426653dc25", checksum);
     }
 }
