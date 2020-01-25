@@ -40,10 +40,12 @@ public class MadridMetroTest {
         assertEquals("2c89b5482c6d662effd706055a43b510", checksum);
     }
 
+    /*
     @Ignore
     @Test
     public void touristBusMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.esmadrid.com/sites/default/files/documentos/planoturisticodelosautobusesdemadrid_0.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("2e5dfdbdb9405b3cf18b483bf5394cd2", checksum);
     }
+    */
 }

@@ -27,10 +27,4 @@ public class IstanbulMetroTest {
         assertEquals("3f703256e54ccd3094ebb6fac7da28f6", checksum);
     }
 
-    @Test
-    public void ferryMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("http://www.sehirhatlari.istanbul/themplate/images/b-merkez-hatlari.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("b495ddccb49fc7295f8d996053d65b87", checksum);
-    }
-
 }
