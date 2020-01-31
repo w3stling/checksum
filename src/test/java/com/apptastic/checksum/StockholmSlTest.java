@@ -70,21 +70,21 @@ public class StockholmSlTest {
     }
 
     @Test
-    public void commuterFerryLinesLine80_82Map() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://sl.se/globalassets/terminalkarta/linje8082.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("c0b0c43901313e5c0c53f344fa3590a8", checksum);
+    public void commuterFerryLinesLine80Map() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://sl.se/globalassets/terminalkarta/linje80.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("ceddc1dd7224ddb081d52545c2c2eff8", checksum);
     }
 
     @Test
     public void commuterFerryLinesLine82Map() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://sl.se/globalassets/terminalkarta/linje82.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("de4a07b95f69546cc1a3ba800e9e0446", checksum);
+        String checksum = Checksum.calculate(new URI("https://sl.se/globalassets/terminalkarta/linje-82.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("65bb564894419e2003825f0efda85188", checksum);
     }
 
     @Test
     public void commuterFerryLinesLine89Map() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://sl.se/ficktid/karta/vinter/linje89.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f9c3bf68d31e1fc027d81cdb88047915", checksum);
+        String checksum = Checksum.calculate(new URI("https://sl.se/globalassets/terminalkarta/linje-89.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("077591b0bff7028fe5ee42e2d62b20b2", checksum);
     }
 
 }
