@@ -31,8 +31,8 @@ public class SingaporeLtaTest {
 
     @Test
     public void bukitPanjangLrtMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/bukit_panjang_lrt/image/BPLRT.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("7fb84d75f19c65b622da6b08b4334948", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/bukit_panjang_lrt/image/bp_sm_tel1.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("760133d282c825dc8d376946f9317ade", checksum);
     }
 
     @Test
