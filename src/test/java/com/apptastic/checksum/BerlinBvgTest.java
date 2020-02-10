@@ -36,6 +36,6 @@ public class BerlinBvgTest {
     @Test
     public void nightBusMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=398"), MessageDigest.getInstance("MD5"));
-        assertEquals("5cfd44c8ba1f3a5e9748fb7bfd22d58a", checksum);
+        assertEquals("5b4e6f09bac4f8ffccf0a5b06bd6535b", checksum);
     }
 }
