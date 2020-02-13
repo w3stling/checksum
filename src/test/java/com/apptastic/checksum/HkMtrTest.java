@@ -12,7 +12,7 @@ public class HkMtrTest {
     @Test
     public void systemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.mtr.com.hk/archive/en/services/routemap.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("68bc9714f01ee2cbc16c4511079098f0", checksum);
+        assertEquals("a1c41cb99b9e004dbff532a9de7f7427", checksum);
     }
 
     @Test
