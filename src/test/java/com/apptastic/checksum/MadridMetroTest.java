@@ -1,6 +1,5 @@
 package com.apptastic.checksum;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
@@ -13,7 +12,7 @@ public class MadridMetroTest {
     @Test
     public void metroAndLightRailNetworkMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metromadrid.es/sites/default/files/documentos/Viaja%20en%20Metro/Planos/Planoesquematico.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("ce264d5d61fb0ae53295e750b6a9e449", checksum);
+        assertEquals("3cf3c182b1286444bd2067388c31397b", checksum);
     }
 
     @Test
