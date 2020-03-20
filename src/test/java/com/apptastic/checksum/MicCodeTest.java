@@ -13,14 +13,15 @@ public class MicCodeTest {
 
     @Test
     public void MicCodeTest() throws Exception {
+        String expectedValue = "098007c20a1abd8104f435597fdc190e";
         YearMonth yearMonth = YearMonth.now();
 
         try {
             String checksum = Checksum.calculate(new URI(String.format(URL_FORMAT, yearMonth)), MessageDigest.getInstance("MD5"));
-            assertEquals("098007c20a1abd8104f435597fdc190e", checksum);
+            assertEquals(expectedValue, checksum);
         } catch (Exception e) {
             String checksum = Checksum.calculate(new URI(String.format(URL_FORMAT, yearMonth.minusMonths(1))), MessageDigest.getInstance("MD5"));
-            assertEquals("098007c20a1abd8104f435597fdc190e", checksum);
+            assertEquals(expectedValue, checksum);
         }
     }
 }
