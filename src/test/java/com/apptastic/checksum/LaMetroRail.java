@@ -25,7 +25,7 @@ public class LaMetroRail {
     @Test
     public void metroAndBuswayUnderConstructionMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/b6d676a6-d8f3-4bb9-88c2-97a7497ecf49.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f48be3fbba8e80b6108b5f5a43574a0a", checksum);
+        assertEquals("3363e70aedc645cee05e17716743e26c", checksum);
     }
 
     @Test
