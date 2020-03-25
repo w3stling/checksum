@@ -36,13 +36,13 @@ public class BostonMbtaTest {
     @Test
     public void downtownMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/system-map-downtown"), MessageDigest.getInstance("MD5"));
-        assertEquals("06368bc6fc0bc86deb71953241cdf4d8", checksum);
+        assertEquals("ba96a0ccfebdf48d973acfeaf279e2d5", checksum);
     }
 
     @Test
     public void fullSystemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/system-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("303159f7c4f8d9dfd294f380919fa43c", checksum);
+        assertEquals("99aa6284ec9be1feda90a04d3499eea9", checksum);
     }
 
 }
