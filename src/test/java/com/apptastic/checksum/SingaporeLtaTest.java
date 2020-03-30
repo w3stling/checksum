@@ -1,5 +1,6 @@
 package com.apptastic.checksum;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
@@ -13,20 +14,14 @@ public class SingaporeLtaTest {
 
     @Test
     public void trainSystemMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/image/SystemMap-Nov19.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("dd58d65209e65d4b279cd72b91f1a24c", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/en-sm-20-01-web.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("4d9f5edf7fb5a4258328814d7cb78aa2", checksum);
     }
 
     @Test
     public void trainSystemMapPdf() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/SystemMap%20for%20download-Nov19.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f1753d8e585bc8c2a72b540d89285875", checksum);
-    }
-
-    @Test
-    public void walkingTrainMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltaweb/corp/PublicTransport/img/20190114_SM_%20walking%20time-removal%20BP14%20-%20Walking%20Train%20Map.jpg"), MessageDigest.getInstance("MD5"));
-        assertTrue("d41d8cd98f00b204e9800998ecf8427e".equals(checksum) || "015db661c97589330053bb9a7ec7bc51".equals(checksum));
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm-20-01-en.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("b04a903de2aa7a24fd9b464a3fe842ad", checksum);
     }
 
     @Test
@@ -37,38 +32,45 @@ public class SingaporeLtaTest {
 
     @Test
     public void circleLineMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/circle_line/image/CCL.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("b37f8ab5f5cbacd4e9b1c14815f57dd6", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/circle_line/image/ccl_sm_tel1.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("0cfd06719c7e4816f20f76f13b0eff8c", checksum);
     }
 
     @Test
     public void downtownLineMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/downtown_line/image/DTL.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("b7cc93f782ef2147ab61fb1100f4cb61", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/downtown_line/image/dtl_sm_tel1.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("9685308104fc3ea576a293f7e1f9d7bc", checksum);
     }
 
     @Test
     public void eastWestLineMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/east_west_line/image/EWL.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("317084a9090ada3b9b87c9802890c4b0", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/east_west_line/image/ewl_sm_tel1.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("9b957c2638690702d5f8121bf9b64d2d", checksum);
     }
 
     @Test
     public void northEastLineMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/north_east_line/image/NEL.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("7a13ea7c7581af66a732858a51babce9", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/north_east_line/image/nel_sm_tel1.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("70e548507664722cd7dbb43c636f79d8", checksum);
     }
 
     @Test
     public void northSouthLineMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/north_south_line/image/NSL.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("3b5ec2eed2e74408c9b7e34e26844702", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/north_south_line/image/nsl_sm_tel1.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("8652ae8033a24f69e6eca3ae16f7f83f", checksum);
     }
 
     @Test
     public void sengkangPunggolLrtMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/sengkang_punggol_lrt/image/SPLRT.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("89447c52f9e691d5b66543a5538bd6c3", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/sengkang_punggol_lrt/image/skpg_sm_tel1.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("05b082bbe5be373aa4243a3609ccd428", checksum);
+    }
+
+    @Test
+    public void thomsonEastCostLineMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/upcoming_projects/thomson_east_coast_line/image/tel1_tel5_route-20_01-08.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("6eea129bc3cb27d36e51718da92afe7f", checksum);
+        assertEquals("6eea129bc3cb27d36e51718da92afe7f", checksum);
     }
 
 }
