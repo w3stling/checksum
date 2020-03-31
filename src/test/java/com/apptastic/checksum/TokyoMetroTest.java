@@ -48,7 +48,7 @@ public class TokyoMetroTest {
     @Test
     public void toeiRouteMapEn() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/services/pdf/main_route_map_eng.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("3eb9e2fb9e8e1f19ab048f304a7a717d", checksum);
+        assertEquals("98e489eb67752d245714003b06eb2464", checksum);
     }
 
     @Test
