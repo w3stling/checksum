@@ -1,28 +1,33 @@
 package com.apptastic.checksum;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 // https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network.html
 public class SingaporeLtaTest {
 
     @Test
     public void trainSystemMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/en-sm-20-01-web.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("4d9f5edf7fb5a4258328814d7cb78aa2", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/_jcr_content/par/textimage_967171583/image.img.png/1585728760528.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("d30d7a4e09942ed119d2e426dfa3bc5f", checksum);
     }
 
     @Test
     public void trainSystemMapPdf() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm-20-01-en.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("b04a903de2aa7a24fd9b464a3fe842ad", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm-20-03-en-exp.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("58faec2fad2b55a1211e663f07178593", checksum);
     }
+
+    @Test
+    public void trainFutureSystemMapPdf() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm31-20-03-exp.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("bf27060775c09310010a65f40e71e6af", checksum);
+    }
+
 
     @Test
     public void bukitPanjangLrtMap() throws Exception {
