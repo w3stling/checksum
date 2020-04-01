@@ -87,6 +87,10 @@ public final class Checksum {
 
         HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
+        if (response.statusCode() >= 400 && response.statusCode() < 600) {
+            throw new IOException("Response http status code: " + response.statusCode());
+        }
+
         var inputStream = response.body();
 
         if (Optional.of("gzip").equals(response.headers().firstValue("Content-Encoding")))
