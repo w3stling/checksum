@@ -75,7 +75,69 @@ public class SingaporeLtaTest {
     public void thomsonEastCostLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/upcoming_projects/thomson_east_coast_line/image/tel1_tel5_route-20_01-08.png"), MessageDigest.getInstance("MD5"));
         assertEquals("6eea129bc3cb27d36e51718da92afe7f", checksum);
-        assertEquals("6eea129bc3cb27d36e51718da92afe7f", checksum);
     }
 
+    ///
+
+    @Test
+    public void fullMapColors() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-color.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("2b046e2fb4fec28a09e57a425e40d175", checksum);
+    }
+
+    @Test
+    public void fullMapGreyScale() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-grey%20scale.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("a98243720b59c6c51edde0e962f9ea02", checksum);
+    }
+
+    @Test
+    public void eastWestLine() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/EWL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("f376de220f9a14de1f8d13329552e752", checksum);
+    }
+
+    @Test
+    public void northSouthLine() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/NSL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("30e70a90dbaeec3db1b2d9d191f96b8a", checksum);
+    }
+
+
+    @Test
+    public void circleLine() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/CCL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("9d15791471bc29a9a9bf847a871b6580", checksum);
+    }
+
+    @Test
+    public void downtownLine() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/DTL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("3fa894d5746d2707a9a7c19512b325c7", checksum);
+    }
+
+    @Test
+    public void thomsonEastCost() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/TEL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("f9070e1fd27f1bdc49cec5ea4c1086c5", checksum);
+    }
+
+    @Test
+    public void bukitPanjangLRTLine() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/BPL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("bbf38cdc362ad9d7bb82ed0417af8389", checksum);
+    }
+
+    @Test
+    public void SengkangLRTline() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/STL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("206e8a0bed7acea91d0115a7376cdd61", checksum);
+    }
+
+
+    @Test
+    public void PunggolLRTline() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/PTL.svg"), MessageDigest.getInstance("MD5"));
+        assertEquals("60e43a6b87e05aa8b1e4cd5476f5a91c", checksum);
+    }
 }
