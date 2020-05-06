@@ -24,8 +24,8 @@ public class SingaporeLtaTest {
 
     @Test
     public void trainFutureSystemMapPdf() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm31-20-03-exp.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("bf27060775c09310010a65f40e71e6af", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm31-20-05-exp.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("a6886134ff30db2c3dc56242a58a6e89", checksum);
     }
 
 
