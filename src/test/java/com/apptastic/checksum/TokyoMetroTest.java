@@ -11,14 +11,18 @@ public class TokyoMetroTest {
 
     @Test
     public void metroMapEn() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/library_in/en/subwaymap/pdf/rosen_en_1803.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("5ee097a75a9abfdac975cf25aef9053f", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/lang_en/station/rosen_en_202003.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("d6c3d39bd3279e297d6dcf6ab5453750", checksum);
+
+        // Don't use this map
+        checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/services/pdf/sub_map_eng.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("0a5459f270debcd08be37c157473e415", checksum);
     }
 
     @Test
     public void metroMapJp() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/station/rosen_jp_201904.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f1e20011d0991a18a5e0e0195765d64c", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/station/rosen_jp_202003.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("ef1aa96cc8b5898709414392d2fdbd2b", checksum);
     }
 
     @Test
@@ -29,8 +33,8 @@ public class TokyoMetroTest {
 
     @Test
     public void todenArakawaMapJp() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/toden/map/i/index_map4.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("f91543e0c39b74a80e3f40b0bdb2cd43", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/toden/map/i/index_map4.jpg"), MessageDigest.getInstance("MD5"));
+        assertEquals("96a8d40e958b9bf7b66f90cd7a9f0c77", checksum);
     }
 
     @Test
@@ -53,6 +57,7 @@ public class TokyoMetroTest {
 
     @Test
     public void toeiRouteMapJp() throws Exception {
+        // Not updated for a long time
         String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/subway/route_map.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("a1f98f669116bbd8bf0a2c584c88e712", checksum);
     }
