@@ -27,4 +27,9 @@ public class IstanbulMetroTest {
         assertEquals("3f703256e54ccd3094ebb6fac7da28f6", checksum);
     }
 
+    @Test
+    public void metroNightMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/Gece%20Metrosu%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("d22302aebad12f4ecf8236acae2874e4", checksum);
+    }
 }
