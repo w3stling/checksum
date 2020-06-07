@@ -40,15 +40,21 @@ public class LondonTflTest {
     }
 
     @Test
+    public void railMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/tfl-rail-map.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("f4068c66a5de681e29e4c4b7e6a4f952", checksum);
+    }
+
+    @Test
     public void nationalRailMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/london-rail-and-tube-services-map.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("http://content.tfl.gov.uk/london-rail-and-tube-services-map.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("0decc71599692163a0abf46806a91b7b", checksum);
     }
 
     @Test
     public void busMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/bus-route-maps/key-bus-routes-in-central-london.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("92237edb90f061ddd29925c86b506e4a", checksum);
+        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/key-bus-routes-in-central-london.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("01e917561e3aeec7dbbe87f51c581002", checksum);
     }
 
     @Test
