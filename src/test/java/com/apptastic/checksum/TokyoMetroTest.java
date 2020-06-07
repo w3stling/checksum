@@ -11,18 +11,18 @@ public class TokyoMetroTest {
 
     @Test
     public void metroMapEn() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/lang_en/station/rosen_en_202003.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("d6c3d39bd3279e297d6dcf6ab5453750", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/lang_en/station/202006_number_en.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("990a50d42c49f7a70138b6a7a6c60ab5", checksum);
 
         // Don't use this map
         checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/services/pdf/sub_map_eng.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("0a5459f270debcd08be37c157473e415", checksum);
+        assertEquals("06dce852802405a8163cfc706d0f810e", checksum);
     }
 
     @Test
     public void metroMapJp() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/station/rosen_jp_202003.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("ef1aa96cc8b5898709414392d2fdbd2b", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/station/202006_number_ja.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("e5ca04505d626c591a189c3c717e7cbd", checksum);
     }
 
     @Test
