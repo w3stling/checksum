@@ -35,8 +35,8 @@ public class OsloRuterTest {
 
     @Test
     public void nightBusAndFerryMapInAkershus() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-akershus/linjekart/nattbuss-akershus-linjekart-05072019.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("2002d01e104ecb9193fdb5e1adf706b4", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-akershus/linjekart/nattbuss-akershus-linjekart-28062020.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("34cf6e8d0e491d2990efd1d345b6fefd", checksum);
     }
 
     @Test
