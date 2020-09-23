@@ -77,13 +77,13 @@ public class StockholmSlTest {
 
     @Test
     public void commuterFerryLinesLine82Map() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://sl.se/globalassets/terminalkarta/linje-82.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://mitt.sl.se/globalassets/terminalkarta/linje-82.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("65bb564894419e2003825f0efda85188", checksum);
     }
 
     @Test
     public void commuterFerryLinesLine89Map() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://sl.se/globalassets/terminalkarta/linje-89.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://mitt.sl.se/globalassets/terminalkarta/linje-89.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("077591b0bff7028fe5ee42e2d62b20b2", checksum);
     }
 
