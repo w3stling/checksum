@@ -54,6 +54,6 @@ public class OsloRuterTest {
     @Test
     public void trainRoutesInSoutheasternNorway() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-no/linjekart/linjekart-lokaltog-ostlandet.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("24b1a7383f3389fee90e62e94fc01d2d", checksum);
+        assertEquals("215379af763a148f181b9b5b430b61bf", checksum);
     }
 }
