@@ -16,6 +16,12 @@ public class DelhiMetroTest {
     }
 
     @Test
+    public void rapidMetroMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/RapidMetroRouteMap.jpg"), MessageDigest.getInstance("MD5"));
+        assertEquals("4e84ea188d3857f592544beeeae1eba6", checksum);
+    }
+
+    @Test
     public void airportExpressLine() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/airportlineimg.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("527d9ea1037cd6b964cb8e09c87e7d2c", checksum);
