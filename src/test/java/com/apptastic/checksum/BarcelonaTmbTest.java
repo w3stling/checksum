@@ -24,7 +24,7 @@ public class BarcelonaTmbTest {
     @Test
     public void busNetworkMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+Nova+Xarxa+de+Bus_febrer+2018.pdf/b1000930-9204-4f4b-b86b-576e8391588b"), MessageDigest.getInstance("MD5"));
-        assertEquals("09bf9f8609fd217371299d3020f2625b", checksum);
+        assertEquals("092911b03452894c8b2cfa4c7e9a0042", checksum);
     }
 
 
