@@ -6,6 +6,7 @@ import java.net.URI;
 import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class NewYorkMtaTest {
@@ -13,7 +14,8 @@ public class NewYorkMtaTest {
     @Test
     public void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("177fbf70c29ac66fb8525a58602734a5", checksum);
+        assertTrue("177fbf70c29ac66fb8525a58602734a5".equals(checksum) ||
+                "9ae4a1bfe59286c9264c8487ea3df62c".equals(checksum));
     }
 
     @Test
