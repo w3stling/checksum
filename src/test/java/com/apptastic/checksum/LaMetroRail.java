@@ -13,7 +13,7 @@ public class LaMetroRail {
     @Test
     public void metroAndBuswayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/8f0fe43e-da3b-4a10-bd8e-4cfd54e30eb3.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("54fc31198630a341bfe45e2f3df08b04", checksum);
+        assertEquals("f880b7115d6dbe4d7b53cde94dadc3d9", checksum);
     }
 
     @Test
