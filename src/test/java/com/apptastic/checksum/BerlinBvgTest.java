@@ -12,7 +12,7 @@ public class BerlinBvgTest {
     @Test
     public void undergroundBerlinABC() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=399"), MessageDigest.getInstance("MD5"));
-        assertEquals("16a1b2db6f1104073b01c209af3bf469", checksum);
+        assertEquals("5eb162d203d20106f858cc138dda3f6e", checksum);
     }
 
     @Test
