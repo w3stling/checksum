@@ -12,7 +12,7 @@ public class StockholmSlTest {
     @Test
     public void allRailServicesMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://mitt.sl.se/ficktid/karta/vinter/SL_Sp%C3%A5rtrafik.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("061ac92473d88c25862996eb9615d179", checksum);
+        assertEquals("af960ebefdab4158f02ef2f59e517ed2", checksum);
     }
 
     @Test
