@@ -24,7 +24,7 @@ public class BerlinBvgTest {
     @Test
     public void tramMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=401"), MessageDigest.getInstance("MD5"));
-        assertEquals("9cef908eb23c1e1fa649aea68ab43326", checksum);
+        assertEquals("14b9fc36348b875efebf01e4b3fa360f", checksum);
     }
 
     @Test
