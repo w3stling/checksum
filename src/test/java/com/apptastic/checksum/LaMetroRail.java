@@ -19,7 +19,7 @@ public class LaMetroRail {
     @Test
     public void metroAndRegionalMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/90e3378c-e786-4cc7-8f4b-88fc15a4b3b3.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("96fc0769f187a72e8221255e5a4bfbeb", checksum);
+        assertEquals("58f6ead0e3a9a6a30c658ea573af99e4", checksum);
     }
 
     @Test
