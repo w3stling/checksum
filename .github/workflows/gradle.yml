@@ -34,3 +34,4 @@ jobs:
         SONAR_HOST_URL: https://sonarcloud.io
         SONAR_ORGANIZATION: w3stling-github
         SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_LOGIN }}
