@@ -23,4 +23,13 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+      env:
+        ARTIFACTORY_USERNAME: apptastic
+        ARTIFACTORY_PASSWORD: ${{ CI.ARTIFACTORY_PASSWORD }}
+        BINTRAY_USER: apptastic
+        BINTRAY_KEY: ${{ CI.BINTRAY_KEY }}
+        GRGIT_USER: ${{ CI.GRGIT_USER }}
+        SONAR_HOST_URL: https://sonarcloud.io
+        SONAR_ORGANIZATION: w3stling-github
+        SONAR_LOGIN: ${{ CI.SONAR_LOGIN }}
