@@ -25,6 +25,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ARTIFACTORY_USERNAME: apptastic
         ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
         BINTRAY_USER: apptastic
