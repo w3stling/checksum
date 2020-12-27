@@ -26,7 +26,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: echo java --version;echo "--> $SONAR_ORGANIZATION <--";./gradlew --stacktrace --debug clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.projectKey=com.apptastic:checksum -Dsonar.login=$SONAR_LOGIN
+      run: echo java --version;echo "--> $SONAR_ORGANIZATION <--";./gradlew --stacktrace --debug clean build jacocoTestReport sonarqube -info -Dsonar.log.level=DEBUG -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.projectKey=com.apptastic:checksum -Dsonar.login=$SONAR_LOGIN
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ARTIFACTORY_USERNAME: apptastic
