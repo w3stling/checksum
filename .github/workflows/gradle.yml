@@ -24,7 +24,24 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: echo "--->${{ env.VERSION }}<---";./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+        run: ./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ARTIFACTORY_USERNAME: apptastic
+          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          BINTRAY_USER: apptastic
+          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
+          GRGIT_USER: ${{ secrets.GRGIT_USER }}
+          SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_ORGANIZATION: w3stling-github
+          SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Build with Gradle
+        run: ./gradlew gitPublishPush artifactoryPublish bintrayUpload
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ARTIFACTORY_USERNAME: apptastic
