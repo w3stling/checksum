@@ -18,13 +18,13 @@ public class ParisRatpTest {
     @Test
     public void rerAndTransiliensMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-RER-et-transiliens.1584438522.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("7f23e162bc100a9df74f2f3a7b786a5b", checksum);
+        assertEquals("dc8a5fc7ed531cdf45e9815ef707000b", checksum);
     }
 
     @Test
     public void busMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Bus.1576767682.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("05538b8d39798cf69ab350af75cad1f7", checksum);
+        assertEquals("606da19b0ef7579307b13f3ed67c9c52", checksum);
     }
 
     @Test
