@@ -5,7 +5,7 @@ name: Schedule
 
 on:
   schedule:
-    - cron: '40 9 * * *'
+    - cron: '40 5 * * *'
 
 jobs:
   build:
