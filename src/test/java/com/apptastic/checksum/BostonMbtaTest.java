@@ -31,7 +31,7 @@ public class BostonMbtaTest {
     @Test
     public void ferryMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/ferry-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("4d58aa70145afa7d50ebb81a2c6c86ee", checksum);
+        assertEquals("0deead5ad8f269cd1f6d95a284e496ab", checksum);
     }
 
     @Ignore
