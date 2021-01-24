@@ -8,7 +8,7 @@ import java.security.MessageDigest;
 import static org.junit.Assert.assertEquals;
 
 // https://www.metro.net/riding/guide/system-maps/
-public class LaMetroRail {
+public class LaMetroRailTest {
 
     @Test
     public void metroAndBuswayMap() throws Exception {
