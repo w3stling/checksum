@@ -17,20 +17,20 @@ public class OsloRuterTest {
 
     @Test
     public void tramMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-04102020.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f067d4cf0819c98e5615690bfa2e9caa", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-15022021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("b088a44faff1789772c23815ce1c8c86", checksum);
     }
 
     @Test
     public void busMapInOslo() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-19082019.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("edb0db66ccfdf4f8607857d0603df7c8", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-02012021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("7d5eb913ffc095293b3acc8c0dc6bd0d", checksum);
     }
 
     @Test
     public void nightBusMapInOslo() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/nattbuss-oslo-linjekart-19082019.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("4f43fd84a9b2ef2d791628fba926d51d", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/nattbuss-oslo-linjekart-02012021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("f222381b5cda6366882601201885ac5d", checksum);
     }
 
     @Test
