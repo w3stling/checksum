@@ -75,6 +75,9 @@ public class SingaporeLtaTest {
     public void thomsonEastCostLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/upcoming_projects/thomson_east_coast_line/image/tel1_tel5_route-20_01-08.png"), MessageDigest.getInstance("MD5"));
         assertEquals("6eea129bc3cb27d36e51718da92afe7f", checksum);
+
+        String checksum2 = Checksum.calculate(new URI("https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/thomson_east_coast_line/_jcr_content/par/image.img.png/1580366965678.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("c682f6f2043815b2d079d308a6f0ef2a", checksum2);
     }
 
     ///
