@@ -60,7 +60,7 @@ public class LondonTflTest {
     @Test
     public void riverMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/river-services-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("c6c39cd4a181cbd4f45027928ede48df", checksum);
+        assertEquals("c8a67e051369b4eec1134ae290ce8771", checksum);
     }
 
 }
