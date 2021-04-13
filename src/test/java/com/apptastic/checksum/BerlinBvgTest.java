@@ -30,12 +30,12 @@ public class BerlinBvgTest {
     @Test
     public void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=3449"), MessageDigest.getInstance("MD5"));
-        assertEquals("e04d0a1a85bebea9c52a7036c6a905e9", checksum);
+        assertEquals("40b6830d58131646f2342048c2c329db", checksum);
     }
 
     @Test
     public void nightBusMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=398"), MessageDigest.getInstance("MD5"));
-        assertEquals("7722da0d84bcb920c51c9f7a41765f11", checksum);
+        assertEquals("1e4c4183df26cadf9275a705d642581c", checksum);
     }
 }
