@@ -12,7 +12,7 @@ public class LondonTflTest {
     @Test
     public void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/standard-tube-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("a97abb8361f08f0f9f8921933c1b2ca7", checksum);
+        assertEquals("26b2dadc02fa1e2a6f95080a525b5d68", checksum);
     }
 
     @Test
