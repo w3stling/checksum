@@ -48,7 +48,7 @@ public class LondonTflTest {
     @Test
     public void nationalRailMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://content.tfl.gov.uk/london-rail-and-tube-services-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("78049522c921f56f503abe2422786936", checksum);
+        assertEquals("ca3906d30a5b4a53ea9f654de1d0ea77", checksum);
     }
 
     @Test
