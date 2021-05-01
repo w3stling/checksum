@@ -13,7 +13,7 @@ public class BostonMbtaTest {
     @Test
     public void subwayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/subway-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("d5ae12cd1b99f30dafdb671df3db2152", checksum);
+        assertEquals("63deecf17dea46c7010038195ac101e6", checksum);
     }
 
     @Test
