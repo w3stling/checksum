@@ -13,7 +13,7 @@ public class NewYorkMtaTest {
     @Test
     public void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("97bd6cdb84067560621912802ea265a8", checksum);
+        assertEquals("3645f3cd939863aee59bf2f5d43aab1b", checksum);
     }
 
     @Test

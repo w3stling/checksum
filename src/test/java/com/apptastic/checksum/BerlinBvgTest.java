@@ -12,13 +12,13 @@ public class BerlinBvgTest {
     @Test
     public void undergroundBerlinABC() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=399"), MessageDigest.getInstance("MD5"));
-        assertEquals("44bbcae10cd2868918138b82713b9548", checksum);
+        assertEquals("afea5204f29be1311ecd39994f3eb789", checksum);
     }
 
     @Test
     public void undergroundBerlinCityCenter() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=400"), MessageDigest.getInstance("MD5"));
-        assertEquals("75a740659c8ee8c909e90be5f1485a1a", checksum);
+        assertEquals("e10793bc0db8e6d849dffac9769821d8", checksum);
     }
 
     @Test
