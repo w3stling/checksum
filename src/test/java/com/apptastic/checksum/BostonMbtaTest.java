@@ -44,7 +44,7 @@ public class BostonMbtaTest {
     @Test
     public void fullSystemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/system-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("e757a4d1d50b515a06f8889dd242efdb", checksum);
+        assertEquals("60048c51ce0a6e9610eeb38dd96cd078", checksum);
     }
 
 }
