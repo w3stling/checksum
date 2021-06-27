@@ -12,13 +12,13 @@ public class HkMtrTest {
     @Test
     public void systemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.mtr.com.hk/archive/en/services/routemap.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("a1c41cb99b9e004dbff532a9de7f7427", checksum);
+        assertEquals("cb178e5c0c25f16c7192eb0ec7a943b4", checksum);
     }
 
     @Test
     public void lightRailRouteMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.mtr.com.hk/archive/en/services/LR_routemap.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("b652b2cb5cc83870727ac75a74a3efb4", checksum);
+        assertEquals("a5caede846e5dd7a6624424ee87ba8dc", checksum);
     }
 
     @Test
