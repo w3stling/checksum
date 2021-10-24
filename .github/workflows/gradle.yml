@@ -37,15 +37,15 @@ jobs:
           SONAR_HOST_URL: https://sonarcloud.io
           SONAR_ORGANIZATION: w3stling-github
           SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
-      - name: Publish build
-        run: ./gradlew gitPublishPush artifactoryPublish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ARTIFACTORY_USERNAME: apptastic
-          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          BINTRAY_USER: apptastic
-          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
-          GRGIT_USER: ${{ secrets.GRGIT_USER }}
-          SONAR_HOST_URL: https://sonarcloud.io
-          SONAR_ORGANIZATION: w3stling-github
-          SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
+#      - name: Publish build
+#        run: ./gradlew gitPublishPush artifactoryPublish
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          ARTIFACTORY_USERNAME: apptastic
+#          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+#          BINTRAY_USER: apptastic
+#          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
+#          GRGIT_USER: ${{ secrets.GRGIT_USER }}
+#          SONAR_HOST_URL: https://sonarcloud.io
+#          SONAR_ORGANIZATION: w3stling-github
+#          SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
