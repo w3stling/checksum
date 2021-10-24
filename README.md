@@ -1,7 +1,7 @@
 Checksum
 ==========
 
-[![Build Status](https://github.com/w3stling/checksum/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master)](https://github.com/w3stling/checksum/actions)
+[![build](https://github.com/w3stling/checksum/actions/workflows/build.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/build.yml)
 [![Download](https://api.bintray.com/packages/apptastic/maven-repo/checksum/images/download.svg)](https://bintray.com/apptastic/maven-repo/checksum/_latestVersion)
 [![Javadoc](https://img.shields.io/badge/javadoc-1.0.10-blue.svg)](https://w3stling.github.io/checksum/javadoc/1.0.10)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)   
