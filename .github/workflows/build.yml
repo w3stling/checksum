@@ -27,6 +27,12 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_ORGANIZATION: w3stling-github
+          SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
+
 #      - name: SonarCloud Scan
 #        uses: sonarsource/sonarcloud-github-action@master
 #        with:
