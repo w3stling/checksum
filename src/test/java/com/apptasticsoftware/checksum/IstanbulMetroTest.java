@@ -8,6 +8,7 @@ import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
 
+@Ignore
 public class IstanbulMetroTest {
 
     @Test

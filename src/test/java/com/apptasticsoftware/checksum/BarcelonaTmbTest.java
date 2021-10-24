@@ -12,19 +12,19 @@ public class BarcelonaTmbTest {
     @Test
     public void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+xarxa+de+Metro/f5578f40-5a66-46ba-907c-cf31e0d368c0"), MessageDigest.getInstance("MD5"));
-        assertEquals("03f9217502a89ad18d05f00d2975a130", checksum);
+        assertEquals("6907c7b9b66d36290d7d3de713214b53", checksum);
     }
 
     @Test
     public void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+xarxa+bus.pdf/9b5bfa95-6117-4117-9843-fb3e3fde5447"), MessageDigest.getInstance("MD5"));
-        assertEquals("be6c334056b305ce6be95655ec0f8dfc", checksum);
+        assertEquals("9f9c0687e8bce35cdd63cdfcd45b05a0", checksum);
     }
 
     @Test
     public void busNetworkMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+Nova+Xarxa+de+Bus_febrer+2018.pdf/b1000930-9204-4f4b-b86b-576e8391588b"), MessageDigest.getInstance("MD5"));
-        assertEquals("092911b03452894c8b2cfa4c7e9a0042", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+Nova+Xarxa+de+Bus_octubre+2020.pdf/b1000930-9204-4f4b-b86b-576e8391588b"), MessageDigest.getInstance("MD5"));
+        assertEquals("2010fd8fb3aa2e08d1923aa6c3e3abaa", checksum);
     }
 
 

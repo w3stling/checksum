@@ -1,5 +1,6 @@
 package com.apptasticsoftware.checksum;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
@@ -27,6 +28,7 @@ public class DelhiMetroTest {
         assertEquals("527d9ea1037cd6b964cb8e09c87e7d2c", checksum);
     }
 
+    @Ignore // slow
     @Test
     public void airportExpressLinePdf() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/abc.pdf"), MessageDigest.getInstance("MD5"));

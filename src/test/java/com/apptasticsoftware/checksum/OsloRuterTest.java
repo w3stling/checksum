@@ -17,14 +17,14 @@ public class OsloRuterTest {
 
     @Test
     public void tramMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-21062021.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f8b35a734dd61f47b13ea40598a17e9d", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-09082021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("4f7f29bc39e5b316498ed3523c17fa2d", checksum);
     }
 
     @Test
     public void busMapInOslo() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-02012021.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("7d5eb913ffc095293b3acc8c0dc6bd0d", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-09082021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("70c2c7386e6ae4c4cee2c86846410487", checksum);
     }
 
     @Test
@@ -47,13 +47,13 @@ public class OsloRuterTest {
 
     @Test
     public void trainRoutesInNorwayDetailed() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-no/linjekart/linjekart-vy-norge-detaljert.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("27874fb18d06fe2b2b895275f92e4b6e", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-en/linjekart/nye-linjekart/linjekart-vy-norge2.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("6a9e7d1fc5f42b6befb2fdb25a4a9619", checksum);
     }
 
     @Test
     public void trainRoutesInSoutheasternNorway() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-no/linjekart/linjekart-lokaltog-ostlandet.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.vy.no/globalassets/vy.no/filer-en/linjekart/nye-linjekart/linjekart-lokaltog-ostlandet2.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("215379af763a148f181b9b5b430b61bf", checksum);
     }
 }

@@ -1,6 +1,5 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
@@ -34,17 +33,10 @@ public class BostonMbtaTest {
         assertEquals("67112361d2abb8c215869922e2e7a264", checksum);
     }
 
-    @Ignore
     @Test
-    public void downtownMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.mbta.com/system-map-downtown"), MessageDigest.getInstance("MD5"));
-        assertEquals("ed8d13f384ee5fe021619172dcce6d69", checksum);
-    }
-
-    @Test
-    public void fullSystemMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.mbta.com/system-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("60048c51ce0a6e9610eeb38dd96cd078", checksum);
+    public void BusMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.mbta.com/bus-map"), MessageDigest.getInstance("MD5"));
+        assertEquals("7bb25d30e2b75a69ba7e0232e80f5e20", checksum);
     }
 
 }
