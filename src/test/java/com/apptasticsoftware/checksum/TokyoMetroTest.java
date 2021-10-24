@@ -1,4 +1,4 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
 import org.junit.Test;
 

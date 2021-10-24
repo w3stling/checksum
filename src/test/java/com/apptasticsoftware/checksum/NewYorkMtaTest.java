@@ -1,4 +1,4 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
 import org.junit.Test;
 
@@ -13,13 +13,13 @@ public class NewYorkMtaTest {
     @Test
     public void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("fc396dd17f79ee68534edb2f21575ffe", checksum);
+        assertEquals("2d65465cbc20934b1703891152ac60d2", checksum);
     }
 
     @Test
     public void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("fa234e979104ae554e203fd49fef5340", checksum);
+        assertEquals("5001b7c64b8ede80165a7901a0496688", checksum);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class NewYorkMtaTest {
     @Test
     public void busBrooklynMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5261"), MessageDigest.getInstance("MD5"));
-        assertEquals("1879521d47dcc7f1d2ec0eefb7ac5767", checksum);
+        assertEquals("1080e9388afcf5c262aa27b5a1287459", checksum);
     }
 
     @Test

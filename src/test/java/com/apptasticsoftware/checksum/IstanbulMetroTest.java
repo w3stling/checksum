@@ -1,5 +1,6 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;

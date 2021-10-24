@@ -1,4 +1,4 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class LondonTflTest {
     @Test
     public void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/standard-tube-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("96618ec7126eff24b752dae457259624", checksum);
+        assertEquals("53bb93fadcb13b81ddec193b79a29c21", checksum);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class LondonTflTest {
     @Test
     public void nationalRailMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://content.tfl.gov.uk/london-rail-and-tube-services-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("ff623aabdb973a3ff0c93fef0b527cf2", checksum);
+        assertEquals("6f1a23dd148087111e14c04e0aed9c48", checksum);
     }
 
     @Test
@@ -59,8 +59,8 @@ public class LondonTflTest {
 
     @Test
     public void riverMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/river-services-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("26d017a4a3fd76aca036a4c462f816ff", checksum);
+        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/riverservices-map.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("78c2e8bf6b1c13cec5c4d8ebf1aa6063", checksum);
     }
 
 }

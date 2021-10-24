@@ -1,4 +1,4 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
 import org.junit.Test;
 
@@ -11,25 +11,25 @@ public class ParisRatpTest {
 
     @Test
     public void metroMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-Metro.1607863858.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-Metro.1618238799.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("512963de75821f2b66b60d93741ab42d", checksum);
     }
 
     @Test
     public void rerAndTransiliensMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-RER-et-transiliens.1584438522.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-RER-et-transiliens.1609949703.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("dc8a5fc7ed531cdf45e9815ef707000b", checksum);
     }
 
     @Test
     public void busMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Bus.1576767682.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Bus.1609949974.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("606da19b0ef7579307b13f3ed67c9c52", checksum);
     }
 
     @Test
     public void nightBusMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Noctilien.1571230068.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Noctilien.1611217472.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("7c7284b7ce957a3a22cae6726974c54b", checksum);
     }
 

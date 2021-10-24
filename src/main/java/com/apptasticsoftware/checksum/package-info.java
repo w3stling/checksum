@@ -25,4 +25,4 @@
 /**
  * This package is intended for checksum.
  */
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;

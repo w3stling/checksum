@@ -1,4 +1,4 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
 import org.junit.Test;
 
@@ -17,8 +17,8 @@ public class OsloRuterTest {
 
     @Test
     public void tramMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-15022021.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("b088a44faff1789772c23815ce1c8c86", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/trikk/trikk-linjekart-21062021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("f8b35a734dd61f47b13ea40598a17e9d", checksum);
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class BerlinBvgTest {
     @Test
     public void undergroundBerlinABC() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/de/index.php?section=downloads&cmd=58&download=399"), MessageDigest.getInstance("MD5"));
-        assertEquals("afea5204f29be1311ecd39994f3eb789", checksum);
+        assertEquals("2e5f5d2088bbb6b7af163d559916c928", checksum);
     }
 
     @Test

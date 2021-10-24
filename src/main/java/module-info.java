@@ -25,8 +25,8 @@
 /**
  * This modules defines the base APIs for checksum.
  */
-module com.apptastic.checksum {
+module com.apptasticsoftware.checksum {
     requires java.net.http;
 
-    exports com.apptastic.checksum;
+    exports com.apptasticsoftware.checksum;
 }

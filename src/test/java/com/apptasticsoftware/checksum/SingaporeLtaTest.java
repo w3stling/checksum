@@ -1,5 +1,6 @@
-package com.apptastic.checksum;
+package com.apptasticsoftware.checksum;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URI;
@@ -22,6 +23,7 @@ public class SingaporeLtaTest {
         assertEquals("58faec2fad2b55a1211e663f07178593", checksum);
     }
 
+    @Ignore
     @Test
     public void trainFutureSystemMapPdf() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm31-20-05-exp.pdf"), MessageDigest.getInstance("MD5"));
@@ -85,13 +87,13 @@ public class SingaporeLtaTest {
     @Test
     public void fullMapColors() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-color.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("2b046e2fb4fec28a09e57a425e40d175", checksum);
+        assertEquals("b05ec97b7a962019267e0d9de03639e7", checksum);
     }
 
     @Test
     public void fullMapGreyScale() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-grey%20scale.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("a98243720b59c6c51edde0e962f9ea02", checksum);
+        assertEquals("2a4ff30c9241d6d1b605bbf8cd379044", checksum);
     }
 
     @Test
