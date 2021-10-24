@@ -5,11 +5,11 @@ Checksum
 [![Download](https://api.bintray.com/packages/apptastic/maven-repo/checksum/images/download.svg)](https://bintray.com/apptastic/maven-repo/checksum/_latestVersion)
 [![Javadoc](https://img.shields.io/badge/javadoc-1.0.10-blue.svg)](https://w3stling.github.io/checksum/javadoc/1.0.10)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)   
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=com.apptastic%3Achecksum&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.apptastic%3Achecksum)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=com.apptastic%3Achecksum&metric=coverage)](https://sonarcloud.io/component_measures?id=com.apptastic%3Achecksum&metric=Coverage)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=com.apptastic%3Achecksum&metric=bugs)](https://sonarcloud.io/component_measures?id=com.apptastic%3Achecksum&metric=bugs)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=com.apptastic%3Achecksum&metric=vulnerabilities)](https://sonarcloud.io/component_measures?id=com.apptastic%3Achecksum&metric=vulnerabilities)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=com.apptastic%3Achecksum&metric=code_smells)](https://sonarcloud.io/component_measures?id=com.apptastic%3Achecksum&metric=code_smells)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=coverage)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=bugs)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
 
 Java library for calculating a checksum for a given resource. It can be either the content of a file or the content from a URL. 
 
