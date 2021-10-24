@@ -8,7 +8,7 @@ import java.security.MessageDigest;
 
 import static org.junit.Assert.assertEquals;
 
-@Ignore
+@Ignore("Investigating")
 public class IstanbulMetroTest {
 
     @Test

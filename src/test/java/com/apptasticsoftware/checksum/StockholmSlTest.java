@@ -22,7 +22,7 @@ public class StockholmSlTest {
         assertEquals("1bb8c5906dd4fad4aef8ade38072e40a", checksum);
     }
 
-    @Ignore
+    @Ignore("Investigating")
     @Test
     public void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://mitt.sl.se/ficktid/karta/vinter/Tub.pdf"), MessageDigest.getInstance("MD5"));

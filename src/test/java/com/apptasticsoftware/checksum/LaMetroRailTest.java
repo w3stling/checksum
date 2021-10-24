@@ -29,7 +29,7 @@ public class LaMetroRailTest {
         assertEquals("3363e70aedc645cee05e17716743e26c", checksum);
     }
 
-    @Ignore
+    @Ignore("Investigating")
     @Test
     public void busSystemOverviewMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.net/riding_metro/maps/images/4_17-3071_BLT_BusRailOverview.pdf"), MessageDigest.getInstance("MD5"));
