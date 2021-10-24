@@ -157,6 +157,7 @@ uploadArchives {
 }
 */
 
+/*
 gitPublish {
     repoUri = 'https://github.com/w3stling/checksum.git'
     branch = 'gh-pages'
@@ -174,6 +175,7 @@ gitPublish {
 
     commitMessage = 'Publishing javadoc'
 }
+*/
 
 release {
     tagTemplate = 'v$version'
