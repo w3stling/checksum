@@ -1,18 +1,17 @@
 plugins {
     id 'org.sonarqube' version '3.0'
-    id 'com.jfrog.bintray' version '1.8.4'
-    id 'com.jfrog.artifactory' version '4.13.0'
     id 'org.ajoberstar.git-publish' version '2.1.1'
     id 'net.researchgate.release' version '2.8.1'
 }
 
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'signing'
 apply plugin: 'maven-publish'
 apply plugin: 'jacoco'
 apply plugin: 'distribution'
 
-group 'com.apptastic'
+group 'com.apptasticsoftware'
 version "${version}"
 
 sourceCompatibility = JavaVersion.VERSION_11
@@ -59,7 +58,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
-ext.moduleName = 'com.apptastic.checksum'
+ext.moduleName = 'com.apptasticsoftware.checksum'
 
 compileJava {
     options.encoding = "UTF-8"
@@ -88,60 +87,73 @@ artifacts {
     archives javadocJar
 }
 
-bintray {
-    if (!project.version.endsWith("-SNAPSHOT")) {
-        user = System.getenv('BINTRAY_USER')
-        key = System.getenv('BINTRAY_KEY')
-        publications = ['ChecksumPublication']
-        dryRun = false
-        publish = true
-        override = true
-
-        pkg {
-            repo = 'maven-repo'
-            name = 'checksum'
-            desc = 'Java library for calculating checksum for a given resource.'
-            issueTrackerUrl = 'https://github.com/w3stling/checksum/issues'
-            vcsUrl = 'https://github.com/w3stling/checksum.git'
-            licenses = ['MIT']
-
-            version {
-                name = System.properties['version']
-                released = new Date()
-            }
-        }
-    }
+signing {
+    sign configurations.archives
 }
 
-artifactory {
-    contextUrl = 'https://oss.jfrog.org/artifactory'
-    publish {
-        repository {
-            if (project.version.endsWith("-SNAPSHOT")) {
-                repoKey = 'oss-snapshot-local'
-            } else {
-                repoKey = 'oss-release-local'
-            }
-            username = System.getenv('ARTIFACTORY_USERNAME')
-            password = System.getenv('ARTIFACTORY_PASSWORD')
-            maven = true
-        }
-        defaults {
-            publications ('ChecksumPublication')
-        }
-    }
+ext["ossrhUsername"] = ''
+ext["ossrhPassword"] = ''
+ext["sonatypeStagingProfileId"] = ''
+ext["signing.keyId"] = ''
+ext["signing.password"] = ''
+ext["signing.secretKeyRingFile"] = ''
+
+File secretPropsFile = project.rootProject.file('local.properties')
+if (secretPropsFile.exists()) {
+    // Read local.properties file first if it exists
+    Properties p = new Properties()
+    new FileInputStream(secretPropsFile).withCloseable { is -> p.load(is) }
+    p.each { name, value -> ext[name] = value }
+} else {
+    // Use system environment variables
+    ext["ossrhUsername"] = System.getenv('OSSRH_USERNAME')
+    ext["ossrhPassword"] = System.getenv('OSSRH_PASSWORD')
+    ext["sonatypeStagingProfileId"] = System.getenv('SONATYPE_STAGING_PROFILE_ID')
+    ext["signing.keyId"] = System.getenv('SIGNING_KEY_ID')
+    ext["signing.password"] = System.getenv('SIGNING_PASSWORD')
+    ext["signing.secretKeyRingFile"] = System.getenv('SIGNING_SECRET_KEY_RING_FILE')
 }
 
-publishing {
-    publications {
-        ChecksumPublication(MavenPublication) {
-            from components.java
-            groupId 'com.apptastic'
-            artifactId 'checksum'
-            version "${version}"
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-            artifact sourcesJar
-            artifact javadocJar
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'Checksum'
+                packaging 'jar'
+                description 'Library for calculating a checksum for a given resource. It can be either the content of a file or the content from a URL.'
+                url 'https://github.com/w3stling/checksum'
+
+                scm {
+                    connection 'scm:git:https://github.com/w3stling/checksum.git'
+                    developerConnection 'scm:git:https://github.com/w3stling/checksum.git'
+                    url 'https://github.com/w3stling/checksum'
+                }
+
+                licenses {
+                    license {
+                        name 'MIT License'
+                        url 'https://raw.githubusercontent.com/w3stling/checksum/master/LICENSE'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'w3stling'
+                        name 'Apptastic Software'
+                        email 'apptastic.software@gmail.com'
+                    }
+                }
+            }
         }
     }
 }
