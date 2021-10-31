@@ -24,7 +24,7 @@ public class BerlinBvgTest {
     @Test
     public void tramMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:d45105f2-6752-4ec5-b882-8936572053c3/TramMetro_12_2020-Internetversion.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("14b9fc36348b875efebf01e4b3fa360f", checksum);
+        assertEquals("87b29c79cf1e14f17ae699ba3a14db0a", checksum);
     }
 
     @Test
