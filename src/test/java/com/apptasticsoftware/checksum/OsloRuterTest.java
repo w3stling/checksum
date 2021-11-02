@@ -41,8 +41,8 @@ public class OsloRuterTest {
 
     @Test
     public void ferryMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/bat/baat-linjekart-04112019.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("5b8d176c97aa6458df7c424c42e328a0", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/bat/baat-linjekart-01112021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("dce9fb49c6a1113bc015ffe451234618", checksum);
     }
 
     @Test
