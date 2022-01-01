@@ -1,11 +1,12 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HkMtrTest {
 
@@ -21,12 +22,14 @@ public class HkMtrTest {
         assertEquals("a5caede846e5dd7a6624424ee87ba8dc", checksum);
     }
 
+    @Disabled
     @Test
     public void westboundTramwayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://hktramways.com/images/googleMap/HK-tram-route-map-WB.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("1d960b16b7c83a9c0af85a3efb777768", checksum);
     }
 
+    @Disabled
     @Test
     public void eastboundTramwayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://hktramways.com/images/googleMap/HK-tram-route-map-EB.pdf"), MessageDigest.getInstance("MD5"));

@@ -1,12 +1,12 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DelhiMetroTest {
 
@@ -28,7 +28,7 @@ public class DelhiMetroTest {
         assertEquals("527d9ea1037cd6b964cb8e09c87e7d2c", checksum);
     }
 
-    @Ignore("Slow")
+    @Disabled("Slow")
     @Test
     public void airportExpressLinePdf() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/abc.pdf"), MessageDigest.getInstance("MD5"));

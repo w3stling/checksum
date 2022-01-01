@@ -1,15 +1,14 @@
 plugins {
+    id 'java-library'
+    id 'jacoco'
+    id 'distribution'
+    id 'signing'
+    id 'maven-publish'
+    id 'io.github.gradle-nexus.publish-plugin' version '1.1.0'
     id 'org.sonarqube' version '3.3'
 //    id 'org.ajoberstar.git-publish' version '2.1.1'
-    id 'net.researchgate.release' version '2.8.1'
+//    id 'net.researchgate.release' version '2.8.1'
 }
-
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'signing'
-apply plugin: 'maven-publish'
-apply plugin: 'jacoco'
-apply plugin: 'distribution'
 
 group 'com.apptasticsoftware'
 version "${version}"
@@ -19,19 +18,12 @@ targetCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
-    maven {
-        name = 'ajoberstar-backup'
-        url = 'https://ajoberstar.org/bintray-backup/'
-    }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
-
-distTar {
-    compression = Compression.GZIP
-    extension = 'tar.gz'
+    //testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation(platform('org.junit:junit-bom:5.8.2'))
+    testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
 }
 
 distributions {
@@ -47,14 +39,16 @@ distributions {
     }
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    archiveClassifier.set('sources')
-    from sourceSets.main.allSource
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    archiveClassifier.set('javadoc')
-    from javadoc.destinationDir
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 ext.moduleName = 'com.apptasticsoftware.checksum'
@@ -81,106 +75,49 @@ jacocoTestReport {
     }
 }
 
-artifacts {
-    archives sourcesJar
-    archives javadocJar
-}
-
-/*
-signing {
-    sign configurations.archives
-}
-*/
-
-ext["ossrhUsername"] = ''
-ext["ossrhPassword"] = ''
-ext["sonatypeStagingProfileId"] = ''
-ext["signing.keyId"] = ''
-ext["signing.password"] = ''
-ext["signing.secretKeyRingFile"] = ''
-
-File secretPropsFile = project.rootProject.file('local.properties')
-if (secretPropsFile.exists()) {
-    // Read local.properties file first if it exists
-    Properties p = new Properties()
-    new FileInputStream(secretPropsFile).withCloseable { is -> p.load(is) }
-    p.each { name, value -> ext[name] = value }
-} else {
-    // Use system environment variables
-    ext["ossrhUsername"] = System.getenv('OSSRH_USERNAME')
-    ext["ossrhPassword"] = System.getenv('OSSRH_PASSWORD')
-    ext["sonatypeStagingProfileId"] = System.getenv('SONATYPE_STAGING_PROFILE_ID')
-    ext["signing.keyId"] = System.getenv('SIGNING_KEY_ID')
-    ext["signing.password"] = System.getenv('SIGNING_PASSWORD')
-    ext["signing.secretKeyRingFile"] = System.getenv('SIGNING_SECRET_KEY_RING_FILE')
-}
-
-/*
-uploadArchives {
+nexusPublishing {
     repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+        sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+        }
+    }
+}
 
-            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'Checksum'
-                packaging 'jar'
-                description 'Library for calculating a checksum for a given resource. It can be either the content of a file or the content from a URL.'
-                url 'https://github.com/w3stling/checksum'
-
-                scm {
-                    connection 'scm:git:https://github.com/w3stling/checksum.git'
-                    developerConnection 'scm:git:https://github.com/w3stling/checksum.git'
-                    url 'https://github.com/w3stling/checksum'
-                }
-
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from(components.java)
+            pom {
+                name = 'Checksum'
+                description = 'Library for calculating a checksum for a given resource. It can be either the content of a file or the content from a URL.'
+                url = 'https://github.com/w3stling/checksum'
                 licenses {
                     license {
-                        name 'MIT License'
-                        url 'https://raw.githubusercontent.com/w3stling/checksum/master/LICENSE'
+                        name = 'MIT License'
+                        url = 'https://raw.githubusercontent.com/w3stling/checksum/master/LICENSE'
                     }
                 }
-
                 developers {
                     developer {
-                        id 'w3stling'
-                        name 'Apptastic Software'
+                        id = 'w3stling'
+                        name = 'Apptastic Software'
                         email 'apptastic.software@gmail.com'
                     }
                 }
+                scm {
+                    url = 'https://github.com/w3stling/checksum'
+                    connection = 'scm:git://github.com/w3stling/checksum.git'
+                    developerConnection = 'scm:git://github.com/w3stling/checksum.git'
+                }
             }
         }
     }
 }
-*/
 
-/*
-gitPublish {
-    repoUri = 'https://github.com/w3stling/checksum.git'
-    branch = 'gh-pages'
-
-    contents {
-        from("$buildDir/docs/javadoc") {
-            into "javadoc/${version}"
-        }
-    }
-
-    preserve {
-        include 'javadoc/**'
-        exclude 'javadoc/*-SNAPSHOT/**'
-    }
-
-    commitMessage = 'Publishing javadoc'
-}
-*/
-
-release {
-    tagTemplate = 'v$version'
+signing {
+    def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.mavenJava
 }

@@ -1,12 +1,12 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network.html
 public class SingaporeLtaTest {
@@ -23,7 +23,7 @@ public class SingaporeLtaTest {
         assertEquals("ca64b0a5dcc6e14c0e02a2ac303b623b", checksum);
     }
 
-    @Ignore("Investigating")
+    @Disabled("Investigating")
     @Test
     public void trainFutureSystemMapPdf() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm31-20-05-exp.pdf"), MessageDigest.getInstance("MD5"));

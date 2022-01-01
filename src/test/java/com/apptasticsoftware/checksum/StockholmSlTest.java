@@ -1,12 +1,12 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StockholmSlTest {
 
@@ -22,7 +22,7 @@ public class StockholmSlTest {
         assertEquals("7bd1cf3310bc90853f2acfc70e2d1e70", checksum);
     }
 
-    @Ignore("Investigating")
+    @Disabled("Investigating")
     @Test
     public void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://mitt.sl.se/ficktid/karta/vinter/Tub.pdf"), MessageDigest.getInstance("MD5"));

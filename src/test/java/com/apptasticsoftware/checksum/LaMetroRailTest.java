@@ -1,12 +1,13 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 // https://www.metro.net/riding/guide/system-maps/
 public class LaMetroRailTest {
@@ -29,7 +30,7 @@ public class LaMetroRailTest {
         assertEquals("3363e70aedc645cee05e17716743e26c", checksum);
     }
 
-    @Ignore("Investigating")
+    @Disabled("Investigating")
     @Test
     public void busSystemOverviewMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.net/riding_metro/maps/images/4_17-3071_BLT_BusRailOverview.pdf"), MessageDigest.getInstance("MD5"));
