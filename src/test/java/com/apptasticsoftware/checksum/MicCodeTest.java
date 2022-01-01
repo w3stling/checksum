@@ -7,10 +7,10 @@ import java.security.MessageDigest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MicCodeTest {
+class MicCodeTest {
 
     @Test
-    public void testMicCode() throws Exception {
+    void testMicCode() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.iso20022.org/sites/default/files/ISO10383_MIC/ISO10383_MIC.csv"), MessageDigest.getInstance("MD5"));
         assertEquals("1d757cbe07968828b98af51dbd4dcd5d", checksum);
     }
