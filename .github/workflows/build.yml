@@ -16,6 +16,8 @@ jobs:
     name: Compile and Test code
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{github.event_name}}
+      - run: echo ${{github.ref}}
       - uses: actions/checkout@v2
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
@@ -55,7 +57,7 @@ jobs:
   publish:
     name: Publish Artifacts
     needs: [build]
-    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
 
     steps:
