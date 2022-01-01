@@ -102,13 +102,13 @@ publishing {
                     developer {
                         id = 'w3stling'
                         name = 'Apptastic Software'
-                        email 'apptastic.software@gmail.com'
+                        email = 'apptastic.software@gmail.com'
                     }
                 }
                 scm {
                     url = 'https://github.com/w3stling/checksum'
                     connection = 'scm:git://github.com/w3stling/checksum.git'
-                    developerConnection = 'scm:git://github.com/w3stling/checksum.git'
+                    developerConnection = 'scm:git:ssh://github.com/w3stling/checksum.git'
                 }
             }
         }
