@@ -74,6 +74,9 @@ nexusPublishing {
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            groupId = 'com.apptasticsoftware'
+            artifactId = 'checksum'
+            version = "${version}"
             from(components.java)
             pom {
                 name = 'Checksum'
