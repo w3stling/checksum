@@ -1,7 +1,6 @@
 plugins {
     id 'java-library'
     id 'jacoco'
-    id 'distribution'
     id 'signing'
     id 'maven-publish'
     id 'io.github.gradle-nexus.publish-plugin' version '1.1.0'
@@ -21,22 +20,8 @@ repositories {
 }
 
 dependencies {
-    //testImplementation group: 'junit', name: 'junit', version: '4.12'
     testImplementation(platform('org.junit:junit-bom:5.8.2'))
     testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
-}
-
-distributions {
-    main {
-        contents {
-            from("$projectDir")
-            exclude('.gitignore')
-            exclude('.travis.yml')
-            exclude('*.iml')
-            exclude('out')
-            exclude('build')
-        }
-    }
 }
 
 test {
