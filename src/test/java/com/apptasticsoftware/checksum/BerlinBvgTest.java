@@ -12,7 +12,7 @@ class BerlinBvgTest {
     @Test
     void undergroundBerlinABC() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:60a89e3b-f88d-4d48-b8a6-98ab340ada05/S+U-Bahn_07_2021-Internetversion-BVG.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("8a2c520528df6fed50621dcb15a428ea", checksum);
+        assertEquals("dfff058f8479a87edfa3ebdfcc01e93a", checksum);
     }
 
     @Test
