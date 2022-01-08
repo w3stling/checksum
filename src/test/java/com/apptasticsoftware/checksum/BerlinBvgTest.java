@@ -18,7 +18,7 @@ class BerlinBvgTest {
     @Test
     void undergroundBerlinCityCenter() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:3f8025f2-285b-4fa0-8cef-72def24c6c21/Liniennetzplan_SUBahnnetz_mit_Regionalbahn_Tarifbereich_AB_Innenstadtausschnitt.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("82944e894b0c72a6e2778cc27ef84ffe", checksum);
+        assertEquals("0d612f76131e15ebec3a39782dc38605", checksum);
     }
 
     @Test
@@ -30,7 +30,7 @@ class BerlinBvgTest {
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:ee4647c3-ce1e-4b0a-9546-b1848b85ee7e/BVG_BusNetzABC_202104%20(1)%20(1).pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f3da757a00d0d790423b9c4d09dc0fc9", checksum);
+        assertEquals("bafb636f9cf326e8cd420c87466995c2", checksum);
     }
 
     @Test
