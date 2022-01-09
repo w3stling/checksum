@@ -108,7 +108,7 @@ jobs:
           target-folder: javadoc/${{ steps.build_version_property.outputs.value }}
           commit-message: Publishing javadoc
           clean: true
-          dry-run: true
+          dry-run: false
 
       - name: Publish with Gradle
         env:
