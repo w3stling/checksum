@@ -103,10 +103,12 @@ jobs:
       - name: Deploy Javadoc
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build/docs/javadoc
-          TARGET_FOLDER: javadoc/${{ steps.build_version_property.outputs.value }}
+          branch: gh-pages
+          folder: build/docs/javadoc
+          target-folder: javadoc/${{ steps.build_version_property.outputs.value }}
+          commit-message: Publishing javadoc
+          clean: true
+          dry-run: true
 
       - name: Publish with Gradle
         env:
