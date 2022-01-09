@@ -97,9 +97,6 @@ jobs:
       - name: Print version numbers
         run: echo ${{ steps.read_property.outputs.value }}
 
-      - name: Generate Javadoc
-        run: mvn org.apache.maven.plugins:maven-javadoc-plugin:3.3.1:aggregate
-
       - name: Deploy Javadoc
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
