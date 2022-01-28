@@ -36,6 +36,6 @@ class BerlinBvgTest {
     @Test
     void nightBusMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:b40725a3-1da0-4ca7-ad1f-a214eb2d7ffe/Nachtnetz_202104.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("1e4c4183df26cadf9275a705d642581c", checksum);
+        assertEquals("eb91a2b54d657bd0ffa2a756ef370565", checksum);
     }
 }
