@@ -1,5 +1,6 @@
 package com.apptasticsoftware.checksum;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -21,6 +22,7 @@ class NewYorkMtaTest {
         assertEquals("930245f3cb5e553bbe1deda0823c6d97", checksum);
     }
 
+    @Disabled("Investigating")
     @Test
     void regionalDiagramMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new2.mta.info/sites/default/files/2018-09/180907-MTA-RTD_unlock.pdf"), MessageDigest.getInstance("MD5"));
