@@ -12,7 +12,7 @@ class MadridMetroTest {
     @Test
     void metroAndLightRailNetworkMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metromadrid.es/sites/default/files/documentos/Viaja%20en%20Metro/Planos/Planoesquematico.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("628de16aebbfbc347c2785e343c36291", checksum);
+        assertEquals("8b3c045d1dbe95f6c654a0c92e287b3e", checksum);
     }
 
     @Test
