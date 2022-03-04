@@ -18,7 +18,7 @@ class ParisRatpTest {
     @Test
     void rerAndTransiliensMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-RER-et-transiliens.1609949703.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("dc8a5fc7ed531cdf45e9815ef707000b", checksum);
+        assertEquals("bfc8ee1e1063eec7995d155e47c106e7", checksum);
     }
 
     @Test
