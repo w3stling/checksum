@@ -12,19 +12,19 @@ class IstanbulMetroTest {
     @Test
     void railSystemsMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Rayl%C4%B1%20Sistemler%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("47873138526aa20645f2543bbd425426", checksum);
+        assertEquals("9454e021810252c07743e8fa71fed35e", checksum);
     }
 
     @Test
     void tramMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Tramvay%20Hatlar%C4%B1%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("e8cf6557b892dbaf63b411af14bdecd4", checksum);
+        assertEquals("394a9e320095c58454f724cf277daa53", checksum);
     }
 
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Metro%20Hatlar%C4%B1%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9e643aec8a7713195cbd628065d80380", checksum);
+        assertEquals("eaa66b85495189f8555ac8f5623d3d8e", checksum);
     }
 
     @Test

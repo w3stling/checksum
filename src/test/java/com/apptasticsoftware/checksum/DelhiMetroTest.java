@@ -13,19 +13,19 @@ class DelhiMetroTest {
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/Map-Bilingual-04102019.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d2d785d4aae32651addf9137261c11b7", checksum);
+        assertEquals("b31a7bac72b4420f9245b93c2407ea4d", checksum);
     }
 
     @Test
     void rapidMetroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/RapidMetroRouteMap.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d2d785d4aae32651addf9137261c11b7", checksum);
+        assertEquals("b31a7bac72b4420f9245b93c2407ea4d", checksum);
     }
 
     @Test
     void airportExpressLine() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/airportlineimg.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("d2d785d4aae32651addf9137261c11b7", checksum);
+        assertEquals("b31a7bac72b4420f9245b93c2407ea4d", checksum);
     }
 
     @Disabled("Slow")
