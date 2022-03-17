@@ -10,18 +10,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DelhiMetroTest {
 
+    @Disabled("Investigating")
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/Map-Bilingual-04102019.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("1e71d0816cdfd688c8693b3b0ba074dd", checksum);
     }
 
+    @Disabled("Investigating")
     @Test
     void rapidMetroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/RapidMetroRouteMap.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("1e71d0816cdfd688c8693b3b0ba074dd", checksum);
     }
 
+    @Disabled("Investigating")
     @Test
     void airportExpressLine() throws Exception {
         String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/airportlineimg.jpg"), MessageDigest.getInstance("MD5"));
