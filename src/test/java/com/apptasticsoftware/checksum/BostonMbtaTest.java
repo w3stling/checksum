@@ -18,7 +18,7 @@ class BostonMbtaTest {
     @Test
     void commuterRailMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/cr-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("7ee1750a593e5fea65d55d3f9130cb44", checksum);
+        assertEquals("4fe399c5086223cf1e954a7e6fc3ffaa", checksum);
     }
 
     @Test
@@ -36,7 +36,7 @@ class BostonMbtaTest {
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/bus-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("f6a58838c68a5f24d5278b589bd24cc2", checksum);
+        assertEquals("df4ea89a12c6444c45c7028233fd29e2", checksum);
     }
 
 }
