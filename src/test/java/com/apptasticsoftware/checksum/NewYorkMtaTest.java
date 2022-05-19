@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.security.MessageDigest;
+import java.util.Stack;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,13 +14,13 @@ class NewYorkMtaTest {
     @Test
     void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("fee3c474f5b52312ea941f3c68f021b9", checksum);
+        assertEquals("d22b37b44ac07dbbec84f13416966e6b", checksum);
     }
 
     @Test
     void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("5abb1f02383e0e2ff2d59bad8f17ee8e", checksum);
+        assertEquals("dde2d9d2b687fe76a464ef6ac221b277", checksum);
     }
 
     @Disabled("Investigating")
