@@ -69,7 +69,7 @@ class NewYorkMtaTest {
     @Test
     void railLongIslandMap() throws Exception{
         String checksum = Checksum.calculate(new URI("http://web.mta.info/lirr/Timetable/SystemMap.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("68145056049f27beb5b9c306ea5e31bc", checksum);
+        assertEquals("03453a4a7aaf4bad96cb3d4cab905194", checksum);
     }
 
     @Test
