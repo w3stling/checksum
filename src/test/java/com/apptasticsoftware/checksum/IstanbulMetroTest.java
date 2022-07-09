@@ -12,7 +12,7 @@ class IstanbulMetroTest {
     @Test
     void railSystemsMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Rayl%C4%B1%20Sistemler%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9454e021810252c07743e8fa71fed35e", checksum);
+        assertEquals("9570bea19b222194a303c99a83225983", checksum);
     }
 
     @Test
