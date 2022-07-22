@@ -13,13 +13,13 @@ class LondonTflTest {
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/standard-tube-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("7fc567ccc4c373dd4c17d724b92fce96", checksum);
+        assertEquals("a6a09437e6ad88a20caacd28755c18df", checksum);
     }
 
     @Test
     void metroNightMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/standard-night-tube-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("63eececfdc52279511de3103f26e3a4c", checksum);
+        assertEquals("cd71d57ddb54c0e272d825a1012e5b07", checksum);
     }
 
     @Test
