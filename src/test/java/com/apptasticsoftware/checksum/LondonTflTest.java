@@ -25,13 +25,13 @@ class LondonTflTest {
     @Test
     void overgroundMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/london-overground-network-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("54d941b923edd6ca7631900013df799f", checksum);
+        assertEquals("6f6607fd88fdf2391f6b3d7cee6707ee", checksum);
     }
 
     @Test
     void dlrMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/dlr-route-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("e3ccb5f54fea042cc72000acc38cca83", checksum);
+        assertEquals("ec51ec1809c7db10718e19d90ed2c5c9", checksum);
     }
 
     @Test
