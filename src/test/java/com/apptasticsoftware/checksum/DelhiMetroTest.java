@@ -10,33 +10,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DelhiMetroTest {
 
-    @Disabled("Investigating")
     @Test
     void metroMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/Map-Bilingual-04102019.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("1e71d0816cdfd688c8693b3b0ba074dd", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.delhimetrorail.com/static/media/Network-Map-English.e17d3ce0.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("03e0b19230e7628a5d4c5c8e03573352", checksum);
     }
 
-    @Disabled("Investigating")
     @Test
     void rapidMetroMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/RapidMetroRouteMap.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("1e71d0816cdfd688c8693b3b0ba074dd", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.delhimetrorail.com/media/images/RapidMetroRouteMap.original.jpg"), MessageDigest.getInstance("MD5"));
+        assertEquals("507edaa4d35fb26a11feb7349f440066", checksum);
     }
 
-    @Disabled("Investigating")
     @Test
     void airportExpressLine() throws Exception {
-        String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/images/airportlineimg.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("1e71d0816cdfd688c8693b3b0ba074dd", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.delhimetrorail.com/media/images/airportlineimg.original.jpg"), MessageDigest.getInstance("MD5"));
+        assertEquals("8bcd3c071a247cd6dd0c906874e0bd45", checksum);
     }
 
     @Disabled("Slow")
     @Test
     void airportExpressLinePdf() throws Exception {
-        String checksum = Checksum.calculate(new URI("http://www.delhimetrorail.com/abc.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("a8fbfd2ffab9052290273a3aac021aad", checksum);
+        String checksum = Checksum.calculate(new URI("https://backend.delhimetrorail.com/documents/1062/abc.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("4020a512dd0878d9ebc0f478d4fc4573", checksum);
     }
-
 
 }
