@@ -40,7 +40,7 @@ class TokyoMetroTest {
     @Test
     void nipporiToneriLinerMapEn() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/maps/images/liner_map_01.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("75199c49f69ac8c55e1478c2f1a8e485", checksum);
+        assertEquals("579f2bbc864e66124b6e5468d2d46b35", checksum);
     }
 
     @Test
