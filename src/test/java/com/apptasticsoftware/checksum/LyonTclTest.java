@@ -17,32 +17,32 @@ class LyonTclTest {
 
     @Test
     void lyonVillebanne() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2020-08/Lyon-Villeurbanne_092020.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9017d62b2810b07299e29b6fd79291c7", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2021-08/Plan_Lyon-Villeurbanne_092021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("487e10878dcf2e592e1f29ac85e9b7eb", checksum);
     }
 
     @Test
     void agglomeration() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2020-08/Agglomeration_lyonnaise_092020.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("ca7283951ddca6893d694cedcc96fe79", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2021-08/Plan_Agglomeration_Lyonnaise_092021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("6f18b2931e69f6c33eac74b7689517c1", checksum);
     }
 
     @Test
     void agglomerationAreaEast() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2020-08/Plan_Secteur_Est_092020.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("0d337acf0a0fc1c59af7938c9a46e39c", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2021-08/Plan_AGGLO_EST_26082021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("e9652b92891b69f1855ff486e45880c0", checksum);
     }
 
     @Test
     void southWestAgglomerationArea() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2020-08/Plan_Secteur_Ouest_092020.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("46c5c620beee8d16a027f7dc030e81ed", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2021-08/Plan_AGGLO_OUEST_26082021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("55c22a071a883154412913c39164936c", checksum);
     }
 
     @Test
     void northAgglomerationArea() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2020-08/Plan_Secteur_Nord_092020.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("103abb0e4cdfcb391e57514d54fe23c0", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tcl.fr/sites/default/files/2021-08/Plan_AGGLO_NORD_26082021.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("77ea6493f48991d6349eb32429820c04", checksum);
     }
 
     @Test
