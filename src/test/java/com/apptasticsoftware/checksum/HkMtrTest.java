@@ -34,6 +34,7 @@ class HkMtrTest {
         assertEquals("411897bff81ff59cbc8c9ceb31d8046c", checksum);
     }
 
+    @Disabled("Investigating")
     @Test
     void starferryRouteMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.starferry.com.hk/sites/default/files/routemap.jpg"), MessageDigest.getInstance("MD5"));

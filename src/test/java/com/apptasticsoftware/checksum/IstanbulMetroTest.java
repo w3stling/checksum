@@ -30,6 +30,6 @@ class IstanbulMetroTest {
     @Test
     void metroNightMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/Gece%20Metrosu%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("d22302aebad12f4ecf8236acae2874e4", checksum);
+        assertEquals("2ef2f4cf0ced8e8e906358e48a743a1a", checksum);
     }
 }
