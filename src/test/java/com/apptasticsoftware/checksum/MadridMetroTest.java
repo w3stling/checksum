@@ -35,8 +35,8 @@ class MadridMetroTest {
 
     @Test
     void touristMap1() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.metromadrid.es/sites/default/files/documentos/Viaja%20en%20Metro/Planos/PlanoMetroTurInterior.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("2c89b5482c6d662effd706055a43b510", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.metromadrid.es/sites/default/files/web/planos/Planoturisticoenero22_0.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("a1cdb9ae44741f2b835296f132763280", checksum);
     }
 
     /*
