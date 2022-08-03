@@ -40,11 +40,10 @@ class LondonTflTest {
         assertEquals("aa3b654447edb135ffa76ddc1bb91817", checksum);
     }
 
-    @Disabled("Investigating")
     @Test
-    void railMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/tfl-rail-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f4068c66a5de681e29e4c4b7e6a4f952", checksum);
+    void elizabethLineMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/elizabeth-line-map.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("d25c6fd63f7f30ce230aa6037fe8c95d", checksum);
     }
 
     @Test
