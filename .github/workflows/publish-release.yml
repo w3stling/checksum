@@ -8,7 +8,7 @@ jobs:
   publish-release:
     timeout-minutes: 30
     runs-on: ubuntu-latest
-    if: github.repository == 'w3stling/release-test'
+    if: github.repository == 'w3stling/checksum'
 
     steps:
       - uses: actions/checkout@v2
