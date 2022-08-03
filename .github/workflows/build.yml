@@ -85,6 +85,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: get next version
+        id: 'bump'
+        uses: allegro-actions/next-version@v1
+
       - name: Read build version from properties file
         id: build_version_property
         uses: christian-draeger/read-properties@1.0.1
@@ -94,6 +98,9 @@ jobs:
 
       - name: Print build version
         run: echo ${{ steps.build_version_property.outputs.value }}
+
+      - name: Print build version2
+        run: echo ${{ steps.bump.outputs.next_version }}
 
       - name: Generate Javadoc
         run: ./gradlew javadoc
