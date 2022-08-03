@@ -42,7 +42,6 @@ jobs:
           NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
           echo "New version: ${NEW_VERSION}"
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
-          echo "New version2: ${{ env.new_version }}"
 
       - name: Generate Javadoc
         run: ./gradlew javadoc
@@ -68,8 +67,5 @@ jobs:
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
         #./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository publishPlugins -Pversion=${NEW_VERSION}
         run: |
-          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
-          echo "New version: ${NEW_VERSION}"
-          echo "New version3: ${{ env.new_version }}"
-          ./gradlew publishToSonatype -Pversion=${NEW_VERSION}
+          ./gradlew publishToSonatype -Pversion=${{ env.new_version }}"
 
