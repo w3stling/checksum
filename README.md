@@ -33,19 +33,6 @@ Download
 Download [the latest JAR][1] or grab via [Maven][2] or [Gradle][3].
 
 ### Maven setup
-Add JCenter repository for resolving artifact:
-```xml
-<project>
-    ...
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-    ...
-</project>
-```
 
 Add dependency declaration:
 ```xml
@@ -53,27 +40,19 @@ Add dependency declaration:
     ...
     <dependencies>
         <dependency>
-            <groupId>com.apptastic</groupId>
+            <groupId>com.apptasticsoftware</groupId>
             <artifactId>checksum</artifactId>
-            <version>1.0.10</version>
+            <version>2.0.0</version>
         </dependency>
     </dependencies>
     ...
 </project>
 ```
 
-### Gradle setup
-Add JCenter repository for resolving artifact:
-```groovy
-repositories {
-    jcenter()
-}
-```
-
 Add dependency declaration:
 ```groovy
 dependencies {
-    implementation 'com.apptastic:checksum:1.0.10'
+    implementation 'com.apptasticsoftware:checksum:2.0.0'
 }
 ```
 
