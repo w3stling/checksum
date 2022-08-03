@@ -88,6 +88,8 @@ jobs:
       - name: get next version
         id: 'bump'
         uses: allegro-actions/next-version@v1
+        with:
+          prefix: 'v'
 
       - name: Read build version from properties file
         id: build_version_property
@@ -99,7 +101,10 @@ jobs:
       - name: Print build version
         run: echo ${{ steps.build_version_property.outputs.value }}
 
-      - name: Print build version2
+      - name: Print current build version
+        run: echo ${{ steps.bump.outputs.current_tag }}
+
+      - name: Print next build version
         run: echo ${{ steps.bump.outputs.next_version }}
 
       - name: Generate Javadoc
