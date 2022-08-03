@@ -85,11 +85,11 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: get next version
-        id: 'bump'
-        uses: allegro-actions/next-version@v1
-        with:
-          prefix: 'v'
+      - name: calculate next version
+        id: version
+        uses: patrickjahns/version-drafter-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Read build version from properties file
         id: build_version_property
@@ -101,11 +101,9 @@ jobs:
       - name: Print build version
         run: echo ${{ steps.build_version_property.outputs.value }}
 
-      - name: Print current build version
-        run: echo ${{ steps.bump.outputs.current_tag }}
-
-      - name: Print next build version
-        run: echo ${{ steps.bump.outputs.next_version }}
+      - name: Calculated version
+        run: |
+          echo "version: ${{ steps.version.outputs.next-version }}"
 
       - name: Generate Javadoc
         run: ./gradlew javadoc
