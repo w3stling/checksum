@@ -37,11 +37,12 @@ jobs:
       - name: Validate Gradle wrapper 🔎
         uses: gradle/wrapper-validation-action@v1
 
-      - name: Set version
+      - name: Get version
         run: |
           NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
           echo "New version: ${NEW_VERSION}"
-          echo "::set-env name=NEW_VERSION::$NEW_VERSION"
+          echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
+          echo "New version2: ${{ env.new_version }}"
 
       - name: Generate Javadoc
         run: ./gradlew javadoc
@@ -51,7 +52,7 @@ jobs:
         with:
           branch: gh-pages
           folder: build/docs/javadoc
-          target-folder: javadoc/${NEW_VERSION}
+          target-folder: javadoc/${{ env.new_version }}
           commit-message: Publishing javadoc
           clean: true
           dry-run: false
@@ -67,5 +68,8 @@ jobs:
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
         #./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository publishPlugins -Pversion=${NEW_VERSION}
         run: |
+          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
+          echo "New version: ${NEW_VERSION}"
+          echo "New version3: ${{ env.new_version }}"
           ./gradlew publishToSonatype -Pversion=${NEW_VERSION}
 
