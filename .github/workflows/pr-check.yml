@@ -1,20 +1,21 @@
-# This workflow will build a Java project with Gradle
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
-
-name: schedule
+name: Pull Request Check
 
 on:
-  schedule:
-    - cron: '40 5 * * SAT'
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
+    timeout-minutes: 20
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
+
       - name: Setup Java 11 ⚙️
         uses: actions/setup-java@v2
         with:
@@ -36,5 +37,13 @@ jobs:
       - name: Validate Gradle wrapper 🔎
         uses: gradle/wrapper-validation-action@v1
 
-      - name: Build with Gradle  🏗️
-        run: ./gradlew clean build jacocoTestReport
+      - name: Build library with Gradle 🏗️
+        run: ./gradlew clean build
+
+      - name: Archive build and test reports 🗃️
+        uses: actions/upload-artifact@v2
+        if: success() || failure()
+        with:
+          name: test-results
+          path: ./**/build/test-results/test/*.xml
+          retention-days: 7

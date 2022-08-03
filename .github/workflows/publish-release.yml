@@ -1,0 +1,67 @@
+name: Publish Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-release:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    if: github.repository == 'w3stling/release-test'
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
+
+      - name: Setup Java 11 ⚙️
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Setup Gradle Dependencies Cache ⚙️
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('**/*.gradle', '**/*.gradle.kts') }}
+
+      - name: Setup Gradle Wrapper Cache ⚙️
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: Validate Gradle wrapper 🔎
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Generate Javadoc
+        run: ./gradlew javadoc
+
+      - name: Deploy Javadoc
+        uses: JamesIves/github-pages-deploy-action@4.2.0
+        with:
+          branch: gh-pages
+          folder: build/docs/javadoc
+          target-folder: javadoc/${{ steps.build_version_property.outputs.value }}
+          commit-message: Publishing javadoc
+          clean: true
+          dry-run: false
+
+      - name: Build with Gradle 🏗️
+        run: ./gradlew clean build -x test
+
+      - name: Publish with Gradle 🚀
+        env:
+          ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PASSWORD }}
+          ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USERNAME }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_SECRET }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
+        #./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository publishPlugins -Pversion=${NEW_VERSION}
+        run: |
+          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
+          echo "New version: ${NEW_VERSION}"
+          ./gradlew publishToSonatype -Pversion=${NEW_VERSION}
+
