@@ -111,5 +111,5 @@ jobs:
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
         #./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository publishPlugins -Pversion=${NEW_VERSION}
         run: |
-          ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository publishPlugins -Pversion=${{ env.new_version }}
+          ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository -Pversion=${{ env.new_version }}
 
