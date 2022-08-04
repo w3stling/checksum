@@ -59,7 +59,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         id: auto-commit-action-readme
         with:
-          commit_message: Apply README.md changes
+          commit_message: Bump version to ${{ env.new_version }} in README.md
           file_pattern: README.md
           branch: master
 
@@ -79,7 +79,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         id: auto-commit-action-licence
         with:
-          commit_message: Apply LICENSE changes
+          commit_message: Bump year to ${{ env.year }} in LICENSE file
           file_pattern: LICENSE
           branch: master
 
