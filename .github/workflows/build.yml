@@ -45,8 +45,18 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Calculate next version
+        id: version
+        uses: patrickjahns/version-drafter-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Next version
+        run: |
+          echo "Next version: ${{ steps.version.outputs.next-version }}"
+
       - name: Build with Gradle
-        run: ./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+        run: ./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.projectVersion=${{ steps.version.outputs.next-version }}-SNAPSHOT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
