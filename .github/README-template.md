@@ -84,6 +84,6 @@ License
     SOFTWARE.
 
 
-[1]: https://bintray.com/apptastic/maven-repo/checksum/_latestVersion
+[1]: https://search.maven.org/artifact/com.apptasticsoftware/checksum/%%version%%/jar
 [2]: https://maven.apache.org
 [3]: https://gradle.org
