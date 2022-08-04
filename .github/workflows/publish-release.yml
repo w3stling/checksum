@@ -46,19 +46,6 @@ jobs:
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
           echo "year=$(date +%Y%)" >> $GITHUB_ENV
 
-      - name: Generate Javadoc
-        run: ./gradlew javadoc
-
-      - name: Deploy Javadoc
-        uses: JamesIves/github-pages-deploy-action@4.2.0
-        with:
-          branch: gh-pages
-          folder: build/docs/javadoc
-          target-folder: javadoc/${{ env.new_version }}
-          commit-message: Publishing javadoc
-          clean: true
-          dry-run: false
-
       - name: Checkout repo
         run: echo "head_ref ${{ github.head_ref }}"
 
@@ -80,8 +67,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         id: auto-commit-action-readme
         with:
-            commit_message: Apply README.md changes
-            file_pattern: README.md
+          commit_message: Apply README.md changes
+          file_pattern: README.md
 
       - name: "README.md - changes have been detected"
         if: steps.auto-commit-action-readme.outputs.changes_detected == 'true'
@@ -113,6 +100,19 @@ jobs:
       - name: "LICENSE - no changes have been detected"
         if: steps.auto-commit-action-licence.outputs.changes_detected == 'false'
         run: echo "No Changes!"
+
+      - name: Generate Javadoc
+        run: ./gradlew javadoc
+
+      - name: Deploy Javadoc
+        uses: JamesIves/github-pages-deploy-action@4.2.0
+        with:
+          branch: gh-pages
+          folder: build/docs/javadoc
+          target-folder: javadoc/${{ env.new_version }}
+          commit-message: Publishing javadoc
+          clean: true
+          dry-run: false
 
       - name: Build with Gradle 🏗️
         run: ./gradlew clean build -x test
