@@ -85,13 +85,13 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: calculate next version
+      - name: Calculate next version
         id: version
         uses: patrickjahns/version-drafter-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Calculated next version
+      - name: Next version
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
