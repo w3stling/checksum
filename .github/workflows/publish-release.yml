@@ -6,6 +6,8 @@ on:
 
 jobs:
   publish-release:
+    permissions:
+      contents: write
     timeout-minutes: 30
     runs-on: ubuntu-latest
     if: github.repository == 'w3stling/checksum'
@@ -56,6 +58,14 @@ jobs:
           commit-message: Publishing javadoc
           clean: true
           dry-run: false
+
+      - name: Checkout repo
+        run: echo "head_ref ${{ github.head_ref }}"
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Update README.md
         uses: bluwy/substitute-string-action@v1
