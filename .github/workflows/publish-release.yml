@@ -44,15 +44,7 @@ jobs:
           NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
           echo "New version: ${NEW_VERSION}"
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
-          echo "year=$(date +%Y%)" >> $GITHUB_ENV
-
-      - name: Checkout repo
-        run: echo "head_ref ${{ github.head_ref }}"
-
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+          echo "year=$(date +%Y)" >> $GITHUB_ENV
 
       - name: Update README.md
         uses: bluwy/substitute-string-action@v1
@@ -69,6 +61,7 @@ jobs:
         with:
           commit_message: Apply README.md changes
           file_pattern: README.md
+          branch: master
 
       - name: "README.md - changes have been detected"
         if: steps.auto-commit-action-readme.outputs.changes_detected == 'true'
@@ -92,6 +85,7 @@ jobs:
         with:
           commit_message: Apply LICENSE changes
           file_pattern: LICENSE
+          branch: master
 
       - name: "LICENSE - changes have been detected"
         if: steps.auto-commit-action-licence.outputs.changes_detected == 'true'
