@@ -123,7 +123,7 @@ jobs:
           clean: true
           dry-run: false
 
-  publish:
+  publish-snapshot:
     name: 🚀 Publish Snapshot
     needs: [build]
     if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
