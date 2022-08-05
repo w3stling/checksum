@@ -21,7 +21,7 @@ categories:
     label: 'chore'
   - title: '♻️ Refactoring'
     label: 'refactor'
-  - title: '🚦 Tests'
+  - title: '🧪 Tests'
     label: 'test'
   - title: '🎨️ Style'
     labels:

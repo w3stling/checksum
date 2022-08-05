@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: 📅 Schedule Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository ⚙️️

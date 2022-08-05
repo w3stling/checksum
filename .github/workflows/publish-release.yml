@@ -6,6 +6,7 @@ on:
 
 jobs:
   publish-release:
+    name: 🚀 Publish Release
     permissions:
       contents: write
     timeout-minutes: 30
