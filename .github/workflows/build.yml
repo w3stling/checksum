@@ -4,7 +4,7 @@ name: Build
 
 on:
   schedule:
-    - cron: '00 16 * * FRI'
+    - cron: '40 5 * * SAT'
   push:
     branches: [ master ]
     tags-ignore:
