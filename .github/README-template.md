@@ -14,6 +14,11 @@ Checksum
 
 Java library for calculating a checksum for a given resource. It can be either the content of a file or the content from a URL. 
 
+> **Note**
+> From version 2.0.0:
+> * New package name
+> * Moved repository from JCenter to Maven Central Repository
+
 Examples
 --------
 Calculates MD5 checksum for content of a file 
