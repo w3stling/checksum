@@ -4,7 +4,7 @@ name: CI Build
 
 on:
   schedule:
-    - cron: '40 13 * * FRI'
+    - cron: '00 16 * * FRI'
   push:
     branches: [ master ]
     tags-ignore:
@@ -49,16 +49,6 @@ jobs:
 
       - name: Grant execute permission for gradlew ⚙️
         run: chmod +x gradlew
-
-      - name: Calculate next version 🔢
-        id: version
-        uses: patrickjahns/version-drafter-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Next version 🔢
-        run: |
-          echo "Next version: ${{ steps.version.outputs.next-version }}"
 
       - name: Build and test 🏗️
         run: ./gradlew clean build jacocoTestReport javadoc
