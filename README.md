@@ -12,12 +12,13 @@ Checksum
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
 
-Java library for calculating a checksum for a given resource. It can be either the content of a file or the content from a URL. 
-
 > **Note**
+>
 > From version 2.0.0:
-> * New package name
-> * Moved repository from JCenter to Maven Central Repository 
+> * New Java package name
+> * Moved repository from `JCenter` to `Maven Central Repository`
+
+Java library for calculating a checksum for a given resource. It can be either the content of a file or the content from a URL.
 
 Examples
 --------
