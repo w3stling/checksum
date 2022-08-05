@@ -71,26 +71,6 @@ jobs:
         if: steps.auto-commit-action-readme.outputs.changes_detected == 'true'
         run: echo "Updated README.md with release version ${{ env.new_version }} ✅"
 
-      - name: Update LICENSE 📝
-        uses: bluwy/substitute-string-action@v1
-        with:
-          _input-file: './.github/LICENSE-template'
-          _output-file: ./LICENSE
-          _format-key: '%%key%%'
-          year: ${{ env.year }}
-
-      - name: Commit LICENSE
-        uses: stefanzweifel/git-auto-commit-action@v4
-        id: auto-commit-action-licence
-        with:
-          commit_message: Bump year to ${{ env.year }} in LICENSE file
-          file_pattern: LICENSE
-          branch: master
-
-      - name: "LICENSE - changes have been detected 🔍"
-        if: steps.auto-commit-action-licence.outputs.changes_detected == 'true'
-        run: echo "Updated year to ${{ env.year }} in LICENSE file ✅"
-
       - name: Generate javadoc 📝
         run: ./gradlew javadoc
 
