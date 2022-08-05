@@ -71,7 +71,7 @@ jobs:
         run: echo "Updated README.md with release version ${{ env.new_version }} ✅"
 
       - name: Build release 🏗️
-        run: ./gradlew clean build -x test
+        run: ./gradlew clean build javadoc -x test
 
 
   documentation:
@@ -137,10 +137,10 @@ jobs:
         if: steps.auto-commit-action-readme.outputs.changes_detected == 'true'
         run: echo "Updated README.md with release version ${{ env.new_version }} ✅"
 
-      - name: Generate javadoc 📝
+      - name: Generate Javadoc 📝
         run: ./gradlew javadoc
 
-      - name: Deploy javadoc 📚
+      - name: Deploy Javadoc 📚
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
           branch: gh-pages
@@ -149,19 +149,6 @@ jobs:
           commit-message: Publishing javadoc
           clean: true
           dry-run: false
-
-      - name: Build and test 🏗️
-        run: ./gradlew clean build -x test
-
-      - name: Publish release build 🚀
-        env:
-          ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PASSWORD }}
-          ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USERNAME }}
-          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_SECRET }}
-          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
-        run: |
-          ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository -Pversion=${{ env.new_version }}
-
 
   publish-release:
     needs: [build]

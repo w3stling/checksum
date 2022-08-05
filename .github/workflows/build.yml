@@ -59,7 +59,7 @@ jobs:
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
       - name: Build and test 🏗️
-        run: ./gradlew clean build jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.projectVersion=${{ steps.version.outputs.next-version }}-SNAPSHOT
+        run: ./gradlew clean build javadoc jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.projectVersion=${{ steps.version.outputs.next-version }}-SNAPSHOT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
@@ -110,7 +110,7 @@ jobs:
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
-      - name: Generate javadoc 📝
+      - name: Generate Javadoc 📝
         run: ./gradlew javadoc
 
       - name: Deploy Javadoc 📚
