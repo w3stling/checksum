@@ -1,6 +1,6 @@
 # This workflow will build a Java project with Gradle
 
-name: CI Build
+name: Build
 
 on:
   schedule:

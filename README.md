@@ -1,7 +1,7 @@
 Checksum
 ==========
 
-[![build](https://github.com/w3stling/checksum/actions/workflows/ci-build.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/ci-build.yml)
+[![build](https://github.com/w3stling/checksum/actions/workflows/build.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/build.yml)
 [![Download](https://img.shields.io/badge/download-2.0.15-brightgreen.svg)](https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.0.15/jar)
 [![Javadoc](https://img.shields.io/badge/javadoc-2.0.15-blue.svg)](https://w3stling.github.io/checksum/javadoc/2.0.15)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)   
