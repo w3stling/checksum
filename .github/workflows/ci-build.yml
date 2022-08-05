@@ -1,8 +1,10 @@
 # This workflow will build a Java project with Gradle
 
-name: Build
+name: CI Build
 
 on:
+  schedule:
+    - cron: '40 13 * * FRI'
   push:
     branches: [ master ]
     tags-ignore:
@@ -59,7 +61,7 @@ jobs:
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
       - name: Build and test 🏗️
-        run: ./gradlew clean build javadoc
+        run: ./gradlew clean build jacocoTestReport javadoc
 
 
   code-analysis:
@@ -118,7 +120,7 @@ jobs:
   documentation:
     name: 📚 Publish Javadoc
     needs: [build]
-    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' && github.event_name == 'schedule' }}
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' && github.event_name != 'schedule' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -176,7 +178,7 @@ jobs:
   publish-snapshot:
     name: 🚀 Publish Snapshot
     needs: [build]
-    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' && github.event_name == 'schedule' }}
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' && github.event_name != 'schedule' }}
     runs-on: ubuntu-latest
 
     steps:
