@@ -2,8 +2,8 @@ Checksum
 ==========
 
 [![build](https://github.com/w3stling/checksum/actions/workflows/build.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/build.yml)
-[![Download](https://img.shields.io/badge/download-2.0.13-brightgreen.svg)](https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.0.13/jar)
-[![Javadoc](https://img.shields.io/badge/javadoc-2.0.13-blue.svg)](https://w3stling.github.io/checksum/javadoc/2.0.13)
+[![Download](https://img.shields.io/badge/download-2.0.14-brightgreen.svg)](https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.0.14/jar)
+[![Javadoc](https://img.shields.io/badge/javadoc-2.0.14-blue.svg)](https://w3stling.github.io/checksum/javadoc/2.0.14)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)   
 [![CodeQL](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
@@ -42,7 +42,7 @@ Add dependency declaration:
         <dependency>
             <groupId>com.apptasticsoftware</groupId>
             <artifactId>checksum</artifactId>
-            <version>2.0.13</version>
+            <version>2.0.14</version>
         </dependency>
     </dependencies>
     ...
@@ -52,7 +52,7 @@ Add dependency declaration:
 Add dependency declaration:
 ```groovy
 dependencies {
-    implementation 'com.apptasticsoftware:checksum:2.0.13'
+    implementation 'com.apptasticsoftware:checksum:2.0.14'
 }
 ```
 
@@ -84,6 +84,6 @@ License
     SOFTWARE.
 
 
-[1]: https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.0.13/jar
+[1]: https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.0.14/jar
 [2]: https://maven.apache.org
 [3]: https://gradle.org
