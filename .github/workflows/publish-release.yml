@@ -62,7 +62,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         id: auto-commit-action-readme
         with:
-          commit_message: Bump version to ${{ env.new_version }} in README.md
+          commit_message: Update version to ${{ env.new_version }}
           file_pattern: README.md
           branch: master
 
