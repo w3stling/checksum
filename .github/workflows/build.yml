@@ -66,6 +66,7 @@ jobs:
           SONAR_ORGANIZATION: w3stling-github
           SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
 
+
   documentation:
     name: 📚 Publish Javadoc
     needs: [build]
@@ -122,6 +123,7 @@ jobs:
           commit-message: Publishing javadoc
           clean: true
           dry-run: false
+
 
   publish-snapshot:
     name: 🚀 Publish Snapshot

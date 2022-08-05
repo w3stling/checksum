@@ -116,27 +116,6 @@ jobs:
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
           echo "year=$(date +%Y)" >> $GITHUB_ENV
 
-      - name: Update README.md 📝
-        uses: bluwy/substitute-string-action@v1
-        with:
-          _input-file: './.github/README-template.md'
-          _output-file: ./README.md
-          _format-key: '%%key%%'
-          version: ${{ env.new_version }}
-          year: ${{ env.year }}
-
-      - name: Commit README.md
-        uses: stefanzweifel/git-auto-commit-action@v4
-        id: auto-commit-action-readme
-        with:
-          commit_message: Bump version to ${{ env.new_version }} in README.md
-          file_pattern: README.md
-          branch: master
-
-      - name: "README.md - changes have been detected 🔍"
-        if: steps.auto-commit-action-readme.outputs.changes_detected == 'true'
-        run: echo "Updated README.md with release version ${{ env.new_version }} ✅"
-
       - name: Generate Javadoc 📝
         run: ./gradlew javadoc
 
@@ -149,6 +128,7 @@ jobs:
           commit-message: Publishing javadoc
           clean: true
           dry-run: false
+
 
   publish-release:
     needs: [build]
