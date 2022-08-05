@@ -66,8 +66,8 @@ jobs:
           SONAR_ORGANIZATION: w3stling-github
           SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
 
-  publish:
-    name: 🚀 Publish Snapshot
+  documentation:
+    name: 📚 Publish Javadoc
     needs: [build]
     if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
@@ -113,7 +113,7 @@ jobs:
       - name: Generate javadoc 📝
         run: ./gradlew javadoc
 
-      - name: Deploy javadoc 📚
+      - name: Deploy Javadoc 📚
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
           branch: gh-pages
@@ -122,6 +122,50 @@ jobs:
           commit-message: Publishing javadoc
           clean: true
           dry-run: false
+
+  publish:
+    name: 🚀 Publish Snapshot
+    needs: [build]
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository ⚙️
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 11 ⚙️
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Setup Gradle dependencies cache ⚙️
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('**/*.gradle', '**/*.gradle.kts') }}
+
+      - name: Setup Gradle wrapper cache ⚙️
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: Validate Gradle wrapper ⚙️
+        uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+
+      - name: Grant execute permission for gradlew ⚙️
+        run: chmod +x gradlew
+
+      - name: Get version number 🔢
+        id: version
+        uses: patrickjahns/version-drafter-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Next version 🔢
+        run: |
+          echo "Next version: ${{ steps.version.outputs.next-version }}"
 
       - name: Publish snapshot build 🚀
         env:
