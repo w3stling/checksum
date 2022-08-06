@@ -69,6 +69,12 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
+      - name: Cache SonarCloud packages ⚙️
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+
       - name: Setup Gradle dependencies cache ⚙️
         uses: actions/cache@v3
         with:
@@ -98,12 +104,10 @@ jobs:
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
       - name: Analyze code 🔎️
-        run: ./gradlew jacocoTestReport sonarqube -info -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.projectVersion=${{ steps.version.outputs.next-version }}-SNAPSHOT
+        run: ./gradlew test jacocoTestReport sonarqube --info -Dsonar.projectVersion=${{ steps.version.outputs.next-version }}-SNAPSHOT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_HOST_URL: https://sonarcloud.io
-          SONAR_ORGANIZATION: w3stling-github
-          SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
   documentation:
