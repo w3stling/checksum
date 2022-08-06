@@ -6,11 +6,11 @@ Checksum
 [![Javadoc](https://img.shields.io/badge/javadoc-2.0.16-blue.svg)](https://w3stling.github.io/checksum/javadoc/2.0.16)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)   
 [![CodeQL](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=coverage)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=bugs)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=com.apptasticsoftware%3Achecksum&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=com.apptasticsoftware%3Achecksum)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=w3stling_checksum&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3stling_checksum)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=w3stling_checksum&metric=coverage)](https://sonarcloud.io/summary/new_code?id=w3stling_checksum)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=w3stling_checksum&metric=bugs)](https://sonarcloud.io/summary/new_code?id=w3stling_checksum)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=w3stling_checksum&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=w3stling_checksum)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=w3stling_checksum&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=w3stling_checksum)
 
 > **Note** - from version 2.0.0:
 > * New Java package name
