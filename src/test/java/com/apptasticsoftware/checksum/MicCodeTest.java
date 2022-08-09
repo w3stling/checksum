@@ -1,6 +1,5 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -10,10 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MicCodeTest {
 
-    @Disabled("Investigating")
     @Test
     void testMicCode() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.iso20022.org/sites/default/files/ISO10383_MIC/iso10383_mic_newformat.csv"), MessageDigest.getInstance("MD5"));
-        assertEquals("f3296aa5cc3d638391a29c8769461587", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.iso20022.org/sites/default/files/ISO10383_MIC/ISO10383_MIC.csv"), MessageDigest.getInstance("MD5"));
+        assertEquals("80126e2ce3b868c70d19e425a2f08df9", checksum);
     }
 }
