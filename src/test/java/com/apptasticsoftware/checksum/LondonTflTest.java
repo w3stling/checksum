@@ -42,7 +42,7 @@ class LondonTflTest {
     @Test
     void elizabethLineMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/elizabeth-line-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("d25c6fd63f7f30ce230aa6037fe8c95d", checksum);
+        assertEquals("d223a270eef1a4e06d8337d58a75513b", checksum);
     }
 
     @Test
