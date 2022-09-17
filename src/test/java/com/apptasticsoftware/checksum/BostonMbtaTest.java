@@ -12,13 +12,13 @@ class BostonMbtaTest {
     @Test
     void subwayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/subway-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("17cdb2913f67167a52f77f13d7a9a9da", checksum);
+        assertEquals("ce082ff17e3c161092280f98b7b3081e", checksum);
     }
 
     @Test
     void commuterRailMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/cr-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("4fe399c5086223cf1e954a7e6fc3ffaa", checksum);
+        assertEquals("2b81715cf8c2ec4ba34063d5d0e26a1a", checksum);
     }
 
     @Test
@@ -30,13 +30,13 @@ class BostonMbtaTest {
     @Test
     void ferryMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/ferry-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("67112361d2abb8c215869922e2e7a264", checksum);
+        assertEquals("f4842147df1a339220a0b58eddbf992b", checksum);
     }
 
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/bus-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("c757546d97d94d06cb19ee74f81b9628", checksum);
+        assertEquals("b1c069217338aeadc74b8642dff7789d", checksum);
     }
 
 }
