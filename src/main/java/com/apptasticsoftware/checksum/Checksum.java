@@ -35,6 +35,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
+import java.time.Duration;
 import java.util.Optional;
 import java.util.zip.GZIPInputStream;
 
@@ -77,11 +78,13 @@ public final class Checksum {
 
         HttpClient client = HttpClient.newBuilder()
                 .sslContext(context)
+                .connectTimeout(Duration.ofSeconds(20))
                 .followRedirects(HttpClient.Redirect.ALWAYS)
                 .build();
 
         HttpRequest request = HttpRequest.newBuilder(url)
                 .header("Accept-Encoding", "gzip")
+                .timeout(Duration.ofSeconds(20))
                 .GET()
                 .build();
 
