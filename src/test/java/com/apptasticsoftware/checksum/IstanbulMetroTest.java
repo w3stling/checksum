@@ -12,24 +12,24 @@ class IstanbulMetroTest {
     @Test
     void railSystemsMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Rayl%C4%B1%20Sistemler%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9570bea19b222194a303c99a83225983", checksum);
+        assertEquals("8b9eb2274b865a50f09364308cfd41c4", checksum);
     }
 
     @Test
     void tramMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Tramvay%20Hatlar%C4%B1%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("394a9e320095c58454f724cf277daa53", checksum);
+        assertEquals("29df5528c2df588fda97abfad897972b", checksum);
     }
 
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Metro%20Hatlar%C4%B1%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("eaa66b85495189f8555ac8f5623d3d8e", checksum);
+        assertEquals("671c1ebd7e7663244003cec71c6c1e3f", checksum);
     }
 
     @Test
     void metroNightMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/Gece%20Metrosu%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("2ef2f4cf0ced8e8e906358e48a743a1a", checksum);
+        assertEquals("7becb2efc093c58edb32254ecd3ba305", checksum);
     }
 }
