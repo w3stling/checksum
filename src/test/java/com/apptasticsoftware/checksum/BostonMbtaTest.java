@@ -12,19 +12,19 @@ class BostonMbtaTest {
     @Test
     void subwayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/subway-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("ce082ff17e3c161092280f98b7b3081e", checksum);
+        assertEquals("570c6c1d6bb845b37822ce38c212851d", checksum);
     }
 
     @Test
     void commuterRailMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/cr-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("2b81715cf8c2ec4ba34063d5d0e26a1a", checksum);
+        assertEquals("9667eb6454715b83aa2d089306d1eb86", checksum);
     }
 
     @Test
     void commuterRailZonesMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/cr-map-zones"), MessageDigest.getInstance("MD5"));
-        assertEquals("d20a0107726f4ba43b1cb3af9a380dae", checksum);
+        assertEquals("f15f89f2fe5598d09802ea9e6ec651ac", checksum);
     }
 
     @Test
