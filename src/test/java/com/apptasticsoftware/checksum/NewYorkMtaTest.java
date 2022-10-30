@@ -50,7 +50,7 @@ class NewYorkMtaTest {
     @Test
     void busQueensMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5371"), MessageDigest.getInstance("MD5"));
-        assertEquals("ea5b006bb23023195573d539e83175fc", checksum);
+        assertEquals("4401f7089c6db2dc47bfda8b62c32d08", checksum);
     }
 
     @Test
