@@ -18,13 +18,13 @@ class IstanbulMetroTest {
     @Test
     void tramMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Tramvay%20Hatlar%C4%B1%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("29df5528c2df588fda97abfad897972b", checksum);
+        assertEquals("3292e9200db4d40e2373e48707ae70e0", checksum);
     }
 
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metro.istanbul/Content/assets/uploaded/%C4%B0stanbul%20Metro%20Hatlar%C4%B1%20Haritas%C4%B1.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("671c1ebd7e7663244003cec71c6c1e3f", checksum);
+        assertEquals("0f8827d120bff51ba047fd8409eed396", checksum);
     }
 
     @Test
