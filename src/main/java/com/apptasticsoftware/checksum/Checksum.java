@@ -69,8 +69,6 @@ public final class Checksum {
      * @param digest checksum type
      * @return checksum
      * @throws IOException - IOException
-     * @throws InterruptedException InterruptedException
-     * @throws GeneralSecurityException GeneralSecurityException
      */
     public static String calculate(URI url, MessageDigest digest) throws IOException, InterruptedException, GeneralSecurityException {
         SSLContext context = SSLContext.getInstance("TLSv1.3");
@@ -104,7 +102,15 @@ public final class Checksum {
         return calculate(inputStream, digest);
     }
 
-    private static String calculate(InputStream is, MessageDigest digest) throws IOException {
+    /**
+     * Calculate checksum for a input stream
+     *
+     * @param is input stream
+     * @param digest checksum type
+     * @return checksum
+     * @throws IOException - IOException
+     */
+    public static String calculate(InputStream is, MessageDigest digest) throws IOException {
         byte[] buffer = new byte[8 * 1024];
         int bytesCount;
 
