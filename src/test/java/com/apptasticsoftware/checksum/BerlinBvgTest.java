@@ -12,13 +12,13 @@ class BerlinBvgTest {
     @Test
     void undergroundBerlinABC() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:60a89e3b-f88d-4d48-b8a6-98ab340ada05/S+U-Bahn_07_2021-Internetversion-BVG.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("a501f147cb6de48173443d817272f292", checksum);
+        assertEquals("d716827af418aa840f4d3662286fbeba", checksum);
     }
 
     @Test
     void undergroundBerlinCityCenter() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:3f8025f2-285b-4fa0-8cef-72def24c6c21/Liniennetzplan_SUBahnnetz_mit_Regionalbahn_Tarifbereich_AB_Innenstadtausschnitt.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("0d612f76131e15ebec3a39782dc38605", checksum);
+        assertEquals("a9bf1112d5a6d506f7fc428e83837cce", checksum);
     }
 
     @Test
