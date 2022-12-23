@@ -23,14 +23,14 @@ class OsloRuterTest {
 
     @Test
     void busMapInOslo() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-08082022.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("bf7b7164e2e1ba54b7f74c0c41b39042", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-11122022.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("aa1ad027c91c81ac9641fb3c81ac491f", checksum);
     }
 
     @Test
     void nightBusMapInOslo() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/nattbuss-oslo-linjekart-08082022.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("132459c3776d701f46fdb4b5c31a5f5d", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/nattbuss-oslo-linjekart-11122022.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("33d7831962e9b675ccbde5975f40edac", checksum);
     }
 
     @Test
