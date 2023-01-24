@@ -18,7 +18,7 @@ class BerlinBvgTest {
     @Test
     void undergroundBerlinCityCenter() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:3f8025f2-285b-4fa0-8cef-72def24c6c21/Liniennetzplan_SUBahnnetz_mit_Regionalbahn_Tarifbereich_AB_Innenstadtausschnitt.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("a9bf1112d5a6d506f7fc428e83837cce", checksum);
+        assertEquals("fd4ec8428dd6ad06871bd33e12bb601b", checksum);
     }
 
     @Test
