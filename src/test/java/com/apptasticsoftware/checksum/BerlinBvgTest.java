@@ -30,7 +30,7 @@ class BerlinBvgTest {
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.bvg.de/dam/jcr:ee4647c3-ce1e-4b0a-9546-b1848b85ee7e/BVG_BusNetzABC_202104%20(1)%20(1).pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9d9da381b74caf599e3946449154abbc", checksum);
+        assertEquals("193a2b79e8a7bbe6d36600dd7c031c75", checksum);
     }
 
     @Test
