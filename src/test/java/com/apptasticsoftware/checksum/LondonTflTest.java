@@ -18,7 +18,7 @@ class LondonTflTest {
     @Test
     void metroNightMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/standard-night-tube-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("0edfc4948d93bbe05a288d741f455638", checksum);
+        assertEquals("e53a8156c482ea767cf2d5d94d1d0f8e", checksum);
     }
 
     @Test
