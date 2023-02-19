@@ -13,13 +13,13 @@ class NewYorkMtaTest {
     @Test
     void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("dd401a6ca35ee0f7fb65caee9b481016", checksum);
+        assertEquals("68935b04db83c07c97200eab2dcbbdfc", checksum);
     }
 
     @Test
     void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("f941903627fad15075acafaf1dbe472a", checksum);
+        assertEquals("7cc91d058f7cb3099ca9a0c6802c9307", checksum);
     }
 
     @Disabled("Investigating")
@@ -66,6 +66,12 @@ class NewYorkMtaTest {
     }
 
     @Test
+    void mtaRailroadsMap() throws Exception{
+        String checksum = Checksum.calculate(new URI("https://new.mta.info/map/22461"), MessageDigest.getInstance("MD5"));
+        assertEquals("fc6683322d2007f9fec1c83aa64f549a", checksum);
+    }
+
+    @Test
     void railLongIslandMap() throws Exception{
         String checksum = Checksum.calculate(new URI("http://web.mta.info/lirr/Timetable/SystemMap.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("fadf0f65757e0e69393b6afeb3b4291d", checksum);
@@ -73,6 +79,12 @@ class NewYorkMtaTest {
 
     @Test
     void railMetroNorthMap() throws Exception{
+        String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5351"), MessageDigest.getInstance("MD5"));
+        assertEquals("aa7b62eb0b9b1bd8a1bce0e2878a106f", checksum);
+    }
+
+    @Test
+    void railMetroNorthMapOld() throws Exception{
         String checksum = Checksum.calculate(new URI("http://web.mta.info/mnr/gifs/mnrmap.png"), MessageDigest.getInstance("MD5"));
         assertEquals("76a74c95e7e88e24fd1dc1b5ad4664cc", checksum);
     }
@@ -81,6 +93,25 @@ class NewYorkMtaTest {
     void railStatenIslandMap() throws Exception{
         String checksum = Checksum.calculate(new URI("http://web.mta.info/nyct/service/pdf/sircur.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("18f3cd80f60d48c44c0d2a4654083cbe", checksum);
+    }
+
+
+    @Test
+    void railNyPathMapWeekdays() throws Exception{
+        String checksum = Checksum.calculate(new URI("https://www.panynj.gov/content/dam/path/schedules/master-maps/PATH%20Service%20Map%20_01.jpg.transform/transform-1920/image.jpg"), MessageDigest.getInstance("MD5"));
+        assertEquals("c37b0aab359d661b76895c4ca453fcf4", checksum);
+    }
+
+    @Test
+    void railNyPathMapWeekends() throws Exception{
+        String checksum = Checksum.calculate(new URI("https://www.panynj.gov/content/dam/path/schedules/master-maps/PATH%20Service%20Map%20_02.jpg.transform/transform-1920/image.jpg"), MessageDigest.getInstance("MD5"));
+        assertEquals("a3928acbcdf526c553a93e675fb866c6", checksum);
+    }
+
+    @Test
+    void railCtRail() throws Exception{
+        String checksum = Checksum.calculate(new URI("https://www.hartfordline.com/pdf/hartford_line_statewide_map.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("9b0440cf73d603858e80dfb7a37adb56", checksum);
     }
 
 }
