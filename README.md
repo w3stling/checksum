@@ -2,8 +2,8 @@ Checksum
 ==========
 
 [![Build](https://github.com/w3stling/checksum/actions/workflows/build.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/build.yml)
-[![Download](https://img.shields.io/badge/download-2.1.0-brightgreen.svg)](https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.1.0/jar)
-[![Javadoc](https://img.shields.io/badge/javadoc-2.1.0-blue.svg)](https://w3stling.github.io/checksum/javadoc/2.1.0)
+[![Download](https://img.shields.io/badge/download-2.1.1-brightgreen.svg)](https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.1.1/jar)
+[![Javadoc](https://img.shields.io/badge/javadoc-2.1.1-blue.svg)](https://w3stling.github.io/checksum/javadoc/2.1.1)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)   
 [![CodeQL](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=w3stling_checksum&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3stling_checksum)
@@ -47,7 +47,7 @@ Add dependency declaration:
         <dependency>
             <groupId>com.apptasticsoftware</groupId>
             <artifactId>checksum</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
         </dependency>
     </dependencies>
     ...
@@ -57,7 +57,7 @@ Add dependency declaration:
 Add dependency declaration:
 ```groovy
 dependencies {
-    implementation 'com.apptasticsoftware:checksum:2.1.0'
+    implementation 'com.apptasticsoftware:checksum:2.1.1'
 }
 ```
 
@@ -68,7 +68,7 @@ License
 
     MIT License
     
-    Copyright (c) 2022, Apptastic Software
+    Copyright (c) 2023, Apptastic Software
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -89,6 +89,6 @@ License
     SOFTWARE.
 
 
-[1]: https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.1.0/jar
+[1]: https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.1.1/jar
 [2]: https://maven.apache.org
 [3]: https://gradle.org
