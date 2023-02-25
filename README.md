@@ -2,7 +2,7 @@ Checksum
 ==========
 
 [![Build](https://github.com/w3stling/checksum/actions/workflows/build.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/build.yml)
-[![Download](https://img.shields.io/badge/download-2.1.2-brightgreen.svg)](https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.1.2/jar)
+[![Download](https://img.shields.io/badge/download-2.1.2-brightgreen.svg)](https://central.sonatype.com/artifact/com.apptasticsoftware/checksum/2.1.2/overview)
 [![Javadoc](https://img.shields.io/badge/javadoc-2.1.2-blue.svg)](https://w3stling.github.io/checksum/javadoc/2.1.2)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)   
 [![CodeQL](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/w3stling/checksum/actions/workflows/codeql-analysis.yml)
@@ -89,6 +89,6 @@ License
     SOFTWARE.
 
 
-[1]: https://search.maven.org/artifact/com.apptasticsoftware/checksum/2.1.2/jar
+[1]: https://central.sonatype.com/artifact/com.apptasticsoftware/checksum/2.1.2/overview
 [2]: https://maven.apache.org
 [3]: https://gradle.org
