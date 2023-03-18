@@ -36,7 +36,7 @@ class BostonMbtaTest {
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/bus-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("29b509280eda71c707a0c682d480d560", checksum);
+        assertEquals("2ec07a72632a6258f4cdd44472dd6b89", checksum);
     }
 
 }
