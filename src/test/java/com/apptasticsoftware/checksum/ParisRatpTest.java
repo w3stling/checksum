@@ -24,7 +24,7 @@ class ParisRatpTest {
     @Test
     void busMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-des-Bus.1674568790.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("5f9861535cae93fe66b16a2b75c9147e", checksum);
+        assertEquals("d4b6b575b9032a7cae50d036883ea164", checksum);
     }
 
     @Test
