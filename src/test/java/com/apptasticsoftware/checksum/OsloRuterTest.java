@@ -23,14 +23,14 @@ class OsloRuterTest {
 
     @Test
     void busMapInOslo() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-11122022.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("aa1ad027c91c81ac9641fb3c81ac491f", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/buss-oslo-linjekart-16042023.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("5b7ead3e229ae3698cc36cad496ca399", checksum);
     }
 
     @Test
     void nightBusMapInOslo() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/nattbuss-oslo-linjekart-11122022.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("33d7831962e9b675ccbde5975f40edac", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/buss-oslo/linjekart/nattbuss-oslo-linjekart-16042023.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("889095076b164c27170e3856e5e084b1", checksum);
     }
 
     @Test
@@ -41,8 +41,8 @@ class OsloRuterTest {
 
     @Test
     void ferryMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/bat/baat-linjekart-01112021.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("dce9fb49c6a1113bc015ffe451234618", checksum);
+        String checksum = Checksum.calculate(new URI("https://ruter.no/globalassets/rutetabeller/bat/baat-linjekart-2023.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("0f23d864e1937e172a206df7d5e6d2a0", checksum);
     }
 
     @Test
