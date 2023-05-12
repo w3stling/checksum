@@ -1,6 +1,5 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -26,19 +25,24 @@ class HkMtrTest {
     void westboundTramwayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://hktramways.com/images/googleMap/routeMapWB.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("da6a7e630e40e0d378d120da2d32b77d", checksum);
+
+        checksum = Checksum.calculate(new URI("http://hktramways.com/images/googleMap/HK-tram-route-map-WB.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("1d960b16b7c83a9c0af85a3efb777768", checksum);
     }
 
     @Test
     void eastboundTramwayMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://hktramways.com/images/googleMap/routeMapEB.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("411897bff81ff59cbc8c9ceb31d8046c", checksum);
+
+        checksum = Checksum.calculate(new URI("http://hktramways.com/images/googleMap/HK-tram-route-map-EB.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("8db70ab801e9254e6f53ae3a769d69ad", checksum);
     }
 
-    @Disabled("Investigating")
     @Test
     void starferryRouteMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.starferry.com.hk/sites/default/files/routemap.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("98e9d4e062cc5d25e9b29d4c3bf3ed23", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.starferry.com.hk/sites/default/files/map.jpg"), MessageDigest.getInstance("MD5"));
+        assertEquals("a5d6b27ef397fd904dafbbd7defd9f65", checksum);
     }
 
 }

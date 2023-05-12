@@ -75,4 +75,17 @@ class LaMetroRailTest {
         assertEquals("36af39b22a51a694f6ba11c5439a2bc6", checksum);
     }
 
+
+    @Test
+    void metroLinkAllConnectionsMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/metrolink-map---all-connections.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("bf05e4d61637b757862d866b5dda85ca", checksum);
+    }
+
+    @Test
+    void metroSystemMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/cc_metrolink_system-map---updated-04.24.23-.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("833f69a992bd6e38cb7acf63809decb7", checksum);
+    }
+
 }

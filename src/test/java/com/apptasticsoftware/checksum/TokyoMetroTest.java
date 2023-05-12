@@ -11,23 +11,19 @@ class TokyoMetroTest {
 
     @Test
     void metroMapEn() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/lang_en/station/202006_number_en.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("990a50d42c49f7a70138b6a7a6c60ab5", checksum);
-
-        // Don't use this map
-        checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/services/pdf/sub_map_eng.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("06dce852802405a8163cfc706d0f810e", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/lang_en/station/202303_number_en.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("a9f627becc66701c780ace6aa95902b8", checksum);
     }
 
     @Test
     void metroMapJp() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/station/202006_number_ja.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("e5ca04505d626c591a189c3c717e7cbd", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/station/202303_number_ja.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("5a9461a67533df202b8ad5db6037dbc4", checksum);
     }
 
     @Test
     void todenArakawaMapEn() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/maps/images/street_map_01.gif"), MessageDigest.getInstance("MD5"));
+            String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/maps/images/street_map_01.gif"), MessageDigest.getInstance("MD5"));
         assertEquals("8091e37a1838a07dfde584ea3b8b3cbc", checksum);
     }
 
