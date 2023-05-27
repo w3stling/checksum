@@ -12,7 +12,7 @@ class LondonTflTest {
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/standard-tube-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("89c6cb1985f59d34a84e1e510ad3011c", checksum);
+        assertEquals("89441b81d6ae6d233e2fc3a7a60364dd", checksum);
     }
 
     @Test
@@ -48,7 +48,7 @@ class LondonTflTest {
     @Test
     void nationalRailMap() throws Exception {
         String checksum = Checksum.calculate(new URI("http://content.tfl.gov.uk/london-rail-and-tube-services-map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f76fd858dd3ff2a0e963ed807b245cf1", checksum);
+        assertEquals("cebe129e8db2acd7d9c76df553504418", checksum);
     }
 
     @Test
