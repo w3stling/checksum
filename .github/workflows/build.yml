@@ -158,6 +158,7 @@ jobs:
           echo "tag_name: ${{ steps.version2.outputs.tag_name }}"
           echo "body: ${{ steps.version2.outputs.body }}"
           echo "html_url: ${{ steps.version2.outputs.html_url }}"
+          echo "${GITHUB_REF}"
 
       - name: Get version number 🔢
         id: version
