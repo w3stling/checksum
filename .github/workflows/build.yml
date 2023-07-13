@@ -64,6 +64,10 @@ jobs:
         run: |
           echo "next-version=${{ steps.get-version.outputs.tag_name }}" | cut -c -13,15- >> $GITHUB_OUTPUT
 
+      - name: Print next version 🔢
+        run: |
+          echo "Next version: ${{ steps.get-version.outputs.tag_name }}"
+          echo "Next version2: ${{ steps.version.outputs.next-version }}"
 
   code-analysis:
     name: 🔎 Code Analysis
@@ -163,9 +167,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Next version 🔢
+        env:
+          OUTPUT1: ${{needs.build.outputs.next-version }}
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
-          echo "Next version3: ${{ needs.build.outputs.next-version }}"
+          echo "Next version2: ${{ needs.build.outputs.next-version }}"
+          echo "Next version3: $OUTPUT1"
 
       - name: Generate Javadoc 📝
         run: ./gradlew javadoc
