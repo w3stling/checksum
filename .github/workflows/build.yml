@@ -53,6 +53,17 @@ jobs:
       - name: Build and test 🏗️
         run: ./gradlew clean build jacocoTestReport javadoc
 
+      - name: Get version number 🔢
+        id: get-version
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Next version 🔢
+        id: version
+        run: |
+          echo "next-version=${{ steps.get-version.outputs.tag_name }}" | cut -c -13,15- >> $GITHUB_OUTPUT
+
 
   code-analysis:
     name: 🔎 Code Analysis
@@ -145,22 +156,6 @@ jobs:
       - name: Grant execute permission for gradlew ⚙️
         run: chmod +x gradlew
 
-      - name: Get version number2 🔢
-        id: version2
-        uses: release-drafter/release-drafter@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Next version2 🔢
-        id: version3
-        run: |
-          echo "id: ${{ steps.version2.outputs.id }}"
-          echo "name: ${{ steps.version2.outputs.name }}"
-          echo "tag_name: ${{ steps.version2.outputs.tag_name }}"
-          echo "body: ${{ steps.version2.outputs.body }}"
-          echo "html_url: ${{ steps.version2.outputs.html_url }}"
-          echo "next-version=${{ steps.version2.outputs.tag_name }}" | cut -c -13,15- >> $GITHUB_OUTPUT
-
       - name: Get version number 🔢
         id: version
         uses: patrickjahns/version-drafter-action@v1
@@ -170,7 +165,7 @@ jobs:
       - name: Next version 🔢
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
-          echo "Next version3: ${{ steps.version3.outputs.next-version }}"
+          echo "Next version3: ${{ needs.build.outputs.next-version }}"
 
       - name: Generate Javadoc 📝
         run: ./gradlew javadoc
