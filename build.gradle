@@ -53,7 +53,7 @@ jacoco {
 
 jacocoTestReport {
     reports {
-        xml.enabled true
+        xml.required = true
         xml.destination file("${buildDir}/reports/jacoco/report.xml")
     }
 }
