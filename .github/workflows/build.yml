@@ -150,13 +150,16 @@ jobs:
         uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "tag_name: ${{ outputs.tag_name }}"
 
       - name: Next version2 🔢
+        id: version3
         run: |
+          next-version=$(echo ${{ steps.version2.outputs.tag_name }} | cut -c 2-)
+          echo "next-version=$next-version" >> $GITHUB_OUTPUT
+          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
           echo "id: ${{ steps.version2.outputs.id }}"
           echo "name: ${{ steps.version2.outputs.name }}"
+          echo "tag_name: ${{ steps.version2.outputs.tag_name }}"
           echo "tag_name: ${{ steps.version2.outputs.tag_name }}"
           echo "body: ${{ steps.version2.outputs.body }}"
           echo "html_url: ${{ steps.version2.outputs.html_url }}"
@@ -171,6 +174,7 @@ jobs:
       - name: Next version 🔢
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
+          echo "Next version3: ${{ steps.version3.outputs.next-version }}"
 
       - name: Generate Javadoc 📝
         run: ./gradlew javadoc
