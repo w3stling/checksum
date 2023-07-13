@@ -148,6 +148,8 @@ jobs:
       - name: Get version number2 🔢
         id: version2
         uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Next version2 🔢
         run: |
