@@ -14,6 +14,8 @@ jobs:
   build:
     name: 🏗️ Build and Test
     runs-on: ubuntu-latest
+    outputs:
+      next-version: ${{ steps.version.outputs.next-version }}
     steps:
       - name: Build trigger event 🔎
         run: |
@@ -168,7 +170,7 @@ jobs:
 
       - name: Next version 🔢
         env:
-          OUTPUT1: ${{needs.build.outputs.next-version }}
+          OUTPUT1: ${{ needs.build.outputs.next-version }}
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
           echo "Next version2: ${{ needs.build.outputs.next-version }}"
