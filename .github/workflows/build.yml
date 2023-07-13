@@ -145,6 +145,18 @@ jobs:
       - name: Grant execute permission for gradlew ⚙️
         run: chmod +x gradlew
 
+      - name: Get version number2 🔢
+        id: version2
+        uses: release-drafter/release-drafter@v5
+
+      - name: Next version2 🔢
+        run: |
+          echo "id: ${{ steps.version2.outputs.id }}"
+          echo "name: ${{ steps.version2.outputs.name }}"
+          echo "tag_name: ${{ steps.version2.outputs.tag_name }}"
+          echo "body: ${{ steps.version2.outputs.body }}"
+          echo "html_url: ${{ steps.version2.outputs.html_url }}"
+
       - name: Get version number 🔢
         id: version
         uses: patrickjahns/version-drafter-action@v1
@@ -202,6 +214,8 @@ jobs:
 
       - name: Grant execute permission for gradlew ⚙️
         run: chmod +x gradlew
+
+
 
       - name: Get version number 🔢
         id: version
