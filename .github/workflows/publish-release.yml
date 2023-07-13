@@ -55,8 +55,9 @@ jobs:
           _input-file: './.github/README-template.md'
           _output-file: ./README.md
           _format-key: '%%key%%'
-          version: ${{ env.new_version }}
-          year: ${{ env.year }}
+        env:
+          INPUT_VERSION: ${{ env.new_version }}
+          INPUT_YEAR: ${{ env.year }}
 
       - name: Commit README.md
         uses: stefanzweifel/git-auto-commit-action@v4
