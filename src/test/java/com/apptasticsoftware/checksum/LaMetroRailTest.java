@@ -51,28 +51,28 @@ class LaMetroRailTest {
 
     @Test
     void regionalSanFernandoValleyMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("http://media.metro.net/riding_metro/maps/images/san_fernando_valley.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("b7d8955fda3969d6eab56bee9764128f", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.dropbox.com/s/fufggqd4s9h4fv2/23-3109_web_MSysMap4_SanFernValley_35x17_DCR.pdf?raw=1"), MessageDigest.getInstance("MD5"));
+        assertEquals("2d52ee4474856bf8b919b55b36c0529a", checksum);
     }
 
     @Test
     void regionalSanGabrielValleyMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://media.metro.net/riding_metro/maps/images/SanGabrielValley_2017-0523.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9a8abfa675badfd7eaead577653d68ae", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.dropbox.com/s/z815hbvsy3uuvdw/23-3110_web_MSysMap1_SanGabrValley_35x17_DCR.pdf?raw=1"), MessageDigest.getInstance("MD5"));
+        assertEquals("fba0228d1fcc3c19b7fd8f2bb976677b", checksum);
     }
 
 
     @Test
     void regionalSouthBayGatewayCitiesMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("http://media.metro.net/riding_metro/maps/images/south_bay.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("958862ba3609c5f6c1438eba693ba227", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.dropbox.com/s/apviq8rzp11e3ff/23-3108_web_MSysMap3_SoBayGateway_35x17_DCR.pdf?raw=1"), MessageDigest.getInstance("MD5"));
+        assertEquals("8948ab00b3b42239fc9e58a00f3b2493", checksum);
     }
 
 
     @Test
     void regionalWestsideCentralMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://media.metro.net/riding_metro/maps/images/CentLAWestsd.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("36af39b22a51a694f6ba11c5439a2bc6", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.dropbox.com/s/t3xk9mbe09o2n3p/23-3107_web_MSysMap_CenLAWestside_35x17_DCR.pdf?raw=1"), MessageDigest.getInstance("MD5"));
+        assertEquals("f02dfc5138b51571f31fc0de72195b16", checksum);
     }
 
 
