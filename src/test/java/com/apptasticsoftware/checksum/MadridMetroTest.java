@@ -8,13 +8,13 @@ import java.security.MessageDigest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@Disabled("Investigate")
+@Disabled
 class MadridMetroTest {
 
     @Test
     void metroAndLightRailNetworkMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metromadrid.es/sites/default/files/documentos/Viaja%20en%20Metro/Planos/Planoesquematico.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("5582954319ebe5e4894baba467dea126", checksum);
+        assertEquals("0cf1353d4bfc287bafe2b115088471a0", checksum);
     }
 
     @Test
@@ -38,7 +38,7 @@ class MadridMetroTest {
     @Test
     void touristMap1() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.metromadrid.es/sites/default/files/web/planos/Planoturisticoenero22_0.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("a1cdb9ae44741f2b835296f132763280", checksum);
+        assertEquals("fcad431448d55548bb2c179a409cbfa1", checksum);
     }
 
     @Test
