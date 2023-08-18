@@ -1,6 +1,5 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -14,40 +13,16 @@ class LaMetroRailTest {
 
     @Test
     void metroAndBuswayMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/8f0fe43e-da3b-4a10-bd8e-4cfd54e30eb3.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f880b7115d6dbe4d7b53cde94dadc3d9", checksum);
-    }
-
-    @Test
-    void metroAndRegionalMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/90e3378c-e786-4cc7-8f4b-88fc15a4b3b3.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("58f6ead0e3a9a6a30c658ea573af99e4", checksum);
-    }
-
-    @Test
-    void metroAndBuswayUnderConstructionMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/b6d676a6-d8f3-4bb9-88c2-97a7497ecf49.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("3363e70aedc645cee05e17716743e26c", checksum);
-    }
-
-    @Disabled("Investigating")
-    @Test
-    void busSystemOverviewMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.metro.net/riding_metro/maps/images/4_17-3071_BLT_BusRailOverview.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("5a2ef765217dbd983a173a8b0200d4e3", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.dropbox.com/s/3aw64852ntyx380/23-1096_map_GM_Master_Jun23_DCR_final.pdf?raw=1"), MessageDigest.getInstance("MD5"));
+        assertEquals("557b041ef34f165780c363f24f0f49b9", checksum);
     }
 
     @Test
     void busSystemDetailMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/a5e11b4f-11ac-4807-8cd2-0e7cff6aa94e.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("7c3ab368ee930ae90e8d018280140b3a", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.dropbox.com/s/rf7pwf7yclqgdqz/23-2445_blt_system_map_47x47.5_DCR-3.pdf?raw=1"), MessageDigest.getInstance("MD5"));
+        assertEquals("aa40e7472e350d86dbbd50d32a6a2c35", checksum);
     }
 
-    @Test
-    void downtownMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://media.metro.net/documents/742b6116-1c6a-47af-93f3-514cbc8a4fb8.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("1383396bcc79b695ec97df3ee7dd916b", checksum);
-    }
 
     @Test
     void regionalSanFernandoValleyMap() throws Exception {
@@ -83,7 +58,7 @@ class LaMetroRailTest {
     }
 
     @Test
-    void metroSystemMap() throws Exception {
+    void metroLinkSystemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/cc_metrolink_system-map---updated-04.24.23-.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("833f69a992bd6e38cb7acf63809decb7", checksum);
     }
