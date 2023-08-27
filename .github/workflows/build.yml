@@ -28,10 +28,10 @@ jobs:
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
 
-      - name: Set up JDK 11 ⚙️
+      - name: Set up JDK 17 ⚙️
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Setup Gradle dependencies cache ⚙️
@@ -79,11 +79,13 @@ jobs:
     steps:
       - name: Checkout repository ⚙️
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      - name: Set up JDK 11 ⚙️
+      - name: Set up JDK 17 ⚙️
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Cache SonarCloud packages ⚙️
@@ -115,7 +117,7 @@ jobs:
           echo "Next version: ${{ needs.build.outputs.next-version }}"
 
       - name: Analyze code 🔎️
-        run: ./gradlew test jacocoTestReport sonarqube --info -Dsonar.projectVersion=${{ needs.build.outputs.next-version }}-SNAPSHOT
+        run: ./gradlew test jacocoTestReport sonar --info -Dsonar.projectVersion=${{ needs.build.outputs.next-version }}-SNAPSHOT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -131,10 +133,10 @@ jobs:
       - name: Checkout repository ⚙️
         uses: actions/checkout@v3
 
-      - name: Set up JDK 11 ⚙️
+      - name: Set up JDK 17 ⚙️
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Setup Gradle dependencies cache ⚙️
@@ -183,10 +185,10 @@ jobs:
       - name: Checkout repository ⚙️
         uses: actions/checkout@v3
 
-      - name: Set up JDK 11 ⚙️
+      - name: Set up JDK 17 ⚙️
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Setup Gradle dependencies cache ⚙️
@@ -217,4 +219,4 @@ jobs:
           ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USERNAME }}
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_SECRET }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
-        run: ./gradlew publishToSonatype -Pversion=${{ needs.build.outputs.next-version }}-SNAPSHOT
+        run: ./gradlew -Pversion=${{ needs.build.outputs.next-version }}-SNAPSHOT
