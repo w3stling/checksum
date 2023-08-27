@@ -70,6 +70,7 @@ jobs:
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
+
   code-analysis:
     name: 🔎 Code Analysis
     needs: [build]
