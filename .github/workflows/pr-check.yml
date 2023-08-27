@@ -43,6 +43,9 @@ jobs:
 
       - name: Build and test 🏗
         run: ./gradlew test jacocoTestReport sonarqube --info -Dsonar.projectVersion=${{ needs.build.outputs.next-version }}-SNAPSHOT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Archive build and test reports 🗃️
         uses: actions/upload-artifact@v3
