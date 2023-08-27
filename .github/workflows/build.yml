@@ -220,4 +220,4 @@ jobs:
           ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USERNAME }}
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_SECRET }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
-        run: ./gradlew -Pversion=${{ needs.build.outputs.next-version }}-SNAPSHOT
+        run: ./gradlew publishToSonatype -Pversion=${{ needs.build.outputs.next-version }}-SNAPSHOT
