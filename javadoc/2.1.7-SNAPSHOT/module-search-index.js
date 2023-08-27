@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"com.apptasticsoftware.checksum"}]
+moduleSearchIndex = [{"l":"com.apptasticsoftware.checksum"}];updateSearchResults();

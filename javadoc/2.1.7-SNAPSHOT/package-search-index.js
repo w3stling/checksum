@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"com.apptasticsoftware.checksum","l":"com.apptasticsoftware.checksum"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.apptasticsoftware.checksum","l":"com.apptasticsoftware.checksum"}];updateSearchResults();
