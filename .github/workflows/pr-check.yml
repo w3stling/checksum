@@ -42,7 +42,7 @@ jobs:
         uses: gradle/wrapper-validation-action@v1
 
       - name: Build and test 🏗
-        run: ./gradlew clean build
+        run: ./gradlew clean build test jacocoTestReport sonarqube
 
       - name: Archive build and test reports 🗃️
         uses: actions/upload-artifact@v3
