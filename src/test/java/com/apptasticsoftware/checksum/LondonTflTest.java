@@ -54,7 +54,7 @@ class LondonTflTest {
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/key-bus-routes-in-central-london.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("01e917561e3aeec7dbbe87f51c581002", checksum);
+        assertEquals("69f95d00468c434098b0ddcee5d54434", checksum);
     }
 
     @Test

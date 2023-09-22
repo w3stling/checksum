@@ -13,13 +13,13 @@ class NewYorkMtaTest {
     @Test
     void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("2fd4e7c42e5520c2d37b30c6b45a9488", checksum);
+        assertEquals("901d5c8739322dcd89853225c0784852", checksum);
     }
 
     @Test
     void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("ba1f387ef4d8eeef5da0bc9167b9595e", checksum);
+        assertEquals("53c36308b06cd50dbdc1c00684ab8f19", checksum);
     }
 
     @Disabled("Investigating")
@@ -56,19 +56,19 @@ class NewYorkMtaTest {
     @Test
     void busStatenIslandMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5376"), MessageDigest.getInstance("MD5"));
-        assertEquals("57c2d104330eaaeea61fe94c2fe06333", checksum);
+        assertEquals("956cf436ed452c720af7ce3f0d4bb46b", checksum);
     }
 
     @Test
     void busStatenIslandExpressMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5381"), MessageDigest.getInstance("MD5"));
-        assertEquals("966a7a2c705b39d1fd6999a8a57acc0c", checksum);
+        assertEquals("b1597efb46f971e72c8f2b5f1fc69b00", checksum);
     }
 
     @Test
     void mtaRailroadsMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/22461"), MessageDigest.getInstance("MD5"));
-        assertEquals("eda96d83e94eb5667bc7a2f6a8a532a8", checksum);
+        assertEquals("642486e84797a7ff2543f69282728358", checksum);
     }
 
     @Test
