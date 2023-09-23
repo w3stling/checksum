@@ -1,5 +1,6 @@
 package com.apptasticsoftware.checksum;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -7,6 +8,7 @@ import java.security.MessageDigest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Disabled
 class LondonTflTest {
 
     @Test
@@ -53,7 +55,7 @@ class LondonTflTest {
 
     @Test
     void busMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://tfl.gov.uk/cdn/static/cms/documents/key-bus-routes-in-central-london.pdf"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://content.tfl.gov.uk/bus-route-maps/key-bus-routes-in-central-london.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("69f95d00468c434098b0ddcee5d54434", checksum);
     }
 
