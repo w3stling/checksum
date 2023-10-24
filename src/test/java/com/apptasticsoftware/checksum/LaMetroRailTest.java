@@ -60,7 +60,7 @@ class LaMetroRailTest {
     @Test
     void metroLinkSystemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/cc_metrolink_system-map---updated-04.24.23-.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("833f69a992bd6e38cb7acf63809decb7", checksum);
+        assertEquals("9576d94bd5559a14449ab658cd620737", checksum);
     }
 
 }
