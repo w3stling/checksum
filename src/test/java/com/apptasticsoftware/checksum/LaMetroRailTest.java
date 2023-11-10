@@ -53,14 +53,14 @@ class LaMetroRailTest {
 
     @Test
     void metroLinkAllConnectionsMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/metrolink-map---all-connections.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("203e01d330c4612c9edc9200a81e97c8", checksum);
+        String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/map_allconnections_20231025_edit.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("0e67baf91880a0354dc871d3703ef9ef", checksum);
     }
 
     @Test
     void metroLinkSystemMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/cc_metrolink_system-map---updated-04.24.23-.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("4e3c6d7a22272e46168d8c50806e3820", checksum);
+        String checksum = Checksum.calculate(new URI("https://metrolinktrains.com/globalassets/maps/cc_metrolink_system-map_2023_sept.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("6d33da03b92deff988172496d84ea4a2", checksum);
     }
 
 }
