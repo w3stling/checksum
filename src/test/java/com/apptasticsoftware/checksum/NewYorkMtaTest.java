@@ -44,7 +44,7 @@ class NewYorkMtaTest {
     @Test
     void busManhattanMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5391"), MessageDigest.getInstance("MD5"));
-        assertEquals("a8fef2a63a804a8f2f2bffec23fde580", checksum);
+        assertEquals("8b8d217136cf99a1a0b78de6bfa6aa20", checksum);
     }
 
     @Test
@@ -109,9 +109,29 @@ class NewYorkMtaTest {
     }
 
     @Test
-    void railCtRail() throws Exception{
+    void railCtRail() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.hartfordline.com/pdf/hartford_line_statewide_map.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("9b0440cf73d603858e80dfb7a37adb56", checksum);
     }
 
+    @Test
+    void nycFerryMap() throws Exception {
+        // https://www.ferry.nyc/routes-and-schedules/
+        String checksum = Checksum.calculate(new URI("https://images.ferry.nyc/wp-content/uploads/2023/11/08022445/System-Map_11-4-2023-1.jpg?_ga=2.81391703.1991557015.1700302188-855332713.1700302188"), MessageDigest.getInstance("MD5"));
+        assertEquals("c1c349744336ee96b6a3aae74fbae595", checksum);
+    }
+
+    @Test
+    void jfkAirportMap() throws Exception {
+        // https://www.jfkairport.com/at-airport/airport-maps
+        String checksum = Checksum.calculate(new URI("https://www.jfkairport.com/static/JFK/image/JFK-airport-map.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("f3ffea5319f450dbc0c961d602e1f4e9", checksum);
+    }
+
+    @Test
+    void airTrainServiceMap() throws Exception {
+        // https://www.jfkairport.com/at-airport/connecting-flights
+        String checksum = Checksum.calculate(new URI("https://www.jfkairport.com/static/JFK/image/jfk-airTrain-graphic.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("7e04f632645cf6e3fed94f5af0f0975a", checksum);
+    }
 }
