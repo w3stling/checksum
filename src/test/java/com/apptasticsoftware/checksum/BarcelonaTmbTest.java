@@ -1,6 +1,5 @@
 package com.apptasticsoftware.checksum;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -16,7 +15,6 @@ class BarcelonaTmbTest {
         assertEquals("23f61f5a1c7c719637c6d5fc5698cde4", checksum);
     }
 
-    @Disabled
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+xarxa+bus.pdf/9b5bfa95-6117-4117-9843-fb3e3fde5447?t=1673959629000"), MessageDigest.getInstance("MD5"));
