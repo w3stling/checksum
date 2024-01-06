@@ -24,7 +24,7 @@ class BostonMbtaTest {
     @Test
     void commuterRailZonesMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/cr-map-zones"), MessageDigest.getInstance("MD5"));
-        assertEquals("e0e8a5a02271666713a50b180248dda4", checksum);
+        assertEquals("30386e5c1947d1ae95a5d788f04f444a", checksum);
     }
 
     @Test

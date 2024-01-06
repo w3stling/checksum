@@ -14,7 +14,7 @@ class ParisRatpTest {
     @Test
     void metroMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.ratp.fr/sites/default/files/plans-lignes/Plans-essentiels/Plan-Metro.1669996027.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9d0a9c518d47520ef4d42e553ab2a9e0", checksum);
+        assertEquals("8110fa46095ebbb50c5cff58ac650a8e", checksum);
     }
 
     @Test
