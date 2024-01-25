@@ -12,7 +12,7 @@ class BarcelonaTmbTest {
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+xarxa+de+Metro.pdf/f5578f40-5a66-46ba-907c-cf31e0d368c0?t=1694605145000"), MessageDigest.getInstance("MD5"));
-        assertEquals("23f61f5a1c7c719637c6d5fc5698cde4", checksum);
+        assertEquals("7932fa4fa678d559e3ac990b0cec2e02", checksum);
     }
 
     @Test
