@@ -13,13 +13,13 @@ class NewYorkMtaTest {
     @Test
     void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("e823a99e4c0ff37e029d0ea00120a888", checksum);
+        assertEquals("d39e7958cf73774ea7d73acfc65a76b0", checksum);
     }
 
     @Test
     void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("ed9af75743759d848792a2b76fdf82bd", checksum);
+        assertEquals("fc1bb02ce0149c8e43d9746ea86f36ea", checksum);
     }
 
     @Disabled("Investigating")
@@ -38,7 +38,7 @@ class NewYorkMtaTest {
     @Test
     void busBronxMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5366"), MessageDigest.getInstance("MD5"));
-        assertEquals("a84ef06b77f788bc56693aee0b713b73", checksum);
+        assertEquals("68f1853bbb40dae008807a7893eb93c1", checksum);
     }
 
     @Test
@@ -56,13 +56,13 @@ class NewYorkMtaTest {
     @Test
     void busStatenIslandMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5376"), MessageDigest.getInstance("MD5"));
-        assertEquals("956cf436ed452c720af7ce3f0d4bb46b", checksum);
+        assertEquals("968ba073b87b2c14fd245bec73e27f4d", checksum);
     }
 
     @Test
     void busStatenIslandExpressMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5381"), MessageDigest.getInstance("MD5"));
-        assertEquals("b1597efb46f971e72c8f2b5f1fc69b00", checksum);
+        assertEquals("be1dd8c00895f53f7f69229d1dc294a7", checksum);
     }
 
     @Test
@@ -110,8 +110,9 @@ class NewYorkMtaTest {
 
     @Test
     void railCtRail() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.hartfordline.com/pdf/hartford_line_statewide_map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("9b0440cf73d603858e80dfb7a37adb56", checksum);
+        // https://www.hartfordline.com/pdf/hartford_line_statewide_map.pdf
+        String checksum = Checksum.calculate(new URI("https://hartfordline.com/wp-content/uploads/2023/12/new_service_map.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("dddc76b053192cadec71358fa6a316cb", checksum);
     }
 
     @Test
