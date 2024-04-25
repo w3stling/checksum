@@ -18,7 +18,7 @@ class BarcelonaTmbTest {
     @Test
     void busMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.tmb.cat/documents/20182/96078/Pl%C3%A0nol+xarxa+bus.pdf/9b5bfa95-6117-4117-9843-fb3e3fde5447?t=1673959629000"), MessageDigest.getInstance("MD5"));
-        assertEquals("8f8f96e6962d09f2d7523614b90ce818", checksum);
+        assertEquals("d01c202915cd547d88819889d5a0bb4f", checksum);
     }
 
     @Test

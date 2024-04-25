@@ -13,7 +13,7 @@ class DelhiMetroTest {
     @Test
     void metroMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.delhimetrorail.com/static/media/Network-Map-English.e17d3ce0.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("32d618f9780057af6b26b88f0c3cdec6", checksum);
+        assertEquals("8e754ac64c9777cc8b57aa426b749ab0", checksum);
     }
 
     @Test
