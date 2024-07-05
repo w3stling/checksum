@@ -13,13 +13,13 @@ class NewYorkMtaTest {
     @Test
     void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("d39e7958cf73774ea7d73acfc65a76b0", checksum);
+        assertEquals("15983212e03e58d1b5c1e073c8f95784", checksum);
     }
 
     @Test
     void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("fc1bb02ce0149c8e43d9746ea86f36ea", checksum);
+        assertEquals("ced103b428d55a2be11d9ffbf2a3a620", checksum);
     }
 
     @Disabled("Investigating")
@@ -68,7 +68,7 @@ class NewYorkMtaTest {
     @Test
     void mtaRailroadsMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/22461"), MessageDigest.getInstance("MD5"));
-        assertEquals("4acb482650d3e1b4577d0b2508cef794", checksum);
+        assertEquals("7c0ab81369de010d12a3a7e7da050edd", checksum);
     }
 
     @Test
@@ -126,13 +126,13 @@ class NewYorkMtaTest {
     void jfkAirportMap() throws Exception {
         // https://www.jfkairport.com/at-airport/airport-maps
         String checksum = Checksum.calculate(new URI("https://www.jfkairport.com/static/JFK/image/JFK-airport-map.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("f3ffea5319f450dbc0c961d602e1f4e9", checksum);
+        assertEquals("3b35afd74ee5ad14660d147118d6bd96", checksum);
     }
 
     @Test
     void airTrainServiceMap() throws Exception {
         // https://www.jfkairport.com/at-airport/connecting-flights
         String checksum = Checksum.calculate(new URI("https://www.jfkairport.com/static/JFK/image/jfk-airTrain-graphic.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("7e04f632645cf6e3fed94f5af0f0975a", checksum);
+        assertEquals("82ceaf23116672ca1a7077915f740e69", checksum);
     }
 }
