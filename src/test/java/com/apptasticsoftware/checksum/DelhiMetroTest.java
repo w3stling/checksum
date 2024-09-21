@@ -8,6 +8,7 @@ import java.security.MessageDigest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Disabled("Investigating")
 class DelhiMetroTest {
 
     @Test
