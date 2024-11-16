@@ -13,13 +13,13 @@ class NewYorkMtaTest {
     @Test
     void subwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("f5b2c6fa9e4b8403faa12d10a90e2d84", checksum);
+        assertEquals("a1fc85d05ef1d37f0da67469b69b6684", checksum);
     }
 
     @Test
     void subwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("ccaca6849d3f651167453a1d982e1630", checksum);
+        assertEquals("39160df1c3c214ceae3cd183c55f3a2b", checksum);
     }
 
     @Disabled("Investigating")
