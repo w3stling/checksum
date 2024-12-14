@@ -14,7 +14,7 @@ class SingaporeLtaTest {
     @Test
     void trainSystemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/_jcr_content/par/textimage_967171583/image.img.png/1585728760528.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("fdaeaea8816c65a9fcf409eb7cf904e7", checksum);
+        assertEquals("2b0d0e05683412d20e78dbad21b4166f", checksum);
     }
 
     @Test
@@ -86,7 +86,7 @@ class SingaporeLtaTest {
         assertEquals("6eea129bc3cb27d36e51718da92afe7f", checksum);
 
         String checksum2 = Checksum.calculate(new URI("https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/thomson_east_coast_line/_jcr_content/par/image.img.png/1580366965678.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("ebd7974ef7f7ee53c23af21aca0ef12b", checksum2);
+        assertEquals("a9a5d650852915c8a252a2f234fc6d1a", checksum2);
     }
 
     ///
@@ -94,13 +94,13 @@ class SingaporeLtaTest {
     @Test
     void fullMapColors() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-color.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("b264369cd6416e1b7407c4cb9abe76c4", checksum);
+        assertEquals("ff080cf7e1f74bb7176080ac46754098", checksum);
     }
 
     @Test
     void fullMapGreyScale() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-grey%20scale.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("6794b146749843cba50521c9429f8d24", checksum);
+        assertEquals("b4a5f684be9ea5150e9818864b72ba8e", checksum);
     }
 
     @Test
