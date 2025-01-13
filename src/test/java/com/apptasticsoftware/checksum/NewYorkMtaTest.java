@@ -121,8 +121,8 @@ class NewYorkMtaTest {
     @Test
     void nycFerryMap() throws Exception {
         // https://www.ferry.nyc/routes-and-schedules/
-        String checksum = Checksum.calculate(new URI("https://images.ferry.nyc/wp-content/uploads/2023/11/08022445/System-Map_11-4-2023-1.jpg?_ga=2.81391703.1991557015.1700302188-855332713.1700302188"), MessageDigest.getInstance("MD5"));
-        assertEquals("c1c349744336ee96b6a3aae74fbae595", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.ferry.nyc/wp-content/uploads/2024/05/System-Map_5-20-2024.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("fa1b38709f370048098c853efe3fe3b8", checksum);
     }
 
     @Test
