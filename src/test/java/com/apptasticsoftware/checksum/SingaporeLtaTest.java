@@ -14,7 +14,7 @@ class SingaporeLtaTest {
     @Test
     void trainSystemMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/_jcr_content/par/textimage_967171583/image.img.png/1585728760528.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("2b0d0e05683412d20e78dbad21b4166f", checksum);
+        assertEquals("c3c6b687500398a478e346ce340fd185", checksum);
     }
 
     @Test
@@ -86,7 +86,7 @@ class SingaporeLtaTest {
         assertEquals("6eea129bc3cb27d36e51718da92afe7f", checksum);
 
         String checksum2 = Checksum.calculate(new URI("https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/thomson_east_coast_line/_jcr_content/par/image.img.png/1580366965678.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("a9a5d650852915c8a252a2f234fc6d1a", checksum2);
+        assertEquals("9b47c9697145fcf8ad1b9c798b7cd538", checksum2);
     }
 
     ///
@@ -94,13 +94,13 @@ class SingaporeLtaTest {
     @Test
     void fullMapColors() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-color.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("ff080cf7e1f74bb7176080ac46754098", checksum);
+        assertEquals("3f17f22a04a89e972516dd0ebd907e5e", checksum);
     }
 
     @Test
     void fullMapGreyScale() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-grey%20scale.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("b4a5f684be9ea5150e9818864b72ba8e", checksum);
+        assertEquals("937a290d09462f63e233d472fc420774", checksum);
     }
 
     @Test
@@ -125,7 +125,7 @@ class SingaporeLtaTest {
     @Test
     void downtownLine() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/DTL.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("1f1e3ef9e2db0d7918135513c440776b", checksum);
+        assertEquals("5f6ab1723b2afd9a5e9a330973b7b12f", checksum);
     }
 
     @Test
