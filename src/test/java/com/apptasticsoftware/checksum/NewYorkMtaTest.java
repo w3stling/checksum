@@ -80,8 +80,8 @@ class NewYorkMtaTest {
 
     @Test
     void railMetroNorthMap() throws Exception{
-        String checksum = Checksum.calculate(new URI("https://new.mta.info/map/5351"), MessageDigest.getInstance("MD5"));
-        assertEquals("aa7b62eb0b9b1bd8a1bce0e2878a106f", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.mta.info/map/22461"), MessageDigest.getInstance("MD5"));
+        assertEquals("8be267bfb16b90cc755382fadb28bcca", checksum);
     }
 
     @Disabled("Investigate")
