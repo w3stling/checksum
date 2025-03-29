@@ -18,13 +18,13 @@ class BostonMbtaTest {
     @Test
     void commuterRailMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/cr-map"), MessageDigest.getInstance("MD5"));
-        assertEquals("65a737369ab7d1d7e1b72041cf52821d", checksum);
+        assertEquals("f586a54a3824626c01348ce63c6850d2", checksum);
     }
 
     @Test
     void commuterRailZonesMap() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.mbta.com/cr-map-zones"), MessageDigest.getInstance("MD5"));
-        assertEquals("16b3bcff4b9b2c0787e9714e9649d0db", checksum);
+        assertEquals("a1e91a0b46d9f7edd42ea152753ecb5b", checksum);
     }
 
     @Test
