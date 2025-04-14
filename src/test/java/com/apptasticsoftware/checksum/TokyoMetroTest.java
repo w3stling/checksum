@@ -13,6 +13,7 @@ class TokyoMetroTest {
 
     @Test
     void metroMapEn() throws Exception {
+        // https://www.tokyometro.jp/en/subwaymap/index.html
         String checksum = Checksum.calculate(new URI("https://www.tokyometro.jp/lang_en/station/202303_number_en.pdf"), MessageDigest.getInstance("MD5"));
         assertEquals("a9f627becc66701c780ace6aa95902b8", checksum);
     }
@@ -25,7 +26,8 @@ class TokyoMetroTest {
 
     @Test
     void todenArakawaMapEn() throws Exception {
-            String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/maps/images/street_map_01.gif"), MessageDigest.getInstance("MD5"));
+        // https://www.kotsu.metro.tokyo.jp/eng/maps/
+        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/maps/images/street_map_01.gif"), MessageDigest.getInstance("MD5"));
         assertEquals("8091e37a1838a07dfde584ea3b8b3cbc", checksum);
     }
 
@@ -37,6 +39,7 @@ class TokyoMetroTest {
 
     @Test
     void nipporiToneriLinerMapEn() throws Exception {
+        // https://www.kotsu.metro.tokyo.jp/eng/maps/
         String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/maps/images/liner_map_01.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("579f2bbc864e66124b6e5468d2d46b35", checksum);
     }
