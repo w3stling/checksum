@@ -24,6 +24,11 @@ class LaMetroRailTest {
         assertEquals("aa40e7472e350d86dbbd50d32a6a2c35", checksum);
     }
 
+    @Test
+    void metroAndRegionalRailMap() throws Exception {
+        String checksum = Checksum.calculate(new URI("https://www.dropbox.com/scl/fi/sivog4pnu259j9oc75vlo/25-0412_blt_GM_MlinkAmtrak_47x47.5_DCR_final.pdf?rlkey=g9xk79o2uypo191fmacpbx2hx&st=8d9coqsr&raw=1"), MessageDigest.getInstance("MD5"));
+        assertEquals("d27a75843b0e81584360b2c76b5c9faa", checksum);
+    }
 
     @Test
     void regionalSanFernandoValleyMap() throws Exception {

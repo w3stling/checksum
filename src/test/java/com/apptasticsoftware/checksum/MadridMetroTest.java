@@ -8,6 +8,7 @@ import java.security.MessageDigest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+// https://www.metromadrid.es/en/travel-in-the-metro/metro-de-madrid-maps
 @Disabled
 class MadridMetroTest {
 

@@ -7,6 +7,7 @@ import java.security.MessageDigest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+// https://www.tcl.fr/en/pdf-plans
 class LyonTclTest {
 
     @Test
