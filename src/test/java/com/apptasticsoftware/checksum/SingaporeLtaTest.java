@@ -94,13 +94,13 @@ class SingaporeLtaTest {
     @Test
     void fullMapColors() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-color.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("66fe8a137f5f9fcb45eddc8f464d9662", checksum);
+        assertEquals("b6d15a44403f6e01c5c6a05fff451b13", checksum);
     }
 
     @Test
     void fullMapGreyScale() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/Full%20map-grey%20scale.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("8e5d946bec1ada839beca751ecf91386", checksum);
+        assertEquals("813d3a879d6bfbc792bb95813e04b62f", checksum);
     }
 
     @Test
