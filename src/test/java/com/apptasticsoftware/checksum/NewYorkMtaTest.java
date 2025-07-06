@@ -107,21 +107,51 @@ class NewYorkMtaTest {
 
     @Test
     void railNyPathMapWeekdays() throws Exception{
+        // https://www.panynj.gov/path/en/schedules-maps.html
         String checksum = Checksum.calculate(new URI("https://www.panynj.gov/content/dam/path/schedules/master-maps/PATH%20Service%20Map%20_01.jpg.transform/transform-1920/image.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("c37b0aab359d661b76895c4ca453fcf4", checksum);
     }
 
     @Test
     void railNyPathMapWeekends() throws Exception{
+        // https://www.panynj.gov/path/en/schedules-maps.html
         String checksum = Checksum.calculate(new URI("https://www.panynj.gov/content/dam/path/schedules/master-maps/PATH%20Service%20Map%20_02.jpg.transform/transform-1920/image.jpg"), MessageDigest.getInstance("MD5"));
         assertEquals("a3928acbcdf526c553a93e675fb866c6", checksum);
     }
 
     @Test
     void railCtRail() throws Exception {
-        // https://www.hartfordline.com/pdf/hartford_line_statewide_map.pdf
-        String checksum = Checksum.calculate(new URI("https://hartfordline.com/wp-content/uploads/2023/12/new_service_map.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("dddc76b053192cadec71358fa6a316cb", checksum);
+        // https://hartfordline.com/route_stations/
+        String checksum = Checksum.calculate(new URI("https://hartfordline.com/wp-content/uploads/2025/05/CTrail_LineMap_8-5x11_051425.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("f6ef14f455f486a599cce3afaff75c80", checksum);
+    }
+
+    @Test
+    void njTransitSystemMap() throws Exception {
+        // https://www.njtransit.com/
+        String checksum = Checksum.calculate(new URI("https://content.njtransit.com/sites/default/files/pdfs/maps/RSM_Geographic_040425_web.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("a5c60fd10dde531055b5ff0fca6dea33", checksum);
+    }
+
+    @Test
+    void njTransitHudsonBergenLightRail() throws Exception {
+        // https://www.njtransit.com/
+        String checksum = Checksum.calculate(new URI("https://content.njtransit.com/sites/default/files/pdfs/light-rail/HBLR_RSM_021925.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("e676cc5b70bd6cfbbb3c4413c233ef77", checksum);
+    }
+
+    @Test
+    void njTransitNewarkLightRail() throws Exception {
+        // https://www.njtransit.com/
+        String checksum = Checksum.calculate(new URI("https://content.njtransit.com/sites/default/files/pdfs/light-rail/NLR_052825.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("246417dfd60dd1b7390b33d75a1e2958", checksum);
+    }
+
+    @Test
+    void njTransitRiverLine() throws Exception {
+        // https://www.njtransit.com/
+        String checksum = Checksum.calculate(new URI("https://content.njtransit.com/sites/default/files/pdfs/light-rail/Riverline_021925_web.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("4b01e28cff516247a060a64aca50ad96", checksum);
     }
 
     @Test
