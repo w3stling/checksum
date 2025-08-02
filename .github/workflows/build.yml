@@ -28,7 +28,7 @@ jobs:
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
 
-      - name: Set up JDK 17 ⚙️
+      - name: Set up JDK ⚙️
         uses: actions/setup-java@v4
         with:
           java-version: '21'
@@ -83,7 +83,7 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      - name: Set up JDK 17 ⚙️
+      - name: Set up JDK ⚙️
         uses: actions/setup-java@v4
         with:
           java-version: '21'
@@ -134,7 +134,7 @@ jobs:
       - name: Checkout repository ⚙️
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17 ⚙️
+      - name: Set up JDK ⚙️
         uses: actions/setup-java@v4
         with:
           java-version: '21'
@@ -186,7 +186,7 @@ jobs:
       - name: Checkout repository ⚙️
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17 ⚙️
+      - name: Set up JDK ⚙️
         uses: actions/setup-java@v4
         with:
           java-version: '21'
