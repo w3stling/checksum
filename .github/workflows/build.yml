@@ -23,7 +23,7 @@ jobs:
           echo "github.ref - ${{github.ref}}"
 
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
@@ -79,7 +79,7 @@ jobs:
 
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
@@ -132,7 +132,7 @@ jobs:
 
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up JDK ⚙️
         uses: actions/setup-java@v4
@@ -184,7 +184,7 @@ jobs:
 
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up JDK ⚙️
         uses: actions/setup-java@v4
