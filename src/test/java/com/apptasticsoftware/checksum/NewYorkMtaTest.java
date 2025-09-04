@@ -25,13 +25,13 @@ class NewYorkMtaTest {
     @Test
     void geographicSubwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36946"), MessageDigest.getInstance("MD5"));
-        assertEquals("938286cb1d52cb38d11ed725a8d950cb", checksum);
+        assertEquals("046697a4bcd3a89f49372e0eddfbf8b7", checksum);
     }
 
     @Test
     void geographicSubwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36951"), MessageDigest.getInstance("MD5"));
-        assertEquals("af4b49e5fe1aa5d400a48a47c75753f0", checksum);
+        assertEquals("3d6f46b564aafdbdec7708cd69c31be7", checksum);
     }
 
     @Disabled("Investigating")
@@ -62,7 +62,7 @@ class NewYorkMtaTest {
     @Test
     void busQueensMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5371"), MessageDigest.getInstance("MD5"));
-        assertEquals("a678575a5137125fe698926efbd62568", checksum);
+        assertEquals("c0ef08b29c631af28f99a4c0811ebaa3", checksum);
     }
 
     @Test
