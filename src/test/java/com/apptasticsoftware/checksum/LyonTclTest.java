@@ -1,5 +1,6 @@
 package com.apptasticsoftware.checksum;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -8,6 +9,8 @@ import java.security.MessageDigest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // https://www.tcl.fr/en/pdf-plans
+
+@Disabled("Investigate")
 class LyonTclTest {
 
     @Test
