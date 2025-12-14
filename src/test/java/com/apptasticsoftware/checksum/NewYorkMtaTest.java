@@ -13,25 +13,25 @@ class NewYorkMtaTest {
     @Test
     void diagramSubwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("c7e781f0f1c7cb8b0bbe8e96c6c862bf", checksum);
+        assertEquals("4d36e6c16e37a9c308a601ae3c159e82", checksum);
     }
 
     @Test
     void diagramSubwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("7ada7905ae340c6490754008bbd490ca", checksum);
+        assertEquals("7f47a36f74411e2ee6311715a26a772f", checksum);
     }
 
     @Test
     void geographicSubwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36946"), MessageDigest.getInstance("MD5"));
-        assertEquals("3a9728dfef1be833afad139ec9d9535c", checksum);
+        assertEquals("c2badc7c7b741e43976a49ae523abeeb", checksum);
     }
 
     @Test
     void geographicSubwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36951"), MessageDigest.getInstance("MD5"));
-        assertEquals("958b6e288d45b1d2d039f0a7c3148006", checksum);
+        assertEquals("994f70d200771adb1bc61af996cb47ff", checksum);
     }
 
     @Disabled("Investigating")
@@ -62,13 +62,13 @@ class NewYorkMtaTest {
     @Test
     void busQueensMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5371"), MessageDigest.getInstance("MD5"));
-        assertEquals("e887cf91a3c35e4d5dce0a2e3c8ce068", checksum);
+        assertEquals("c8fd66cb486540e7d27d633bc5e04dd6", checksum);
     }
 
     @Test
     void busStatenIslandMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5376"), MessageDigest.getInstance("MD5"));
-        assertEquals("a4717d3bf9cda29b17b7b88934d423ca", checksum);
+        assertEquals("3492f1c4986576c0fb08aa0a6b3fd5ac", checksum);
     }
 
     @Test
