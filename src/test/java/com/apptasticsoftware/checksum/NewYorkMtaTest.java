@@ -13,25 +13,25 @@ class NewYorkMtaTest {
     @Test
     void diagramSubwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("17b6b66d598a47091dc92334a20ad36e", checksum);
+        assertEquals("63238f1c1fa1282a94454fcd55851fa1", checksum);
     }
 
     @Test
     void diagramSubwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("d214bf323f46241bdc4c357d14d878b5", checksum);
+        assertEquals("bc8905ea65de28a4d718687f825e5cde", checksum);
     }
 
     @Test
     void geographicSubwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36946"), MessageDigest.getInstance("MD5"));
-        assertEquals("c2badc7c7b741e43976a49ae523abeeb", checksum);
+        assertEquals("d4f62b912ca08b6d87daad15aab58943", checksum);
     }
 
     @Test
     void geographicSubwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36951"), MessageDigest.getInstance("MD5"));
-        assertEquals("994f70d200771adb1bc61af996cb47ff", checksum);
+        assertEquals("568a460447233d2296aaac587293251c", checksum);
     }
 
     @Disabled("Investigating")
@@ -122,8 +122,8 @@ class NewYorkMtaTest {
     @Test
     void railCtRail() throws Exception {
         // https://hartfordline.com/route_stations/
-        String checksum = Checksum.calculate(new URI("https://hartfordline.com/wp-content/uploads/2025/05/CTrail_LineMap_8-5x11_051425.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("f6ef14f455f486a599cce3afaff75c80", checksum);
+        String checksum = Checksum.calculate(new URI("https://hartfordline.com/wp-content/uploads/2025/12/CTrail_LineMap_8-5x11_102125_Final.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("6331ecbf997ad53f9d763273b9956ece", checksum);
     }
 
     @Test
