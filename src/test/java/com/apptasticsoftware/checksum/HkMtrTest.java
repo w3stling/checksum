@@ -27,20 +27,20 @@ class HkMtrTest {
     void westboundTramwayMap() throws Exception {
         // https://hktramways.com/en/interactive-map/
         String checksum = Checksum.calculate(new URI("https://hktramways.com/images/googleMap/routeMapWB.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("da6a7e630e40e0d378d120da2d32b77d", checksum);
+        assertEquals("e7a48ca5312e00c15cc773b121693d24", checksum);
 
         checksum = Checksum.calculate(new URI("https://hktramways.com/images/googleMap/HK-tram-route-map-WB.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("1d960b16b7c83a9c0af85a3efb777768", checksum);
+        assertEquals("bd2bbc8e368b5a56fa56905e192271e1", checksum);
     }
 
     @Test
     void eastboundTramwayMap() throws Exception {
         // https://hktramways.com/en/interactive-map/
         String checksum = Checksum.calculate(new URI("https://hktramways.com/images/googleMap/routeMapEB.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("411897bff81ff59cbc8c9ceb31d8046c", checksum);
+        assertEquals("924305cb73ed3659a453b89cc6c15c3d", checksum);
 
         checksum = Checksum.calculate(new URI("https://hktramways.com/images/googleMap/HK-tram-route-map-EB.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("8db70ab801e9254e6f53ae3a769d69ad", checksum);
+        assertEquals("a4620a0535223da71847a11fbea4df3c", checksum);
     }
 
     @Test
