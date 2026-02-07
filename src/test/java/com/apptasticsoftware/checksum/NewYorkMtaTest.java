@@ -165,7 +165,7 @@ class NewYorkMtaTest {
     void jfkAirportMap() throws Exception {
         // https://www.jfkairport.com/at-airport/airport-maps
         String checksum = Checksum.calculate(new URI("https://www.jfkairport.com/static/JFK/image/JFK-airport-map.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("3b35afd74ee5ad14660d147118d6bd96", checksum);
+        assertEquals("95f127d4ff7566e8fd29969243fc4407", checksum);
     }
 
     @Test
