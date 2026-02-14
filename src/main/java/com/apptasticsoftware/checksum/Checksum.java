@@ -55,6 +55,7 @@ public final class Checksum {
             // Safari
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15"
     };
+    @SuppressWarnings("java:S2245")
     private static final Random RANDOM = new Random();
 
     private Checksum() {
