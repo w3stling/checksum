@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.CookieManager;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -37,12 +38,25 @@ import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.time.Duration;
 import java.util.Optional;
+import java.util.Random;
 import java.util.zip.GZIPInputStream;
 
 /**
  * Calculate checksum
  */
 public final class Checksum {
+    private static final String[] HTTP_USER_AGENTS = {
+            // Chrome
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+            // Firefox
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0",
+            "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0",
+            // Safari
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15"
+    };
+    @SuppressWarnings("java:S2245")
+    private static final Random RANDOM = new Random();
 
     private Checksum() {
 
@@ -76,14 +90,21 @@ public final class Checksum {
         SSLContext context = SSLContext.getInstance("TLSv1.3");
         context.init(null, null, null);
 
+        CookieManager cookieManager = new CookieManager();
+
         HttpClient client = HttpClient.newBuilder()
                 .sslContext(context)
+                .cookieHandler(cookieManager)
                 .connectTimeout(Duration.ofSeconds(20))
                 .followRedirects(HttpClient.Redirect.ALWAYS)
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         HttpRequest request = HttpRequest.newBuilder(url)
-                .header("Accept-Encoding", "gzip")
+                .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
+                .header("Accept-Encoding", "gzip, deflate, zstd")
+                .header("User-Agent", getUserAgent())
+                .header("Accept-Language", "en-US,en;q=0.9,*;q=0.8")
                 .timeout(Duration.ofSeconds(20))
                 .GET()
                 .build();
@@ -129,5 +150,9 @@ public final class Checksum {
         }
 
         return hashBuilder.toString();
+    }
+
+    private static String getUserAgent() {
+        return HTTP_USER_AGENTS[RANDOM.nextInt(HTTP_USER_AGENTS.length)];
     }
 }
