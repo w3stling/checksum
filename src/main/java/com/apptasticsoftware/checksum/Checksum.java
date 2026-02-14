@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.CookieManager;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -85,10 +86,14 @@ public final class Checksum {
         SSLContext context = SSLContext.getInstance("TLSv1.3");
         context.init(null, null, null);
 
+        CookieManager cookieManager = new CookieManager();
+
         HttpClient client = HttpClient.newBuilder()
                 .sslContext(context)
+                .cookieHandler(cookieManager)
                 .connectTimeout(Duration.ofSeconds(20))
                 .followRedirects(HttpClient.Redirect.ALWAYS)
+                .version(HttpClient.Version.HTTP_2)
                 .build();
 
         HttpRequest request = HttpRequest.newBuilder(url)
