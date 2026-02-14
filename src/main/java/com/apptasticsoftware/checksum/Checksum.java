@@ -36,9 +36,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
-import java.security.SecureRandom;
 import java.time.Duration;
 import java.util.Optional;
+import java.util.Random;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -55,7 +55,7 @@ public final class Checksum {
             // Safari
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15"
     };
-    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
+    private static final Random RANDOM = new Random();
 
     private Checksum() {
 
@@ -103,7 +103,7 @@ public final class Checksum {
                 .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
                 .header("Accept-Encoding", "gzip, deflate, zstd")
                 .header("User-Agent", getUserAgent())
-                .header("Accept-Language", "sv,en-US;q=0.9,en;q=0.8,de-DE;q=0.7,de;q=0.6,es-ES;q=0.5,es;q=0.4,ca;q=0.3,tr;q=0.2,ja;q=0.1,hi;q=0.1")
+                .header("Accept-Language", "en-US,en;q=0.9,*;q=0.8")
                 .timeout(Duration.ofSeconds(20))
                 .GET()
                 .build();
@@ -152,6 +152,6 @@ public final class Checksum {
     }
 
     private static String getUserAgent() {
-        return HTTP_USER_AGENTS[SECURE_RANDOM.nextInt(HTTP_USER_AGENTS.length)];
+        return HTTP_USER_AGENTS[RANDOM.nextInt(HTTP_USER_AGENTS.length)];
     }
 }
