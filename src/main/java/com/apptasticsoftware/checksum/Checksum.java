@@ -55,6 +55,7 @@ public final class Checksum {
             // Safari
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15"
     };
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
     private Checksum() {
 
@@ -151,6 +152,6 @@ public final class Checksum {
     }
 
     private static String getUserAgent() {
-        return HTTP_USER_AGENTS[new SecureRandom().nextInt(HTTP_USER_AGENTS.length)];
+        return HTTP_USER_AGENTS[SECURE_RANDOM.nextInt(HTTP_USER_AGENTS.length)];
     }
 }
