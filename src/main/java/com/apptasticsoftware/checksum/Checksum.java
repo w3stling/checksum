@@ -35,6 +35,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
+import java.security.SecureRandom;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.zip.GZIPInputStream;
@@ -43,6 +44,14 @@ import java.util.zip.GZIPInputStream;
  * Calculate checksum
  */
 public final class Checksum {
+    private static final String[] HTTP_USER_AGENTS = {
+            // Chrome
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+            // Firefox
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0",
+            // Safari
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15"
+    };
 
     private Checksum() {
 
@@ -83,7 +92,10 @@ public final class Checksum {
                 .build();
 
         HttpRequest request = HttpRequest.newBuilder(url)
-                .header("Accept-Encoding", "gzip")
+                .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
+                .header("Accept-Encoding", "gzip, deflate, zstd")
+                .header("User-Agent", getUserAgent())
+                .header("Accept-Language", "sv,en-US;q=0.9,en;q=0.8,de-DE;q=0.7,de;q=0.6,es-ES;q=0.5,es;q=0.4,ca;q=0.3,tr;q=0.2,ja;q=0.1,hi;q=0.1")
                 .timeout(Duration.ofSeconds(20))
                 .GET()
                 .build();
@@ -129,5 +141,9 @@ public final class Checksum {
         }
 
         return hashBuilder.toString();
+    }
+
+    private static String getUserAgent() {
+        return HTTP_USER_AGENTS[new SecureRandom().nextInt(HTTP_USER_AGENTS.length)];
     }
 }
