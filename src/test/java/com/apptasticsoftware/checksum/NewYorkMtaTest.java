@@ -123,8 +123,8 @@ class NewYorkMtaTest {
     @Test
     void railCtRail() throws Exception {
         // https://hartfordline.com/route_stations/
-        String checksum = Checksum.calculate(new URI("https://hartfordline.com/wp-content/uploads/2025/12/CTrail_LineMap_8-5x11_102125_Final.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("6331ecbf997ad53f9d763273b9956ece", checksum);
+        String checksum = Checksum.calculate(new URI("https://hartfordline.com/wp-content/uploads/2026/01/CTrail-CTtransit-Service-Map-011426.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("fa16568fc2ead00c6682482602e73cec", checksum);
     }
 
     @Test
