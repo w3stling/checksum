@@ -41,7 +41,7 @@ class TokyoMetroTest {
     void nipporiToneriLinerMapEn() throws Exception {
         // https://www.kotsu.metro.tokyo.jp/eng/maps/
         String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/maps/images/liner_map_01.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("579f2bbc864e66124b6e5468d2d46b35", checksum);
+        assertEquals("c3bb942e0e75f6d29f87abb8a8452c01", checksum);
     }
 
     @Test
@@ -52,8 +52,8 @@ class TokyoMetroTest {
 
     @Test
     void toeiRouteMapEn() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/services/pdf/main_route_map_eng.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("98e489eb67752d245714003b06eb2464", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/services/pdf/sub_map_eng.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("86a262326c0a48125d5d090b1bee82e7", checksum);
     }
 
     @Test
@@ -65,7 +65,7 @@ class TokyoMetroTest {
 
     @Test
     void toeiBusRouteMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/bus/routes/common/pdf/toeibus_routemap.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("7fbb35b1a186aa304824732e4a10030d", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.kotsu.metro.tokyo.jp/eng/document/bus_map.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("27771b859c7296abe934647f2809acae", checksum);
     }
 }
