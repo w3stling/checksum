@@ -14,25 +14,25 @@ class NewYorkMtaTest {
     @Test
     void diagramSubwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5256"), MessageDigest.getInstance("MD5"));
-        assertEquals("ad51f21bde842d2505cb6c8983721b12", checksum);
+        assertEquals("6f356127aa85506766548ce01fc54c93", checksum);
     }
 
     @Test
     void diagramSubwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/5336"), MessageDigest.getInstance("MD5"));
-        assertEquals("48ce397cd5e660696f4497cfb7ee0017", checksum);
+        assertEquals("42d22d38065adfab3d2961d0a7410ca0", checksum);
     }
 
     @Test
     void geographicSubwayMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36946"), MessageDigest.getInstance("MD5"));
-        assertEquals("186c04ffda1ea7d91c1e025c2d07b761", checksum);
+        assertEquals("c0e0f28577a8a7abeb0e2871a33b5cd6", checksum);
     }
 
     @Test
     void geographicSubwayNightMap() throws Exception{
         String checksum = Checksum.calculate(new URI("https://www.mta.info/map/36951"), MessageDigest.getInstance("MD5"));
-        assertEquals("5ae53bad218673ec94c4c48a037f6a9b", checksum);
+        assertEquals("3eca50be8f610a3625b923119ef76e46", checksum);
     }
 
     @Disabled("Investigating")
@@ -166,13 +166,13 @@ class NewYorkMtaTest {
     void jfkAirportMap() throws Exception {
         // https://www.jfkairport.com/at-airport/airport-maps
         String checksum = Checksum.calculate(new URI("https://www.jfkairport.com/static/JFK/image/JFK-airport-map.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("95f127d4ff7566e8fd29969243fc4407", checksum);
+        assertEquals("d4689be8938f94d02c50d0e6f579b35b", checksum);
     }
 
     @Test
     void airTrainServiceMap() throws Exception {
-        // https://www.jfkairport.com/at-airport/connecting-flights
-        String checksum = Checksum.calculate(new URI("https://www.jfkairport.com/static/JFK/image/jfk-airTrain-graphic.png"), MessageDigest.getInstance("MD5"));
-        assertEquals("7e04f632645cf6e3fed94f5af0f0975a", checksum);
+        // https://www.jfkairport.com/transportation/airtrain
+        String checksum = Checksum.calculate(new URI("https://s7d9.scene7.com/is/image/panynjaviation/2-5_7%20AirTrain%20Service%20Map:square-1x1?wid=1200&hei=1200&fit=constrain&qlt=80"), MessageDigest.getInstance("MD5"));
+        assertEquals("82c358f1466de406f5c20347fb18f110", checksum);
     }
 }
