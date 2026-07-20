@@ -20,7 +20,7 @@ class HkMtrTest {
     void lightRailRouteMap() throws Exception {
         // https://www.mtr.com.hk/en/customer/services/routemap_index.html
         String checksum = Checksum.calculate(new URI("https://www.mtr.com.hk/archive/en/services/LR_routemap.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("a5caede846e5dd7a6624424ee87ba8dc", checksum);
+        assertEquals("8d7a4abc697cee989a10eb0629a6ca73", checksum);
     }
 
     @Test
