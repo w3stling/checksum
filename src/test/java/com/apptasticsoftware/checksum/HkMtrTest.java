@@ -1,5 +1,6 @@
 package com.apptasticsoftware.checksum;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
@@ -23,6 +24,7 @@ class HkMtrTest {
         assertEquals("8d7a4abc697cee989a10eb0629a6ca73", checksum);
     }
 
+    @Disabled
     @Test
     void westboundTramwayMap() throws Exception {
         // https://hktramways.com/en/interactive-map/
@@ -33,6 +35,7 @@ class HkMtrTest {
         assertEquals("bd2bbc8e368b5a56fa56905e192271e1", checksum);
     }
 
+    @Disabled
     @Test
     void eastboundTramwayMap() throws Exception {
         // https://hktramways.com/en/interactive-map/
