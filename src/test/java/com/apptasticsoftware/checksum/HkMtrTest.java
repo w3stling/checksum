@@ -48,8 +48,8 @@ class HkMtrTest {
 
     @Test
     void starferryRouteMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.starferry.com.hk/sites/default/files/map.jpg"), MessageDigest.getInstance("MD5"));
-        assertEquals("a5d6b27ef397fd904dafbbd7defd9f65", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.starferry.com.hk/sites/default/files/routemap/route-map.png"), MessageDigest.getInstance("MD5"));
+        assertEquals("f538a3196a063e5bb7432d5699e755ae", checksum);
     }
 
 }
