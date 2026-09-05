@@ -13,14 +13,14 @@ class SingaporeLtaTest {
 
     @Test
     void trainSystemMap() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/_jcr_content/par/textimage_967171583/image.img.png/1585728760528.png"), MessageDigest.getInstance("MD5"));
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/SM_EN_(Ver200526)_CCL6.png"), MessageDigest.getInstance("MD5"));
         assertEquals("30f3e63f67aa76a4e44a828c8ff5695c", checksum);
     }
 
     @Test
     void trainSystemMapPdf() throws Exception {
-        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/sm-20-03-en-exp.pdf"), MessageDigest.getInstance("MD5"));
-        assertEquals("ca64b0a5dcc6e14c0e02a2ac303b623b", checksum);
+        String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/SM_EN_(Ver210726)_CCL6.pdf"), MessageDigest.getInstance("MD5"));
+        assertEquals("21ac20e648292753e54a28768d109426", checksum);
     }
 
     @Disabled("Investigating")
