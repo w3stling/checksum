@@ -119,7 +119,7 @@ class SingaporeLtaTest {
     @Test
     void circleLine() throws Exception {
         String checksum = Checksum.calculate(new URI("https://www.lta.gov.sg/map/mrt/CCL.svg"), MessageDigest.getInstance("MD5"));
-        assertEquals("e8caccf7f7c709d85e1fe0ceebf4a2b5", checksum);
+        assertEquals("d86637cecf1e28f4a9ca0175b6876cef", checksum);
     }
 
     @Test
